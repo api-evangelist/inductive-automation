@@ -1,0 +1,46 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "http://localhost:8088/data/api/v1/resources/ignition/db-connection",
+    "headers": {
+      "X-Ignition-API-Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "collection": "ignition/db-connection",
+      "enabled": true,
+      "name": "ProductionDB",
+      "description": "Production MySQL database connection",
+      "config": {
+        "driver": "com.inductiveautomation.jdbc.mysql.MySQLDriver",
+        "connectUrl": "jdbc:mysql://db.example.com:3306/production",
+        "username": "ignition_user",
+        "extraConnectionProperties": {
+          "autoReconnect": "true",
+          "characterEncoding": "utf8"
+        },
+        "maxConnections": 8,
+        "validationQuery": "SELECT 1"
+      },
+      "data": {
+        "password": "ENCRYPTED:AES/CBC/PKCS5Padding:base64encodedciphertext=="
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "signature": "d41d8cd98f00b204e9800998ecf8427e",
+      "collection": "ignition/db-connection",
+      "enabled": true,
+      "name": "ProductionDB",
+      "description": "Production MySQL database connection",
+      "config": {
+        "driver": "com.inductiveautomation.jdbc.mysql.MySQLDriver",
+        "connectUrl": "jdbc:mysql://db.example.com:3306/production",
+        "username": "ignition_user",
+        "maxConnections": 8
+      }
+    }
+  }
+}

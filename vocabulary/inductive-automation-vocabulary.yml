@@ -1,0 +1,119 @@
+vocabulary:
+  name: Inductive Automation / Ignition Gateway API Vocabulary
+  description: >
+    Key terms and concepts used in the Ignition 8.3 Gateway REST API and the broader
+    Inductive Automation / Ignition industrial automation platform. Covers SCADA, HMI,
+    IIoT, OPC, historian, and platform-specific resource management concepts.
+  version: "8.3.0"
+  terms:
+
+    - term: Gateway
+      definition: >
+        The central server component of the Ignition platform. The Gateway hosts
+        projects, manages tag providers, serves the REST API, enforces security zones,
+        and acts as the broker between OPC devices, databases, and client applications.
+      tags: [platform, core, server]
+
+    - term: Tag
+      definition: >
+        A named data point in the Ignition tag system. Tags represent real-time values
+        from OPC servers, databases, or internal calculations. Tags have a data type,
+        a value, quality flags, and a timestamp. The tag hierarchy is managed through
+        Tag Providers.
+      tags: [tags, IIoT, SCADA, core]
+
+    - term: Tag Provider
+      definition: >
+        A named container that hosts a set of tags. Ignition supports multiple tag
+        provider types including Standard (real-time OPC/derived tags), Historian-backed,
+        and Managed providers. Configured via /data/api/v1/resources/ignition/tag-provider.
+      tags: [tags, configuration, SCADA]
+
+    - term: OPC UA
+      definition: >
+        OPC Unified Architecture — an industrial M2M communication protocol used to
+        connect Ignition to PLCs, DCS systems, and other field devices. The Ignition
+        OPC-UA module acts as both client and server. Configured via the
+        com.inductiveautomation.opcua resource collection.
+      tags: [OPC, IIoT, protocol, connectivity]
+
+    - term: SCADA
+      definition: >
+        Supervisory Control and Data Acquisition. An industrial control system architecture
+        for monitoring and controlling industrial processes. Ignition is widely deployed as
+        a SCADA platform, providing real-time visualization, alarming, and historian
+        capabilities.
+      tags: [SCADA, industrial, monitoring]
+
+    - term: HMI
+      definition: >
+        Human-Machine Interface. The operator-facing screens and controls used to interact
+        with industrial processes. Ignition provides two HMI frameworks: Vision (thick client)
+        and Perspective (web/mobile). Designer sessions and client sessions are managed via
+        the REST API.
+      tags: [HMI, Perspective, Vision, visualization]
+
+    - term: Historian
+      definition: >
+        The Ignition tag history subsystem that records tag values over time to a relational
+        database (SQL Bridge module). The historian configuration is accessible via
+        /data/api/v1/resources/ignition/historian. Used for trend analysis and reporting.
+      tags: [historian, SQL Bridge, tags, data]
+
+    - term: Signature
+      definition: >
+        An opaque server-generated string that uniquely identifies a specific version of a
+        configuration resource. Signatures must be passed unchanged when updating or deleting
+        a resource to prevent lost-update conflicts. Equivalent to an ETag in REST terms.
+      tags: [API, resource management, concurrency]
+
+    - term: Resource Collection
+      definition: >
+        A fully-qualified type path that identifies the kind of configuration resource,
+        e.g., 'ignition/user-source' or 'com.inductiveautomation.opcua/server-config'.
+        Used as the path segment in all /data/api/v1/resources/ endpoints.
+      tags: [API, configuration, resource management]
+
+    - term: Security Zone
+      definition: >
+        A named network boundary definition in Ignition that controls which features and
+        connections are permitted from specific IP address ranges. Security zones allow
+        fine-grained network-based access control for the Gateway web interface, OPC
+        connections, and API endpoints.
+      tags: [security, configuration, networking]
+
+    - term: EAM
+      definition: >
+        Enterprise Administration Module. An Ignition module that enables centralized
+        management of multiple distributed Gateways from a single Controller Gateway.
+        EAM supports agent management, task distribution, and fleet-wide updates via
+        the /data/api/v1/agent-management and /data/api/v1/eam-tasks endpoints.
+      tags: [EAM, enterprise, multi-gateway, management]
+
+    - term: Perspective Session
+      definition: >
+        An active browser or mobile client session running the Ignition Perspective module.
+        Sessions are identified by session IDs and can be queried and terminated via the
+        /data/api/v1/perspective-sessions endpoint.
+      tags: [Perspective, HMI, sessions, Ignition]
+
+    - term: API Token
+      definition: >
+        A time-limited authentication credential used to access the Ignition Gateway REST API.
+        Tokens are exchanged for a session using the X-Ignition-API-Token request header.
+        API token configurations are managed via /data/api/v1/resources/ignition/api-token.
+      tags: [authentication, security, API]
+
+    - term: Alarm Notification Profile
+      definition: >
+        A configuration resource that defines how alarms are routed to recipients using
+        notification pipelines (email, SMS, voice, etc.). Configured via
+        /data/api/v1/resources/ignition/alarm-notification-profile.
+      tags: [alarms, notifications, configuration]
+
+    - term: Store and Forward
+      definition: >
+        An Ignition feature that buffers outbound data (tag history, transaction groups)
+        locally when downstream databases or services are unavailable, then replays the
+        buffered data when connectivity is restored. Critical for industrial reliability.
+      tags: [reliability, historian, IIoT, data buffering]

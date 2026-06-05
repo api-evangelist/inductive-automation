@@ -1,0 +1,27 @@
+{
+  "name": "GatewayInfo",
+  "description": "Top-level response from the gateway-info endpoint; summarizes the running Ignition Gateway instance.",
+  "fields": [
+    {"name": "name", "type": "string", "description": "Configured Gateway name"},
+    {"name": "version", "type": "string", "description": "Full Ignition version string"},
+    {"name": "edition", "type": "string", "description": "Ignition edition (Standard, Edge, Maker, Panel)"},
+    {"name": "platform", "type": "string", "description": "Host OS platform string"},
+    {"name": "uptime", "type": "integer", "description": "Gateway uptime in milliseconds"},
+    {"name": "redundancyState", "type": "string", "description": "Redundancy role: Independent | Master | Backup | Cold Standby"},
+    {
+      "name": "modules",
+      "type": "array",
+      "description": "Installed modules",
+      "items": {
+        "type": "object",
+        "fields": [
+          {"name": "id", "type": "string", "description": "Module reverse-DNS ID"},
+          {"name": "name", "type": "string", "description": "Display name"},
+          {"name": "version", "type": "string", "description": "Version string"},
+          {"name": "state", "type": "string", "description": "Lifecycle state: Loaded | Licensed | Errored | Pending"},
+          {"name": "vendor", "type": "string", "description": "Module vendor name"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/api-evangelist/inductive-automation/blob/main/json-schema/inductive-automation-scim-user-schema.json",
+  "title": "ScimUser",
+  "description": "SCIM 2.0 User object as used by the Ignition Gateway SCIM endpoints under /data/api/v1/scim/{profile-name}/{scim-version}/Users.",
+  "type": "object",
+  "required": ["userName"],
+  "properties": {
+    "schemas": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": ["urn:ietf:params:scim:schemas:core:2.0:User"]
+    },
+    "id": {
+      "type": "string",
+      "description": "Server-assigned unique identifier for the user."
+    },
+    "externalId": {
+      "type": "string",
+      "description": "Client-assigned external identifier."
+    },
+    "userName": {
+      "type": "string",
+      "description": "Unique username (login name)."
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "object",
+      "properties": {
+        "formatted": {"type": "string"},
+        "familyName": {"type": "string"},
+        "givenName": {"type": "string"}
+      }
+    },
+    "emails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {"type": "string", "format": "email"},
+          "type": {"type": "string"},
+          "primary": {"type": "boolean"}
+        }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {"type": "string"},
+          "type": {"type": "string"}
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "description": "Groups the user belongs to (read-only).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": {"type": "string"},
+          "display": {"type": "string"},
+          "$ref": {"type": "string"}
+        }
+      }
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether the user account is active.",
+      "default": true
+    },
+    "password": {
+      "type": "string",
+      "description": "Password (write-only; never returned in responses).",
+      "writeOnly": true
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "resourceType": {"type": "string"},
+        "created": {"type": "string", "format": "date-time"},
+        "lastModified": {"type": "string", "format": "date-time"},
+        "location": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ResourceRecord",
+  "description": "Core data structure for all Ignition Gateway configuration resources (tag providers, user sources, OPC connections, databases, alarm profiles, etc.)",
+  "fields": [
+    {"name": "signature", "type": "string", "required": true, "description": "Unique opaque identifier for this resource version; must be round-tripped on updates/deletes"},
+    {"name": "collection", "type": "string", "required": true, "description": "Resource type path (e.g., 'ignition/user-source', 'com.inductiveautomation.opcua/server-config')"},
+    {"name": "enabled", "type": "boolean", "required": false, "description": "Whether the resource is active"},
+    {"name": "name", "type": "string", "required": false, "description": "Display name"},
+    {"name": "description", "type": "string", "required": false, "description": "Human-readable description"},
+    {"name": "config", "type": "object", "required": false, "description": "Resource-type-specific settings; schema varies by collection"},
+    {"name": "data", "type": "object", "required": false, "description": "Encrypted configuration data for secrets/passwords"}
+  ],
+  "notes": "The 'config' sub-object schema varies per collection. Use GET /data/api/v1/resources/type/{collection} to retrieve the JSON Schema for a specific resource type."
+}

@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ia": "https://inductiveautomation.com/ontology/ignition#",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "iot": "https://www.w3.org/2019/wot/td#",
+
+    "InductiveAutomation": {
+      "@id": "schema:Organization",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:version",
+
+    "Gateway": {
+      "@id": "ia:Gateway",
+      "@type": "@id",
+      "rdfs:comment": "The central Ignition Gateway server that hosts projects, tags, and the REST API."
+    },
+    "gatewayName": "ia:gatewayName",
+    "gatewayVersion": {"@id": "ia:gatewayVersion", "@type": "schema:Text"},
+    "edition": "ia:edition",
+    "uptime": {"@id": "ia:uptime", "@type": "schema:Integer"},
+    "redundancyState": "ia:redundancyState",
+    "platform": "schema:operatingSystem",
+
+    "Tag": {
+      "@id": "ia:Tag",
+      "@type": "@id",
+      "rdfs:comment": "A named data point in the Ignition tag system, representing a real-time value from a device or calculation.",
+      "owl:equivalentClass": "sosa:ObservableProperty"
+    },
+    "tagPath": "ia:tagPath",
+    "tagValue": {"@id": "sosa:hasSimpleResult"},
+    "quality": "ia:quality",
+    "timestamp": {"@id": "schema:dateModified", "@type": "schema:DateTime"},
+    "dataType": "ia:dataType",
+
+    "TagProvider": {
+      "@id": "ia:TagProvider",
+      "@type": "@id",
+      "rdfs:comment": "A named container hosting a hierarchy of Ignition tags."
+    },
+    "tagProviderName": "schema:name",
+    "tagProviderType": "ia:tagProviderType",
+
+    "ResourceRecord": {
+      "@id": "ia:ResourceRecord",
+      "@type": "@id",
+      "rdfs:comment": "Generic configuration resource in the Ignition Gateway resource system."
+    },
+    "signature": "ia:signature",
+    "collection": "ia:collection",
+    "enabled": "schema:isAccessibleForFree",
+    "config": "ia:config",
+
+    "Module": {
+      "@id": "ia:Module",
+      "@type": "@id",
+      "rdfs:comment": "An installable add-on that extends Ignition Gateway capabilities (e.g., Perspective, Vision, SQL Bridge, OPC-UA)."
+    },
+    "moduleId": "ia:moduleId",
+    "moduleState": "ia:moduleState",
+    "vendor": "schema:vendor",
+
+    "OPCConnection": {
+      "@id": "ia:OPCConnection",
+      "@type": "@id",
+      "rdfs:comment": "A configured OPC UA client connection from the Gateway to an OPC server or PLC.",
+      "owl:equivalentClass": "sosa:Sensor"
+    },
+    "endpoint": "ia:endpoint",
+    "bindPort": "ia:bindPort",
+    "connectionState": "ia:connectionState",
+
+    "Project": {
+      "@id": "ia:Project",
+      "@type": "@id",
+      "rdfs:comment": "An Ignition application project containing screens, scripts, and configuration for HMI/SCADA applications."
+    },
+    "projectName": "schema:name",
+    "parentProject": "ia:parentProject",
+    "defaultDatasource": "ia:defaultDatasource",
+    "defaultTagProvider": "ia:defaultTagProvider",
+
+    "AlarmNotificationProfile": {
+      "@id": "ia:AlarmNotificationProfile",
+      "@type": "@id",
+      "rdfs:comment": "Configuration for routing alarm notifications to operators via email, SMS, or voice."
+    },
+
+    "DatabaseConnection": {
+      "@id": "ia:DatabaseConnection",
+      "@type": "@id",
+      "rdfs:comment": "A JDBC database connection configured in the Ignition Gateway.",
+      "owl:equivalentClass": "schema:DataFeed"
+    },
+    "connectUrl": "schema:url",
+    "driver": "ia:jdbcDriver",
+    "maxConnections": "ia:maxConnections",
+
+    "ScimUser": {
+      "@id": "ia:ScimUser",
+      "@type": "@id",
+      "rdfs:comment": "A SCIM 2.0 user managed via the Ignition Gateway SCIM endpoints.",
+      "owl:equivalentClass": "schema:Person"
+    },
+    "userName": "schema:identifier",
+    "displayName": "schema:name",
+    "emails": "schema:email",
+    "active": "schema:activeActionStatus",
+
+    "ApiToken": {
+      "@id": "ia:ApiToken",
+      "@type": "@id",
+      "rdfs:comment": "An API key configuration used to obtain time-limited tokens for Gateway REST API access."
+    },
+
+    "SecurityZone": {
+      "@id": "ia:SecurityZone",
+      "@type": "@id",
+      "rdfs:comment": "A named network boundary in Ignition that grants or restricts access based on client IP address ranges."
+    },
+
+    "HistorianConfig": {
+      "@id": "ia:HistorianConfig",
+      "@type": "@id",
+      "rdfs:comment": "Configuration for the tag historian (SQL Bridge) that stores historical tag values."
+    },
+
+    "InductiveAutomationOrg": {
+      "@id": "schema:Organization",
+      "schema:name": "Inductive Automation",
+      "schema:url": "https://inductiveautomation.com",
+      "schema:description": "Developer of the Ignition industrial application platform for SCADA, HMI, MES, and IIoT deployments.",
+      "schema:sameAs": [
+        "https://github.com/inductiveautomation",
+        "https://www.linkedin.com/company/inductive-automation",
+        "https://www.youtube.com/@InductiveAutomation"
+      ]
+    }
+  }
+}

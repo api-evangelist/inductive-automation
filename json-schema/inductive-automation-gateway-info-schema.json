@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/api-evangelist/inductive-automation/blob/main/json-schema/inductive-automation-gateway-info-schema.json",
+  "title": "GatewayInfo",
+  "description": "Response from GET /data/api/v1/gateway-info. Provides status and version information about the running Ignition Gateway.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Configured name of this Gateway instance."
+    },
+    "version": {
+      "type": "string",
+      "description": "Full Ignition version string (e.g., '8.3.0 (b2024010101)')."
+    },
+    "edition": {
+      "type": "string",
+      "description": "Ignition edition.",
+      "enum": ["Standard", "Edge", "Maker", "Panel"]
+    },
+    "platform": {
+      "type": "string",
+      "description": "Host operating system platform string."
+    },
+    "uptime": {
+      "type": "integer",
+      "description": "Gateway uptime in milliseconds since last start.",
+      "minimum": 0
+    },
+    "redundancyState": {
+      "type": "string",
+      "description": "Current redundancy role.",
+      "enum": ["Independent", "Master", "Backup", "Cold Standby"]
+    },
+    "modules": {
+      "type": "array",
+      "description": "List of installed and licensed modules.",
+      "items": {
+        "$ref": "#/definitions/ModuleInfo"
+      }
+    }
+  },
+  "definitions": {
+    "ModuleInfo": {
+      "type": "object",
+      "description": "Information about a single installed Ignition module.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Module ID (e.g., 'com.inductiveautomation.perspective')."
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the module."
+        },
+        "version": {
+          "type": "string",
+          "description": "Module version string."
+        },
+        "state": {
+          "type": "string",
+          "description": "Module lifecycle state.",
+          "enum": ["Loaded", "Licensed", "Errored", "Pending"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "vendor": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

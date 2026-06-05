@@ -1,0 +1,89 @@
+formats:
+  - oas3
+
+rules:
+
+  ignition-operation-must-have-tag:
+    description: Every operation must have at least one tag matching an Ignition resource area.
+    message: "Operation '{{operationId}}' must have at least one tag."
+    given: "$.paths[*][get,post,put,delete,patch]"
+    severity: warn
+    then:
+      field: tags
+      function: truthy
+
+  ignition-operation-must-have-summary:
+    description: Every operation must have a summary for discoverability.
+    message: "Operation at {{path}} is missing a summary."
+    given: "$.paths[*][get,post,put,delete,patch]"
+    severity: warn
+    then:
+      field: summary
+      function: truthy
+
+  ignition-security-must-be-defined:
+    description: >
+      All Ignition Gateway API operations require authentication via the
+      X-Ignition-API-Token header. Every operation must reference a security scheme.
+    message: "Operation '{{operationId}}' must declare security requirements."
+    given: "$.paths[*][get,post,put,delete,patch]"
+    severity: warn
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: [security]
+            - type: object
+
+  ignition-response-must-include-200:
+    description: Every operation must define a 200 success response.
+    message: "Operation '{{operationId}}' is missing a 200 response definition."
+    given: "$.paths[*][get,post,put,delete,patch].responses"
+    severity: warn
+    then:
+      field: "200"
+      function: truthy
+
+  ignition-path-must-start-with-data-api:
+    description: >
+      All Ignition Gateway REST API paths follow the /data/api/v1/ prefix pattern.
+      Paths not matching this convention may be legacy WebDev endpoints.
+    message: "Path '{{value}}' does not follow the /data/api/v1/ convention."
+    given: "$.paths"
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: "^/data/(api/v1|config|sipcall)"
+
+  ignition-resources-path-must-have-collection:
+    description: >
+      Resource paths under /data/api/v1/resources/ must include a fully-qualified
+      collection identifier (e.g., ignition/user-source, com.inductiveautomation.opcua/server-config).
+    message: "Resource path '{{value}}' appears to be missing a collection identifier."
+    given: "$.paths"
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "^/data/api/v1/resources/$"
+
+  ignition-mutative-must-have-request-body:
+    description: POST and PUT operations against resource endpoints must define a requestBody.
+    message: "POST/PUT operation '{{operationId}}' is missing a requestBody."
+    given: "$.paths[*][post,put]"
+    severity: warn
+    then:
+      field: requestBody
+      function: truthy
+
+  ignition-parameter-names-kebab-case:
+    description: Path parameters should use kebab-case naming as per Ignition API conventions.
+    message: "Parameter '{{value}}' should use kebab-case."
+    given: "$.paths[*][*].parameters[?(@.in == 'path')].name"
+    severity: info
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-z0-9\\-]*$"
