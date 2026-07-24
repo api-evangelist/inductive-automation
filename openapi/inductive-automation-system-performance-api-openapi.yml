@@ -1,0 +1,147 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control system-performance API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: system-performance
+  description: System performance metrics
+paths:
+  /data/api/v1/systemPerformance/charts:
+    get:
+      summary: Historic Performance Data
+      operationId: historic-performance-data-get
+      tags:
+      - system-performance
+      description: Returns a list of historical gateway CPU and memory usage.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/systemPerformance/currentGauges:
+    get:
+      summary: Current Performance Data
+      operationId: current-performance-data-get
+      tags:
+      - system-performance
+      description: Returns an object containing the current gateway CPU and memory usage.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/systemPerformance/driftEvents:
+    get:
+      summary: System Clock Drift Events
+      operationId: system-clock-drift-events-get
+      tags:
+      - system-performance
+      description: Returns a list of historical system clock drift events.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/systemPerformance/driftGauge:
+    get:
+      summary: Current System Clock Drift
+      operationId: current-system-clock-drift-get
+      tags:
+      - system-performance
+      description: Returns the current drift of the system clock.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/systemPerformance/threads:
+    get:
+      summary: Thread Execution Data
+      operationId: thread-execution-data-get
+      tags:
+      - system-performance
+      description: Return the current number of various types of threads running on the gateway.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

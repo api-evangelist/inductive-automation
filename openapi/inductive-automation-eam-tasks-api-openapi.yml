@@ -1,0 +1,732 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control eam-tasks API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: eam-tasks
+  description: Enterprise Administration Module task management
+paths:
+  /data/api/v1/resources/com.inductiveautomation.eam/eam-tasks:
+    put:
+      summary: Modify EAM Agent Task
+      operationId: modify-eam-agent-task-put
+      tags:
+      - eam-tasks
+      description: Modify one or more EAM Agent Task resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+              backupConfig:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+              backupConfig:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create EAM Agent Task
+      operationId: create-eam-agent-task-post
+      tags:
+      - eam-tasks
+      description: Create a new EAM Agent Task resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+              backupConfig:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+              backupConfig:
+                profile:
+                  type: <string>
+                  isSuspended: <boolean>
+                  scheduleMode: <string>
+                  scheduleDetails: <string>
+                settings: <object>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/com.inductiveautomation.eam/eam-tasks/{name}/{signature}:
+    delete:
+      summary: Delete EAM Agent Task
+      operationId: delete-eam-agent-task-delete
+      tags:
+      - eam-tasks
+      description: Delete a EAM Agent Task resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/delete/com.inductiveautomation.eam/eam-tasks:
+    post:
+      summary: Delete EAM Agent Task (multiple)
+      operationId: delete-eam-agent-task-(multiple)-post
+      tags:
+      - eam-tasks
+      description: Delete multiple EAM Agent Task resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/com.inductiveautomation.eam/eam-tasks/{name}:
+    get:
+      summary: Get EAM Agent Task Config
+      operationId: get-eam-agent-task-config-get
+      tags:
+      - eam-tasks
+      description: Retrieve configuration details about a specific EAM Agent Task resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/com.inductiveautomation.eam/eam-tasks:
+    get:
+      summary: List EAM Agent Task Resources
+      operationId: list-eam-agent-task-resources-get
+      tags:
+      - eam-tasks
+      description: List all EAM Agent Task resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/com.inductiveautomation.eam/eam-tasks:
+    get:
+      summary: Get EAM Agent Task Names
+      operationId: get-eam-agent-task-names-get
+      tags:
+      - eam-tasks
+      description: List all EAM Agent Task resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/com.inductiveautomation.eam/eam-tasks/{name}:
+    post:
+      summary: Rename EAM Agent Task
+      operationId: rename-eam-agent-task-post
+      tags:
+      - eam-tasks
+      description: Change the name of a EAM Agent Task resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/com.inductiveautomation.eam/eam-tasks:
+    get:
+      summary: Describe 'EAM Agent Task' Resource Type
+      operationId: describe-'eam-agent-task'-resource-type-get
+      tags:
+      - eam-tasks
+      description: Describe the EAM Agent Task resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/cancel/{name}:
+    post:
+      summary: Cancel task
+      operationId: cancel-task-post
+      tags:
+      - eam-tasks
+      description: Cancels upcoming execution of a gateway task. The task configuration is maintained.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/clear-retry/{name}:
+    delete:
+      summary: Clear retry task data
+      operationId: clear-retry-task-data-delete
+      tags:
+      - eam-tasks
+      description: Removes retry data for a task, allowing the task to be forced to run again.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/force/{owner}/{name}:
+    post:
+      summary: Force task execution
+      operationId: force-task-execution-post
+      tags:
+      - eam-tasks
+      description: Force a task to execute immediately.
+      parameters:
+      - name: owner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: retry
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Set to True to retry a failed task
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/history:
+    get:
+      summary: Task History
+      operationId: task-history-get
+      tags:
+      - eam-tasks
+      description: Returns a list of task execution results
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/resume/{name}:
+    post:
+      summary: Resume task
+      operationId: resume-task-post
+      tags:
+      - eam-tasks
+      description: Resumes a suspended gateway task, allowing it to execute at the next scheduled time.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/retry:
+    get:
+      summary: Get retry tasks
+      operationId: get-retry-tasks-get
+      tags:
+      - eam-tasks
+      description: Returns a list of tasks that have errored and can be retried
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/scheduled/{running}:
+    get:
+      summary: Running or Scheduled Tasks
+      operationId: running-or-scheduled-tasks-get
+      tags:
+      - eam-tasks
+      description: Returns a list of running or scheduled tasks
+      parameters:
+      - name: running
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/suspend/{name}:
+    post:
+      summary: Suspend task
+      operationId: suspend-task-post
+      tags:
+      - eam-tasks
+      description: Suspends a scheduled gateway task, preventing it from executing at the next scheduled time.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

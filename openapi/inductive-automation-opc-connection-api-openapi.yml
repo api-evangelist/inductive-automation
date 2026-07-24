@@ -1,0 +1,984 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control opc connection API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: opc connection
+  description: OPC connection management
+paths:
+  /data/api/v1/resources/delete/ignition/opc-connection:
+    post:
+      summary: Delete OPC Connections (multiple)
+      operationId: delete-opc-connections-(multiple)-post
+      tags:
+      - opc connection
+      description: Delete multiple OPC Connections resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/opc-connection/{name}:
+    get:
+      summary: Get OPC Connections Config
+      operationId: get-opc-connections-config-get
+      tags:
+      - opc connection
+      description: Retrieve configuration details about a specific OPC Connections resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/opc-connection:
+    put:
+      summary: Modify OPC Connections
+      operationId: modify-opc-connections-put
+      tags:
+      - opc connection
+      description: Modify one or more OPC Connections resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create OPC Connections
+      operationId: create-opc-connections-post
+      tags:
+      - opc connection
+      description: Create a new OPC Connections resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  readOnly: <boolean>
+                settings:
+                  endpoint:
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityPolicy:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    securityMode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  authentication:
+                    username:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    password:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  keepAlive:
+                    failuresAllowed:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    interval:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    timeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    connectTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    acknowledgeTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    requestTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    sessionTimeout:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPerOperation:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxReferencesPerNode:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxPendingPublishRequests:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxNotificationsPerPublish:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxMessageSize:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxArrayLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    maxStringLength:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    browseOrigin:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    deprecatedDataTypeDictionarySupport:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  security:
+                    certificateValidationEnabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAlias:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    keyStoreAliasPassword:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  failover:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    threshold:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    discoveryUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    endpointUrl:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    hostOverride:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/opc-connection/{name}/{signature}:
+    delete:
+      summary: Delete OPC Connections
+      operationId: delete-opc-connections-delete
+      tags:
+      - opc connection
+      description: Delete a OPC Connections resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/opc-connection:
+    get:
+      summary: List OPC Connections Resources
+      operationId: list-opc-connections-resources-get
+      tags:
+      - opc connection
+      description: List all OPC Connections resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/opc-connection:
+    get:
+      summary: Get OPC Connections Names
+      operationId: get-opc-connections-names-get
+      tags:
+      - opc connection
+      description: List all OPC Connections resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/opc-connection/{name}:
+    post:
+      summary: Rename OPC Connections
+      operationId: rename-opc-connections-post
+      tags:
+      - opc connection
+      description: Change the name of a OPC Connections resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/opc-connection:
+    get:
+      summary: Describe 'OPC Connections' Resource Type
+      operationId: describe-'opc-connections'-resource-type-get
+      tags:
+      - opc connection
+      description: Describe the OPC Connections resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

@@ -1,0 +1,758 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control alarm-journal-resources API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: alarm-journal-resources
+  description: Alarm journal resource management
+paths:
+  /data/api/v1/resources/delete/ignition/alarm-journal:
+    post:
+      summary: Delete Alarm Journal Settings (multiple)
+      operationId: delete-alarm-journal-settings-(multiple)-post
+      tags:
+      - alarm-journal-resources
+      description: Delete multiple Alarm Journal Settings resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/alarm-journal/{name}:
+    get:
+      summary: Get Alarm Journal Settings Config
+      operationId: get-alarm-journal-settings-config-get
+      tags:
+      - alarm-journal-resources
+      description: Retrieve configuration details about a specific Alarm Journal Settings resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/alarm-journal:
+    put:
+      summary: Modify Alarm Journal Settings
+      operationId: modify-alarm-journal-settings-put
+      tags:
+      - alarm-journal-resources
+      description: Modify one or more Alarm Journal Settings resources
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Alarm Journal Settings
+      operationId: create-alarm-journal-settings-post
+      tags:
+      - alarm-journal-resources
+      description: Create a new Alarm Journal Settings resource
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  queryOnly: false
+                settings:
+                  datasource: <string>
+                  events:
+                    minPriority:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeShelvedEvents:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    storeFromEnabledChange:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  eventData:
+                    staticConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicConfig:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    staticAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dynamicAssociatedData:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  dataFilters:
+                    sourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    pathOrSourceFilterName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  pruning:
+                    enabled:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    age:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ageUnits:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                  advanced:
+                    tableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    dataTableName:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    useStoreAndForward:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/alarm-journal/{name}/{signature}:
+    delete:
+      summary: Delete Alarm Journal Settings
+      operationId: delete-alarm-journal-settings-delete
+      tags:
+      - alarm-journal-resources
+      description: Delete a Alarm Journal Settings resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/alarm-journal:
+    get:
+      summary: List Alarm Journal Settings Resources
+      operationId: list-alarm-journal-settings-resources-get
+      tags:
+      - alarm-journal-resources
+      description: List all Alarm Journal Settings resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/alarm-journal:
+    get:
+      summary: Get Alarm Journal Settings Names
+      operationId: get-alarm-journal-settings-names-get
+      tags:
+      - alarm-journal-resources
+      description: List all Alarm Journal Settings resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/alarm-journal/{name}:
+    post:
+      summary: Rename Alarm Journal Settings
+      operationId: rename-alarm-journal-settings-post
+      tags:
+      - alarm-journal-resources
+      description: Change the name of a Alarm Journal Settings resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/alarm-journal:
+    get:
+      summary: Describe 'Alarm Journal Settings' Resource Type
+      operationId: describe-'alarm-journal-settings'-resource-type-get
+      tags:
+      - alarm-journal-resources
+      description: Describe the Alarm Journal Settings resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

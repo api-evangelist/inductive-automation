@@ -1,0 +1,829 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control agent-management API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: agent-management
+  description: EAM agent management
+paths:
+  /data/api/v1/resources/com.inductiveautomation.eam/agent-management:
+    put:
+      summary: Modify Agent Management
+      operationId: modify-agent-management-put
+      tags:
+      - agent-management
+      description: Modify one or more Agent Management resources
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                serverId: <string>
+                groupName: <string>
+              backupConfig:
+                serverId: <string>
+                groupName: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                serverId: <string>
+                groupName: <string>
+              backupConfig:
+                serverId: <string>
+                groupName: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Agent Management
+      operationId: create-agent-management-post
+      tags:
+      - agent-management
+      description: Create a new Agent Management resource
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                serverId: <string>
+                groupName: <string>
+              backupConfig:
+                serverId: <string>
+                groupName: <string>
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                serverId: <string>
+                groupName: <string>
+              backupConfig:
+                serverId: <string>
+                groupName: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/com.inductiveautomation.eam/agent-management/{name}/{signature}:
+    delete:
+      summary: Delete Agent Management
+      operationId: delete-agent-management-delete
+      tags:
+      - agent-management
+      description: Delete a Agent Management resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/delete/com.inductiveautomation.eam/agent-management:
+    post:
+      summary: Delete Agent Management (multiple)
+      operationId: delete-agent-management-(multiple)-post
+      tags:
+      - agent-management
+      description: Delete multiple Agent Management resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/com.inductiveautomation.eam/agent-management/{name}:
+    get:
+      summary: Get Agent Management Config
+      operationId: get-agent-management-config-get
+      tags:
+      - agent-management
+      description: Retrieve configuration details about a specific Agent Management resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/com.inductiveautomation.eam/agent-management:
+    get:
+      summary: List Agent Management Resources
+      operationId: list-agent-management-resources-get
+      tags:
+      - agent-management
+      description: List all Agent Management resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/com.inductiveautomation.eam/agent-management:
+    get:
+      summary: Get Agent Management Names
+      operationId: get-agent-management-names-get
+      tags:
+      - agent-management
+      description: List all Agent Management resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/com.inductiveautomation.eam/agent-management/{name}:
+    post:
+      summary: Rename Agent Management
+      operationId: rename-agent-management-post
+      tags:
+      - agent-management
+      description: Change the name of a Agent Management resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/com.inductiveautomation.eam/agent-management:
+    get:
+      summary: Describe 'Agent Management' Resource Type
+      operationId: describe-'agent-management'-resource-type-get
+      tags:
+      - agent-management
+      description: Describe the Agent Management resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agent-details/{agentName}:
+    get:
+      summary: EAM Agent Details Overview
+      operationId: eam-agent-details-overview-get
+      tags:
+      - agent-management
+      description: Gets the details of a specific EAM agent.
+      parameters:
+      - name: agentName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agent-licenses/{agentName}:
+    get:
+      summary: EAM Agent License Keys
+      operationId: eam-agent-license-keys-get
+      tags:
+      - agent-management
+      description: Gets the license keys of a specific EAM agent.
+      parameters:
+      - name: agentName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agent-management/modules:
+    get:
+      summary: Retrieve agent modules
+      operationId: retrieve-agent-modules-get
+      tags:
+      - agent-management
+      description: Retrieve module information from an agent. This includes module name, version, license status and module state.
+      parameters:
+      - name: serverid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: An encoded ServerId, such as '_0:0:agentName'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agent-management/project-resources:
+    get:
+      summary: Retrieve project resources
+      operationId: retrieve-project-resources-get
+      tags:
+      - agent-management
+      description: Retrieve project resource names from an agent or from the local controller. Set the serverid parameter to return projects from a remote gateway, or set the localsystem parameter to True to return projects from the local controller.
+      parameters:
+      - name: serverid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: An encoded ServerId, such as '_0:0:agentName'
+      - name: localsystem
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Set to True to use the local system as the project source
+      - name: project
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) A project name
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agent-management/projects:
+    get:
+      summary: Retrieve projects names
+      operationId: retrieve-projects-names-get
+      tags:
+      - agent-management
+      description: Retrieve project names from an agent or from the local controller. Set the serverid parameter to return projects from a remote gateway, or set the localsystem parameter to True to return projects from the local controller.
+      parameters:
+      - name: serverid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: An encoded ServerId, such as '_0:0:agentName'
+      - name: localsystem
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Set to True to use the local system as the project source
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agent-management/upgrade-info:
+    get:
+      summary: Retrieve agent info for upgrade
+      operationId: retrieve-agent-info-for-upgrade-get
+      tags:
+      - agent-management
+      description: Returns system data about an agent, used to prep a remote upgrade
+      parameters:
+      - name: serverids
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) A comma-separated list of encoded ServerIds
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agents:
+    get:
+      summary: EAM Agents Status
+      operationId: eam-agents-status-get
+      tags:
+      - agent-management
+      description: Displays a list of EAM agents and their status. The list includes agents that are pending approval. This must be called from a controller.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/agents-by-group:
+    get:
+      summary: EAM Agents by Agent Group
+      operationId: eam-agents-by-agent-group-get
+      tags:
+      - agent-management
+      description: Gets the connected EAM agents, organized by group. This must be called from a controller.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/approve-agent/{serverid}:
+    post:
+      summary: Approve agent
+      operationId: approve-agent-post
+      tags:
+      - agent-management
+      description: Approves an EAM agent, which will allow interaction with the controller.
+      parameters:
+      - name: serverid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/quarantined-agents:
+    get:
+      summary: Quarantined agents
+      operationId: quarantined-agents-get
+      tags:
+      - agent-management
+      description: Returns a list of encoded ServerIds of EAM agents waiting for approval.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/quarantined-agents/{serverid}:
+    delete:
+      summary: Delete quarantined agent
+      operationId: delete-quarantined-agent-delete
+      tags:
+      - agent-management
+      description: Deletes a pending EAM agent from the agent quarantine.
+      parameters:
+      - name: serverid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/upgrade-agent/{groupName}/{agentName}:
+    post:
+      summary: Upgrade Agent
+      operationId: upgrade-agent-post
+      tags:
+      - agent-management
+      description: Upgrade the specified EAM agent
+      parameters:
+      - name: groupName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: agentName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

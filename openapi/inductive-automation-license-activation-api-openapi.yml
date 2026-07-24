@@ -1,0 +1,296 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control license-activation API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: license-activation
+  description: License activation management
+paths:
+  /data/api/v1/activation/activate/{key}:
+    put:
+      summary: Activate License
+      operationId: activate-license-put
+      tags:
+      - license-activation
+      description: Activate an Ignition license using the given license key. Upon successful activation,details of the license key and it's various attributes will be returned in the response.
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/activation/is-online:
+    get:
+      summary: Check Gateway Online Status
+      operationId: check-gateway-online-status-get
+      tags:
+      - license-activation
+      description: Returns a boolean representing the online state of the gateway.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/activation/offline/activate:
+    post:
+      summary: Submit Offline Activation
+      operationId: submit-offline-activation-post
+      tags:
+      - license-activation
+      description: Submit an offline activation response, which can be retrieved by uploading an offline activation request to Inductive Automation's website.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/activation/offline/activate-request/{key}:
+    get:
+      summary: Generate Offline Activation Request
+      operationId: generate-offline-activation-request-get
+      tags:
+      - license-activation
+      description: Generate an offline activation request for the given license key.
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/activation/offline/unactivate/{key}:
+    post:
+      summary: Unactivate License (Offline)
+      operationId: unactivate-license-(offline)-post
+      tags:
+      - license-activation
+      description: 'Unactivate an Ignition license in offline mode. This will download an unactivation notice (`unactivation_message.txt`) file that can be uploaded to Inductive Automation''s website to complete the unactivation. Note: gateway will go into trial mode immediately , however the license grant will not be returned to your license until `unactivation_message.txt` is uploaded to Inductive Automation''s website.'
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/activation/reactivate/{key}:
+    put:
+      summary: Re-Activate License
+      operationId: re-activate-license-put
+      tags:
+      - license-activation
+      description: Re-activate an Ignition license using the given license key. Upon successful re-activation, details of the license key and it's various attributes will be returned in the response.
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/activation/unactivate/{key}:
+    post:
+      summary: Unactivate License
+      operationId: unactivate-license-post
+      tags:
+      - license-activation
+      description: Unactivate an Ignition license.
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/leased-activation/activate:
+    post:
+      summary: Leased Activation
+      operationId: leased-activation-post
+      tags:
+      - license-activation
+      description: Submit a leased activation request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              licenseKey: <string>
+              activationToken: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/leased-activation/test-leased-license-server:
+    get:
+      summary: Test Leased License Service
+      operationId: test-leased-license-service-get
+      tags:
+      - license-activation
+      description: Test the availability of the Inductive Automation Leased License Service.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/leased-activation/unactivate/{key}:
+    post:
+      summary: Leased Unactivation
+      operationId: leased-unactivation-post
+      tags:
+      - license-activation
+      description: Cancel a leased activation.
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

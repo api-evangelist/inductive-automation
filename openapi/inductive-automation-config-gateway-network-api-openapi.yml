@@ -1,0 +1,1510 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-gateway-network API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-gateway-network
+  description: Gateway network configuration
+paths:
+  /data/api/v1/resources/delete/ignition/gateway-network-incoming:
+    post:
+      summary: Delete Incoming Connection Settings (multiple)
+      operationId: delete-incoming-connection-settings-(multiple)-post
+      tags:
+      - config-gateway-network
+      description: Delete multiple Incoming Connection Settings resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/delete/ignition/gateway-network-outgoing:
+    post:
+      summary: Delete Outgoing Connection Settings (multiple)
+      operationId: delete-outgoing-connection-settings-(multiple)-post
+      tags:
+      - config-gateway-network
+      description: Delete multiple Outgoing Connection Settings resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/gateway-network-incoming/{name}:
+    get:
+      summary: Get Incoming Connection Settings Config
+      operationId: get-incoming-connection-settings-config-get
+      tags:
+      - config-gateway-network
+      description: Retrieve configuration details about a specific Incoming Connection Settings resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/gateway-network-outgoing/{name}:
+    get:
+      summary: Get Outgoing Connection Settings Config
+      operationId: get-outgoing-connection-settings-config-get
+      tags:
+      - config-gateway-network
+      description: Retrieve configuration details about a specific Outgoing Connection Settings resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-incoming:
+    put:
+      summary: Modify Incoming Connection Settings
+      operationId: modify-incoming-connection-settings-put
+      tags:
+      - config-gateway-network
+      description: Modify one or more Incoming Connection Settings resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                connectionId: <string>
+                securityStatus: <string>
+              backupConfig:
+                connectionId: <string>
+                securityStatus: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                connectionId: <string>
+                securityStatus: <string>
+              backupConfig:
+                connectionId: <string>
+                securityStatus: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-incoming/{name}/{signature}:
+    delete:
+      summary: Delete Incoming Connection Settings
+      operationId: delete-incoming-connection-settings-delete
+      tags:
+      - config-gateway-network
+      description: Delete a Incoming Connection Settings resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-outgoing:
+    put:
+      summary: Modify Outgoing Connection Settings
+      operationId: modify-outgoing-connection-settings-put
+      tags:
+      - config-gateway-network
+      description: Modify one or more Outgoing Connection Settings resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+              backupConfig:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+              backupConfig:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Outgoing Connection Settings
+      operationId: create-outgoing-connection-settings-post
+      tags:
+      - config-gateway-network
+      description: Create a new Outgoing Connection Settings resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+              backupConfig:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+              backupConfig:
+                host: <string>
+                port: <number>
+                useSSL: <boolean>
+                pingRateMillis: <number>
+                pingTimeoutMillis: <number>
+                pingMaxMissed: <number>
+                wsTimeoutMillis: <number>
+                httpConnectTimeoutMillis: <number>
+                httpReadTimeoutMillis: <number>
+                sendThreads: <number>
+                receiveThreads: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-outgoing/{name}/{signature}:
+    delete:
+      summary: Delete Outgoing Connection Settings
+      operationId: delete-outgoing-connection-settings-delete
+      tags:
+      - config-gateway-network
+      description: Delete a Outgoing Connection Settings resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-proxy-rules:
+    put:
+      summary: Modify Proxy Rules
+      operationId: modify-proxy-rules-put
+      tags:
+      - config-gateway-network
+      description: Modify one or more Proxy Rules resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+              backupConfig:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+              backupConfig:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Proxy Rules
+      operationId: create-proxy-rules-post
+      tags:
+      - config-gateway-network
+      description: Create the Proxy Rules resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+              backupConfig:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+              backupConfig:
+                proxyRules:
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+                - sourceGateways: <string>
+                  destinationGateways: <string>
+                  action: <string>
+                  description: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-proxy-rules/{signature}:
+    delete:
+      summary: Delete Proxy Rules
+      operationId: delete-proxy-rules-delete
+      tags:
+      - config-gateway-network
+      description: Delete the Proxy Rules resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-queue-settings:
+    put:
+      summary: Modify Queue Settings
+      operationId: modify-queue-settings-put
+      tags:
+      - config-gateway-network
+      description: Modify one or more Queue Settings resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+              backupConfig:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+              backupConfig:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Queue Settings
+      operationId: create-queue-settings-post
+      tags:
+      - config-gateway-network
+      description: Create the Queue Settings resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+              backupConfig:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+              backupConfig:
+                queueSettings:
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+                - queueId: <string>
+                  maxActive: <integer>
+                  timeoutMillis: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-queue-settings/{signature}:
+    delete:
+      summary: Delete Queue Settings
+      operationId: delete-queue-settings-delete
+      tags:
+      - config-gateway-network
+      description: Delete the Queue Settings resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-settings:
+    put:
+      summary: Modify General Gateway Network Settings
+      operationId: modify-general-gateway-network-settings-put
+      tags:
+      - config-gateway-network
+      description: Modify one or more General Gateway Network Settings resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+              backupConfig:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+              backupConfig:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create General Gateway Network Settings
+      operationId: create-general-gateway-network-settings-post
+      tags:
+      - config-gateway-network
+      description: Create the General Gateway Network Settings resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+              backupConfig:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+              backupConfig:
+                requireSSL: true
+                requireTwoWayAuth: true
+                receiveQueueMax: 100
+                overloadWaitSecs: 60
+                allowIncoming: true
+                securityPolicy: ApprovedOnly
+                whitelist: ''
+                allowedProxyHops: 0
+                websocketSessionIdleTimeout: 30000
+                tempFilesMaxAgeHours: 24
+                incomingPingRateMillis: 5000
+                incomingPingTimeoutMillis: 300
+                incomingPingMaxMissed: 12
+                proxyInterceptServiceCalls: false
+                allowJavaSerialization: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/gateway-network-settings/{signature}:
+    delete:
+      summary: Delete General Gateway Network Settings
+      operationId: delete-general-gateway-network-settings-delete
+      tags:
+      - config-gateway-network
+      description: Delete the General Gateway Network Settings resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/gateway-network-incoming:
+    get:
+      summary: List Incoming Connection Settings Resources
+      operationId: list-incoming-connection-settings-resources-get
+      tags:
+      - config-gateway-network
+      description: List all Incoming Connection Settings resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/gateway-network-outgoing:
+    get:
+      summary: List Outgoing Connection Settings Resources
+      operationId: list-outgoing-connection-settings-resources-get
+      tags:
+      - config-gateway-network
+      description: List all Outgoing Connection Settings resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/gateway-network-incoming:
+    get:
+      summary: Get Incoming Connection Settings Names
+      operationId: get-incoming-connection-settings-names-get
+      tags:
+      - config-gateway-network
+      description: List all Incoming Connection Settings resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/gateway-network-outgoing:
+    get:
+      summary: Get Outgoing Connection Settings Names
+      operationId: get-outgoing-connection-settings-names-get
+      tags:
+      - config-gateway-network
+      description: List all Outgoing Connection Settings resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/gateway-network-outgoing/{name}:
+    post:
+      summary: Rename Outgoing Connection Settings
+      operationId: rename-outgoing-connection-settings-post
+      tags:
+      - config-gateway-network
+      description: Change the name of a Outgoing Connection Settings resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/ignition/gateway-network-proxy-rules:
+    get:
+      summary: Get Proxy Rules Config
+      operationId: get-proxy-rules-config-get
+      tags:
+      - config-gateway-network
+      description: Retrieve configuration details about the Proxy Rules resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/ignition/gateway-network-queue-settings:
+    get:
+      summary: Get Queue Settings Config
+      operationId: get-queue-settings-config-get
+      tags:
+      - config-gateway-network
+      description: Retrieve configuration details about the Queue Settings resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/ignition/gateway-network-settings:
+    get:
+      summary: Get General Gateway Network Settings Config
+      operationId: get-general-gateway-network-settings-config-get
+      tags:
+      - config-gateway-network
+      description: Retrieve configuration details about the General Gateway Network Settings resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/gateway-network-incoming:
+    get:
+      summary: Describe 'Incoming Connection Settings' Resource Type
+      operationId: describe-'incoming-connection-settings'-resource-type-get
+      tags:
+      - config-gateway-network
+      description: Describe the Incoming Connection Settings resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/gateway-network-outgoing:
+    get:
+      summary: Describe 'Outgoing Connection Settings' Resource Type
+      operationId: describe-'outgoing-connection-settings'-resource-type-get
+      tags:
+      - config-gateway-network
+      description: Describe the Outgoing Connection Settings resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/gateway-network-proxy-rules:
+    get:
+      summary: Describe 'Proxy Rules' Resource Type
+      operationId: describe-'proxy-rules'-resource-type-get
+      tags:
+      - config-gateway-network
+      description: Describe the Proxy Rules resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/gateway-network-queue-settings:
+    get:
+      summary: Describe 'Queue Settings' Resource Type
+      operationId: describe-'queue-settings'-resource-type-get
+      tags:
+      - config-gateway-network
+      description: Describe the Queue Settings resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/gateway-network-settings:
+    get:
+      summary: Describe 'General Gateway Network Settings' Resource Type
+      operationId: describe-'general-gateway-network-settings'-resource-type-get
+      tags:
+      - config-gateway-network
+      description: Describe the General Gateway Network Settings resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

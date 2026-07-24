@@ -1,0 +1,136 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control gateway-backups API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: gateway-backups
+  description: Gateway backup and restore
+paths:
+  /data/api/v1/backup:
+    get:
+      summary: Get Gateway Backup
+      operationId: get-gateway-backup-get
+      tags:
+      - gateway-backups
+      description: Generates a *.gwbk file that can be downloaded.
+      parameters:
+      - name: includePeerLocal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'In a redundant gateway environment, set this parameter to ''true'' to retrieve local-specific files from the
+
+          redundant peer over the gateway network. These files will be stored in the .gwbk alongside the local-specific
+
+          files from this gateway.
+
+          '
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Restore Gateway Backup
+      operationId: restore-gateway-backup-post
+      tags:
+      - gateway-backups
+      description: Processes and restores a *.gwbk file on this gateway. The gateway will then be restarted.
+      parameters:
+      - name: restoreDisabled
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If `true`, all projects, database connections, OPC connections, etc will be disabled upon restart. Default is `false`
+      - name: disableTempProjectBackup
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If `true`, the projects dir will not have a temporary backup created during the restore process. Default is `false`
+      - name: renameEnabled
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If `true` will allow overriding the name of the gateway before it is restored. Default is `false`
+      - name: newName
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The new gateway name to use on restore.
+      - name: restoreLocal
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Set this parameter to `true` to restore local-specific files on the gateway. These files will be restored to the
+
+          data/config/local folder and the data/config/resources/local folder. Note that existing files in these folders
+
+          will be deleted. Default value is `false`.
+
+          '
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

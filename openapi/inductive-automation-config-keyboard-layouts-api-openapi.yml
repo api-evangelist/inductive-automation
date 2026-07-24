@@ -1,0 +1,552 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-keyboard-layouts API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-keyboard-layouts
+  description: Keyboard layout configuration
+paths:
+  /data/api/v1/resources/delete/ignition/keyboard_layout:
+    post:
+      summary: Delete Keyboard Layouts (multiple)
+      operationId: delete-keyboard-layouts-(multiple)-post
+      tags:
+      - config-keyboard-layouts
+      description: Delete multiple Keyboard Layouts resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/keyboard_layout/{name}:
+    get:
+      summary: Get Keyboard Layouts Config
+      operationId: get-keyboard-layouts-config-get
+      tags:
+      - config-keyboard-layouts
+      description: Retrieve configuration details about a specific Keyboard Layouts resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/keyboard_layout:
+    put:
+      summary: Modify Keyboard Layouts
+      operationId: modify-keyboard-layouts-put
+      tags:
+      - config-keyboard-layouts
+      description: Modify one or more Keyboard Layouts resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+              backupConfig:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+              backupConfig:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Keyboard Layouts
+      operationId: create-keyboard-layouts-post
+      tags:
+      - config-keyboard-layouts
+      description: Create a new Keyboard Layouts resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+              backupConfig:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+              backupConfig:
+                id: <string>
+                name: <string>
+                title: <string>
+                alias: <string>
+                rows:
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                - - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                  - value: 'reference #/$defs/key not found in the OpenAPI spec'
+                labels:
+                  BACKSPACE: Backsp
+                  CANCEL: Cancel
+                  SHIFT: Shift
+                  SPACE: Space
+                  SUBMIT: Enter
+                supportedLanguages:
+                - <string>
+                - <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/keyboard_layout/{name}/{signature}:
+    delete:
+      summary: Delete Keyboard Layouts
+      operationId: delete-keyboard-layouts-delete
+      tags:
+      - config-keyboard-layouts
+      description: Delete a Keyboard Layouts resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/keyboard_layout:
+    get:
+      summary: List Keyboard Layouts Resources
+      operationId: list-keyboard-layouts-resources-get
+      tags:
+      - config-keyboard-layouts
+      description: List all Keyboard Layouts resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/keyboard_layout:
+    get:
+      summary: Get Keyboard Layouts Names
+      operationId: get-keyboard-layouts-names-get
+      tags:
+      - config-keyboard-layouts
+      description: List all Keyboard Layouts resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/keyboard_layout/{name}:
+    post:
+      summary: Rename Keyboard Layouts
+      operationId: rename-keyboard-layouts-post
+      tags:
+      - config-keyboard-layouts
+      description: Change the name of a Keyboard Layouts resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/keyboard_layout:
+    get:
+      summary: Describe 'Keyboard Layouts' Resource Type
+      operationId: describe-'keyboard-layouts'-resource-type-get
+      tags:
+      - config-keyboard-layouts
+      description: Describe the Keyboard Layouts resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

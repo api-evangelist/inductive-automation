@@ -1,0 +1,910 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-user-source API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-user-source
+  description: User source configuration
+paths:
+  /data/api/v1/resources/delete/ignition/user-source:
+    post:
+      summary: Delete User Sources (multiple)
+      operationId: delete-user-sources-(multiple)-post
+      tags:
+      - config-user-source
+      description: Delete multiple User Sources resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/user-source/{name}:
+    get:
+      summary: Get User Sources Config
+      operationId: get-user-sources-config-get
+      tags:
+      - config-user-source
+      description: Retrieve configuration details about a specific User Sources resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/user-source:
+    put:
+      summary: Modify User Sources
+      operationId: modify-user-sources-put
+      tags:
+      - config-user-source
+      description: Modify one or more User Sources resources
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create User Sources
+      operationId: create-user-sources-post
+      tags:
+      - config-user-source
+      description: Create a new User Sources resource
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+              backupConfig:
+                profile:
+                  type: <string>
+                  scheduleRestricted: false
+                  failoverProfile: <string>
+                  failoverMode: HARD
+                  cacheValidationTimeout: 15
+                  lockoutEnabled: true
+                  lockoutAttempts: 5
+                  lockoutWindow: 15
+                settings:
+                  host1: <string>
+                  domain: <string>
+                  connectionUsername: <string>
+                  connectionPassword:
+                    value: '<Error: Too many levels of nesting to fake this schema>'
+                  port1: 389
+                  host2: <string>
+                  port2: 389
+                  useSSL: false
+                  ssoEnabled: false
+                  ssoDomain: <string>
+                  userPrefix: <string>
+                  userSuffix: <string>
+                  automaticSuffix: true
+                  usePrefixAndSuffixForGatewayUser: true
+                  userSearchBase: <string>
+                  userSearchFilter: (&(objectClass=user)(sAMAccountName={0}))
+                  userListFilter: (&(objectClass=user)(!(objectClass=computer)))
+                  userNameAttribute: sAMAccountName
+                  userIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  userRoleAttribute: memberOf
+                  nestedGroups: true
+                  groupRoleAttribute: memberOf
+                  roleNameAttribute: cn
+                  roleIdAttribute:
+                    name: objectGUID
+                    binary: true
+                  fullNameAttribute: name
+                  phoneAttribute: telephoneNumber
+                  emailAttribute: mail
+                  smsAttribute: mobile
+                  badgeAttribute: <string>
+                  readTimeout: 60000
+                  pageSize: 1000
+                  roleSearchBase: <string>
+                  roleSearchFilter: (objectClass=group)
+                  badgeSearchFilter: <string>
+                  allowAnon: false
+                  securityProtocol: AUTO
+                  authenticationType: AUTO
+                  saslMechanism: DIGEST-MD5 CRAM-MD5
+                  saslRealm: <string>
+                  saslQualityOfProtection: auth-conf,auth-int,auth
+                  saslProtectionStrength: high,medium,low
+                  saslMutualAuthentication: false
+                  referral: FOLLOW
+                  extraUserAttributes:
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+                  - value: '<Error: Too many levels of nesting to fake this schema>'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/user-source/{name}/{signature}:
+    delete:
+      summary: Delete User Sources
+      operationId: delete-user-sources-delete
+      tags:
+      - config-user-source
+      description: Delete a User Sources resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/user-source:
+    get:
+      summary: List User Sources Resources
+      operationId: list-user-sources-resources-get
+      tags:
+      - config-user-source
+      description: List all User Sources resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/user-source:
+    get:
+      summary: Get User Sources Names
+      operationId: get-user-sources-names-get
+      tags:
+      - config-user-source
+      description: List all User Sources resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/user-source/{name}:
+    post:
+      summary: Rename User Sources
+      operationId: rename-user-sources-post
+      tags:
+      - config-user-source
+      description: Change the name of a User Sources resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/user-source:
+    get:
+      summary: Describe 'User Sources' Resource Type
+      operationId: describe-'user-sources'-resource-type-get
+      tags:
+      - config-user-source
+      description: Describe the User Sources resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

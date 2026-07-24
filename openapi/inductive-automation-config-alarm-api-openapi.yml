@@ -1,0 +1,1007 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-alarm API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-alarm
+  description: Alarm configuration resources
+paths:
+  /data/api/v1/resources/delete/ignition/holiday:
+    post:
+      summary: Delete Holiday (multiple)
+      operationId: delete-holiday-(multiple)-post
+      tags:
+      - config-alarm
+      description: Delete multiple Holiday resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/delete/ignition/schedule:
+    post:
+      summary: Delete Schedule (multiple)
+      operationId: delete-schedule-(multiple)-post
+      tags:
+      - config-alarm
+      description: Delete multiple Schedule resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/holiday/{name}:
+    get:
+      summary: Get Holiday Config
+      operationId: get-holiday-config-get
+      tags:
+      - config-alarm
+      description: Retrieve configuration details about a specific Holiday resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/ignition/schedule/{name}:
+    get:
+      summary: Get Schedule Config
+      operationId: get-schedule-config-get
+      tags:
+      - config-alarm
+      description: Retrieve configuration details about a specific Schedule resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/holiday:
+    put:
+      summary: Modify Holiday
+      operationId: modify-holiday-put
+      tags:
+      - config-alarm
+      description: Modify one or more Holiday resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+              backupConfig:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+              backupConfig:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Holiday
+      operationId: create-holiday-post
+      tags:
+      - config-alarm
+      description: Create a new Holiday resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+              backupConfig:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+              backupConfig:
+                date: <dateTime>
+                repeatAnnually: <boolean>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/holiday/{name}/{signature}:
+    delete:
+      summary: Delete Holiday
+      operationId: delete-holiday-delete
+      tags:
+      - config-alarm
+      description: Delete a Holiday resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/schedule:
+    put:
+      summary: Modify Schedule
+      operationId: modify-schedule-put
+      tags:
+      - config-alarm
+      description: Modify one or more Schedule resources
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+              backupConfig:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+              backupConfig:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Schedule
+      operationId: create-schedule-post
+      tags:
+      - config-alarm
+      description: Create a new Schedule resource
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+              backupConfig:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+              backupConfig:
+                profile:
+                  type: <string>
+                settings:
+                  observeHolidays: true
+                  allDays: true
+                  allDayTime: 0:00-24:00
+                  weekDays: false
+                  weekDayTime: 0:00-24:00
+                  monday: false
+                  tuesday: false
+                  wednesday: false
+                  thursday: false
+                  friday: false
+                  saturday: false
+                  sunday: false
+                  mondayTime: 0:00-24:00
+                  tuesdayTime: 0:00-24:00
+                  wednesdayTime: 0:00-24:00
+                  thursdayTime: 0:00-24:00
+                  fridayTime: 0:00-24:00
+                  saturdayTime: 0:00-24:00
+                  sundayTime: 0:00-24:00
+                  repeatMode: 'Off'
+                  repeatOn: 1
+                  repeatOff: 1
+                  startingAt: <dateTime>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/schedule/{name}/{signature}:
+    delete:
+      summary: Delete Schedule
+      operationId: delete-schedule-delete
+      tags:
+      - config-alarm
+      description: Delete a Schedule resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/holiday:
+    get:
+      summary: List Holiday Resources
+      operationId: list-holiday-resources-get
+      tags:
+      - config-alarm
+      description: List all Holiday resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/ignition/schedule:
+    get:
+      summary: List Schedule Resources
+      operationId: list-schedule-resources-get
+      tags:
+      - config-alarm
+      description: List all Schedule resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/holiday:
+    get:
+      summary: Get Holiday Names
+      operationId: get-holiday-names-get
+      tags:
+      - config-alarm
+      description: List all Holiday resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/ignition/schedule:
+    get:
+      summary: Get Schedule Names
+      operationId: get-schedule-names-get
+      tags:
+      - config-alarm
+      description: List all Schedule resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/holiday/{name}:
+    post:
+      summary: Rename Holiday
+      operationId: rename-holiday-post
+      tags:
+      - config-alarm
+      description: Change the name of a Holiday resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/rename/ignition/schedule/{name}:
+    post:
+      summary: Rename Schedule
+      operationId: rename-schedule-post
+      tags:
+      - config-alarm
+      description: Change the name of a Schedule resource, and update all references to it
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to rename the resource in
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              references: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/holiday:
+    get:
+      summary: Describe 'Holiday' Resource Type
+      operationId: describe-'holiday'-resource-type-get
+      tags:
+      - config-alarm
+      description: Describe the Holiday resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/schedule:
+    get:
+      summary: Describe 'Schedule' Resource Type
+      operationId: describe-'schedule'-resource-type-get
+      tags:
+      - config-alarm
+      description: Describe the Schedule resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

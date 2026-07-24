@@ -1,0 +1,260 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control client-pki-certificate-management API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: client-pki-certificate-management
+  description: Client PKI certificate management
+paths:
+  /data/opc-ua/api/v1/client/pki/certificate/trust:
+    post:
+      summary: Trust Endpoint Certificate
+      operationId: trust-endpoint-certificate-post
+      tags:
+      - client-pki-certificate-management
+      description: Trust the certificate for the given endpoint.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              certificate: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/opc-ua/api/v1/client/pki/certificates/rejected:
+    get:
+      summary: Get Rejected Client Certificates
+      operationId: get-rejected-client-certificates-get
+      tags:
+      - client-pki-certificate-management
+      description: A list of all rejected client certificates.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/opc-ua/api/v1/client/pki/certificates/rejected/{signature}:
+    get:
+      summary: Download Rejected Client Certificate
+      operationId: download-rejected-client-certificate-get
+      tags:
+      - client-pki-certificate-management
+      description: Download a rejected client certificate with the given signature.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    delete:
+      summary: Delete Rejected Client Certificate
+      operationId: delete-rejected-client-certificate-delete
+      tags:
+      - client-pki-certificate-management
+      description: Delete a rejected client certificate with the given signature.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/opc-ua/api/v1/client/pki/certificates/trusted:
+    get:
+      summary: Get Trusted Client Certificates
+      operationId: get-trusted-client-certificates-get
+      tags:
+      - client-pki-certificate-management
+      description: A list of all trusted client certificates.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Upload Trusted Client Certificates
+      operationId: upload-trusted-client-certificates-post
+      tags:
+      - client-pki-certificate-management
+      description: Upload a trusted client certificate.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/opc-ua/api/v1/client/pki/certificates/trusted/{signature}:
+    get:
+      summary: Download Trusted Client Certificate
+      operationId: download-trusted-client-certificate-get
+      tags:
+      - client-pki-certificate-management
+      description: Download a trusted client certificate with the given signature.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Trust Rejected Client Certificate
+      operationId: trust-rejected-client-certificate-post
+      tags:
+      - client-pki-certificate-management
+      description: Trust a previously rejected client certificate with the given signature.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    delete:
+      summary: Delete Trusted Client Certificate
+      operationId: delete-trusted-client-certificate-delete
+      tags:
+      - client-pki-certificate-management
+      description: Delete a trusted client certificate with the given signature.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

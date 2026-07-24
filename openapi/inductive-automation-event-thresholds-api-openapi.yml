@@ -1,0 +1,389 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control event-thresholds API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: event-thresholds
+  description: Event threshold configuration
+paths:
+  /data/api/v1/resources/com.inductiveautomation.eam/event-thresholds:
+    put:
+      summary: Modify Event Thresholds
+      operationId: modify-event-thresholds-put
+      tags:
+      - event-thresholds
+      description: Modify one or more Event Thresholds resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+              backupConfig:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+              backupConfig:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Event Thresholds
+      operationId: create-event-thresholds-post
+      tags:
+      - event-thresholds
+      description: Create the Event Thresholds resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+              backupConfig:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+              backupConfig:
+                alarmOnActivity: <boolean>
+                alarmOnMetrics: <boolean>
+                alarmOnTasks: <boolean>
+                warningPriority: <string>
+                errorPriority: <string>
+                activePipeline: <string>
+                ackPipeline: <string>
+                connectionWarning: <number>
+                connectionError: <number>
+                cpuWarning: <number>
+                cpuError: <number>
+                memWarning: <number>
+                memError: <number>
+                errPerMinWarning: <number>
+                errPerMinError: <number>
+                errPerHourWarning: <number>
+                errPerHourError: <number>
+                connectedClientsWarning: <number>
+                connectedClientsError: <number>
+                perspectiveSessionsWarning: <number>
+                perspectiveSessionsError: <number>
+                dbConnUtilWarning: <number>
+                dbConnUtilError: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/com.inductiveautomation.eam/event-thresholds/{signature}:
+    delete:
+      summary: Delete Event Thresholds
+      operationId: delete-event-thresholds-delete
+      tags:
+      - event-thresholds
+      description: Delete the Event Thresholds resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/com.inductiveautomation.eam/event-thresholds:
+    get:
+      summary: Get Event Thresholds Config
+      operationId: get-event-thresholds-config-get
+      tags:
+      - event-thresholds
+      description: Retrieve configuration details about the Event Thresholds resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/com.inductiveautomation.eam/event-thresholds:
+    get:
+      summary: Describe 'Event Thresholds' Resource Type
+      operationId: describe-'event-thresholds'-resource-type-get
+      tags:
+      - event-thresholds
+      description: Describe the Event Thresholds resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

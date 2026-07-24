@@ -1,0 +1,488 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control call-script API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: call-script
+  description: Script invocation endpoints
+paths:
+  /data/api/v1/resources/com.inductiveautomation.sip-notification/script-settings:
+    put:
+      summary: Modify Call Script
+      operationId: modify-call-script-put
+      tags:
+      - call-script
+      description: Modify one or more Call Script resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+              backupConfig:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+            - name: <string>
+              signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+              backupConfig:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Call Script
+      operationId: create-call-script-post
+      tags:
+      - call-script
+      description: Create a new Call Script resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+              backupConfig:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+            - name: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+              backupConfig:
+                locale: en
+                voice: 'null'
+                greeting: Hello, this is an Ignition alarm notification.
+                challenge: Please enter your pin, followed by the pound sign.
+                nonChallenge: Please press any key to continue.
+                invalidPin: Invalid pin number.
+                summary: There are %d events.
+                activeMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                clearMessage: At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}
+                option1: Press 1 to acknowledge
+                ackConf: Alarm has been acknowledged.
+                option2: Press 2 to ignore
+                ignoreConf: Alarm has been ignored.
+                option3: Press 3 to repeat
+                closing: Thank you, goodbye.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/com.inductiveautomation.sip-notification/script-settings/{name}/{signature}:
+    delete:
+      summary: Delete Call Script
+      operationId: delete-call-script-delete
+      tags:
+      - call-script
+      description: Delete a Call Script resource by name
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/delete/com.inductiveautomation.sip-notification/script-settings:
+    post:
+      summary: Delete Call Script (multiple)
+      operationId: delete-call-script-(multiple)-post
+      tags:
+      - call-script
+      description: Delete multiple Call Script resources by name
+      parameters:
+      - name: confirm
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Whether to confirm the deletion, required when the operation would affect other resources.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - name: <string>
+              signature: <string>
+              collection: <string>
+            - name: <string>
+              signature: <string>
+              collection: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/find/com.inductiveautomation.sip-notification/script-settings/{name}:
+    get:
+      summary: Get Call Script Config
+      operationId: get-call-script-config-get
+      tags:
+      - call-script
+      description: Retrieve configuration details about a specific Call Script resource
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/list/com.inductiveautomation.sip-notification/script-settings:
+    get:
+      summary: List Call Script Resources
+      operationId: list-call-script-resources-get
+      tags:
+      - call-script
+      description: List all Call Script resources, in verbose format, including configuration, metrics, and health checks.
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/names/com.inductiveautomation.sip-notification/script-settings:
+    get:
+      summary: Get Call Script Names
+      operationId: get-call-script-names-get
+      tags:
+      - call-script
+      description: List all Call Script resources, including just names and enabled bit
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/com.inductiveautomation.sip-notification/script-settings:
+    get:
+      summary: Describe 'Call Script' Resource Type
+      operationId: describe-'call-script'-resource-type-get
+      tags:
+      - call-script
+      description: Describe the Call Script resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

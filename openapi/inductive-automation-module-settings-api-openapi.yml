@@ -1,0 +1,347 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control module-settings API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: module-settings
+  description: Module settings configuration
+paths:
+  /data/api/v1/resources/com.inductiveautomation.eam/module-settings:
+    put:
+      summary: Modify Module Settings
+      operationId: modify-module-settings-put
+      tags:
+      - module-settings
+      description: Modify one or more Module Settings resources
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+              backupConfig:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+              backupConfig:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Module Settings
+      operationId: create-module-settings-post
+      tags:
+      - module-settings
+      description: Create the Module Settings resource
+      parameters:
+      - name: allowInvalidReferences
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, invalid references will be allowed. Default is false.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+              backupConfig:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+              backupConfig:
+                installMode: <string>
+                controllerSettings:
+                  eventTableName: <string>
+                  archiveLocationMode: <string>
+                  archivePath: <string>
+                  lowDiskThresholdMB: <number>
+                  datasource: <string>
+                  maxRetainedBackupCount: <number>
+                  backupRetentionAge: <number>
+                  backupRetentionTimeUnit: <string>
+                agentSettings:
+                  controllerServerId: <string>
+                  sendStatsInterval: <number>
+                  httpConnectTimeout: <number>
+                  httpReadTimeout: <number>
+                  forwardLeasedLicense: <boolean>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/com.inductiveautomation.eam/module-settings/{signature}:
+    delete:
+      summary: Delete Module Settings
+      operationId: delete-module-settings-delete
+      tags:
+      - module-settings
+      description: Delete the Module Settings resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/com.inductiveautomation.eam/module-settings:
+    get:
+      summary: Get Module Settings Config
+      operationId: get-module-settings-config-get
+      tags:
+      - module-settings
+      description: Retrieve configuration details about the Module Settings resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/com.inductiveautomation.eam/module-settings:
+    get:
+      summary: Describe 'Module Settings' Resource Type
+      operationId: describe-'module-settings'-resource-type-get
+      tags:
+      - module-settings
+      description: Describe the Module Settings resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

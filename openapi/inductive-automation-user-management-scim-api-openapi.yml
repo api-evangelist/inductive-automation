@@ -1,0 +1,643 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control user-management-scim API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: user-management-scim
+  description: SCIM 2.0 user and group management
+paths:
+  /data/api/v1/scim/{profile-name}/{scim-version}/Groups:
+    get:
+      summary: List Group Resources
+      operationId: list-group-resources-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint returns a list of group resources.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Group Resource
+      operationId: create-group-resource-post
+      tags:
+      - user-management-scim
+      description: 'This endpoint creates a new group resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              meta:
+                resourceType: <string>
+                location: <string>
+              schemas:
+              - <string>
+              - <string>
+              id: <string>
+              displayName: <string>
+              members:
+              - value: <string>
+                $ref: <string>
+                display: <string>
+                type: <string>
+              - value: <string>
+                $ref: <string>
+                display: <string>
+                type: <string>
+              urn:ietf:params:scim:schemas:extension:inductiveautomation:2.0:Group:
+                notes: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/Groups/{group-id}:
+    get:
+      summary: Get Group Resource
+      operationId: get-group-resource-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint returns a group resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    put:
+      summary: Modify Group Resource
+      operationId: modify-group-resource-put
+      tags:
+      - user-management-scim
+      description: 'This endpoint modifies a group resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    delete:
+      summary: Delete Group Resource
+      operationId: delete-group-resource-delete
+      tags:
+      - user-management-scim
+      description: 'This path deletes a group resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: group-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/ResourceTypes:
+    get:
+      summary: List Resource Types
+      operationId: list-resource-types-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint is used to discover the types of resources available on a SCIM service provider (e.g., Users and Groups). Each resource type defines the endpoints, the core schema URI that defines the resource, and any supported schema extensions.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/ResourceTypes/{type-id}:
+    get:
+      summary: Get Resource Type
+      operationId: get-resource-type-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint is used to retrieve information about the specified resource type available on a SCIM service provider. The type-id path parameter must be set to the resource type of the resource to retrieve (e.g., ''User'', ''Group'').
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/Schemas:
+    get:
+      summary: List Schemas
+      operationId: list-schemas-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint is used to retrieve information about resource schemas supported by a SCIM service provider.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/Schemas/{schema-id}:
+    get:
+      summary: Get Schema
+      operationId: get-schema-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint is used to retrieve information about the specified resource schema supported by a SCIM service provider. The {schema-id} path parameter must be set to the schema URI of the schema to retrieve (e.g., ''urn:ietf:params:scim:schemas:core:2.0:User'').
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: schema-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/ServiceProviderConfig:
+    get:
+      summary: Get Service Provider Configuration
+      operationId: get-service-provider-configuration-get
+      tags:
+      - user-management-scim
+      description: The service provider configuration resource enables a service provider to discover SCIM specification features in a standardized form as well as provide additional implementation details to clients.
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/Users:
+    get:
+      summary: List User Resources
+      operationId: list-user-resources-get
+      tags:
+      - user-management-scim
+      description: 'This path returns a list of user resources.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create User Resource
+      operationId: create-user-resource-post
+      tags:
+      - user-management-scim
+      description: 'This endpoint creates a new user resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              meta:
+                resourceType: <string>
+                location: <string>
+              schemas:
+              - <string>
+              - <string>
+              id: <string>
+              userName: <string>
+              name:
+                familyName: <string>
+                givenName: <string>
+              password: <string>
+              groups:
+              - value: <string>
+                $ref: <string>
+                display: <string>
+              - value: <string>
+                $ref: <string>
+                display: <string>
+              urn:ietf:params:scim:schemas:extension:inductiveautomation:2.0:User:
+                badge: <string>
+                language: <string>
+                notes: <string>
+                contactInfo:
+                - value: <string>
+                  type: <string>
+                - value: <string>
+                  type: <string>
+                schedule: <string>
+                scheduleAdjustments:
+                - start: <dateTime>
+                  end: <dateTime>
+                  available: false
+                  note: <string>
+                - start: <dateTime>
+                  end: <dateTime>
+                  available: false
+                  note: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scim/{profile-name}/{scim-version}/Users/{user-id}:
+    get:
+      summary: Get User Resource
+      operationId: get-user-resource-get
+      tags:
+      - user-management-scim
+      description: 'This endpoint returns a user resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: user-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    put:
+      summary: Modify User Resource
+      operationId: modify-user-resource-put
+      tags:
+      - user-management-scim
+      description: 'This endpoint modifies a user resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: user-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    delete:
+      summary: Delete User Resource
+      operationId: delete-user-resource-delete
+      tags:
+      - user-management-scim
+      description: 'This endpoint deletes a user resource.
+
+        '
+      parameters:
+      - name: profile-name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scim-version
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: user-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

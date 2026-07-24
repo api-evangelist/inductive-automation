@@ -1,0 +1,327 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control storage API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: storage
+  description: Storage configuration
+paths:
+  /data/eam/api/v1/eam-tasks/delete-temp-folder:
+    delete:
+      summary: Delete temp folder
+      operationId: delete-temp-folder-delete
+      tags:
+      - storage
+      description: Deletes the folder containing the previously uploaded files for an EAM task
+      parameters:
+      - name: folderPath
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The path to the temporary folder. This folder path is relative to the EAM system temp folder.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/module-cert:
+    get:
+      summary: Retrieve module certificate
+      operationId: retrieve-module-certificate-get
+      tags:
+      - storage
+      description: Retrieves module certificate information from an uploaded .modl file
+      parameters:
+      - name: filePath
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The file path to the temporary .modl file
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Accept module certificate
+      operationId: accept-module-certificate-post
+      tags:
+      - storage
+      description: Adds a resource to the controller indicating that the user has accepted a module certificate.
+      parameters:
+      - name: filePath
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The file path to the temporary certificate file extracted from the .modl file
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/module-eula:
+    get:
+      summary: Retrieve module EULA
+      operationId: retrieve-module-eula-get
+      tags:
+      - storage
+      description: Retrieves a module EULA from an uploaded .modl file. The EULA is returned as HTML.
+      parameters:
+      - name: filePath
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The file path to the temporary license.html file extracted from the .modl file
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Accept module EULA
+      operationId: accept-module-eula-post
+      tags:
+      - storage
+      description: Adds a resource to the controller indicating that the user has accepted a module EULA.
+      parameters:
+      - name: filePath
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The file path to the temporary license.html file extracted from the .modl file
+      - name: moduleId
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The module id of the .modl file
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/store-gwbk:
+    post:
+      summary: Upload .gwbk file
+      operationId: upload-.gwbk-file-post
+      tags:
+      - storage
+      description: Uploads a .gwbk for temporary storage on the controller. The returned gwbk path is relative to the EAM system temp folder.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/store-module:
+    post:
+      summary: Upload .modl file
+      operationId: upload-.modl-file-post
+      tags:
+      - storage
+      description: Uploads a .modl file for temporary storage on the controller. The returned modlFile path is relative to the EAM system temp folder.
+      parameters:
+      - name: filename
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) Used as the filename when the .modl is uploaded to the gateway's file system. The file is stored in a temporary folder.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/store-module-from-archive:
+    post:
+      summary: Store module file from archive
+      operationId: store-module-file-from-archive-post
+      tags:
+      - storage
+      description: Adds an archived module file to temporary storage on the controller. The returned modlFile path is relative to the EAM system temp folder.
+      parameters:
+      - name: filePath
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The file path of the archived module file, as returned from the archived-modules endpoint. The file is stored in a temporary folder.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/eam-tasks/store-upgrade-zip:
+    post:
+      summary: Upload upgrade zip
+      operationId: upload-upgrade-zip-post
+      tags:
+      - storage
+      description: Upload an Ignition upgrade.zip for temporary storage on the controller. The returned filePath holds the path to the upgrade.zip and is relative to the EAM system temp folder.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/storage/archived-backups:
+    get:
+      summary: Retrieve archived backups
+      operationId: retrieve-archived-backups-get
+      tags:
+      - storage
+      description: Retrieves a list of gateway backups for the specified agents. Returned file paths are relative to the EAM archive folder.
+      parameters:
+      - name: serverids
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) A comma-separated list of encoded ServerIds
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/eam/api/v1/storage/archived-modules:
+    get:
+      summary: Retrieve archived modules
+      operationId: retrieve-archived-modules-get
+      tags:
+      - storage
+      description: Retrieves a list of modules archived on the EAM controller. Returned module file paths are relative to the EAM archive folder.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

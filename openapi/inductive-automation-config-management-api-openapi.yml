@@ -1,0 +1,486 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-management API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-management
+  description: General configuration management
+paths:
+  /data/api/v1/mode:
+    get:
+      summary: Deployment Modes
+      operationId: deployment-modes-get
+      tags:
+      - config-management
+      description: Returns a list of the available deployment modes
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum number of items to return.
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of items to skip before returning results.
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`
+
+          to specify the sort direction as ascending or descending, respectively.
+
+          '
+      - name: search
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A search string to filter items by. Terms separated by whitespace.
+      - name: key_0
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 'Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression).'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Deployment Mode
+      operationId: create-deployment-mode-post
+      tags:
+      - config-management
+      description: Creates a new deployment mode resource collection.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              title: <string>
+              description: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/mode/{name}:
+    put:
+      summary: Update Deployment Mode
+      operationId: update-deployment-mode-put
+      tags:
+      - config-management
+      description: Updates or renames a deployment mode.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              name: <string>
+              title: <string>
+              description: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    delete:
+      summary: Delete Deployment Mode
+      operationId: delete-deployment-mode-delete
+      tags:
+      - config-management
+      description: Deletes a deployment mode
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/copy:
+    post:
+      summary: Copy a Resource
+      operationId: copy-a-resource-post
+      tags:
+      - config-management
+      description: Copies a resource from one collection to another, or to a resource with a new name
+      parameters:
+      - name: resourceType
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The resource type to copy, in the format 'moduleId/typeId'
+      - name: signature
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The signature of the resource to copy
+      - name: fromName
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The name of the resource to copy. (required for non-singleton types)
+      - name: toName
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The name of the copied resource. If omitted, the name will be the same as the original resource
+      - name: fromCollection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The resource collection to copy from. If omitted, will automatically use the active definition
+      - name: toCollection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The resource collection to copy to. If omitted, will use the same collection as the source resource
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/move:
+    post:
+      summary: Move a Resource
+      operationId: move-a-resource-post
+      tags:
+      - config-management
+      description: Moves a resource to a different collection.
+      parameters:
+      - name: resourceType
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The resource type to move, in the format 'moduleId/typeId'
+      - name: signature
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The signature of the resource to move
+      - name: fromName
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The name of the resource to move. (required for non-singleton types)
+      - name: fromCollection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The resource collection to move from. If omitted, will automatically use the active definition
+      - name: toCollection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The resource collection to move to. If omitted, will use the same collection as the source resource
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scan-lock/config:
+    get:
+      summary: Configuration Scan Lock Info
+      operationId: configuration-scan-lock-info-get
+      tags:
+      - config-management
+      description: Returns information about the currently held scan-lock, if any.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Acquire Configuration Scan Lock
+      operationId: acquire-configuration-scan-lock-post
+      tags:
+      - config-management
+      description: 'Prevents changes from being applied to the configuration system for a limited time. Time may be specified
+
+        in the request body. While this lock is held, any other changes will be queued (block) until the
+
+        lock is released. While locked, it is safe to make external changes to the filesystem.
+
+        The next call to `POST /data/api/v1/scan/config` will release the lock.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              acquireTimeout: <number>
+              holdTimeout: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scan-lock/projects:
+    get:
+      summary: Project Scan Lock Info
+      operationId: project-scan-lock-info-get
+      tags:
+      - config-management
+      description: Returns information about the currently held scan-lock, if any.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Acquire Project Scan Lock
+      operationId: acquire-project-scan-lock-post
+      tags:
+      - config-management
+      description: 'Prevents changes from being applied to the project system for a limited time. Time may be specified
+
+        in the request body. While this lock is held, any other changes will be queued (block) until the
+
+        lock is released. While locked, it is safe to make external changes to the filesystem.
+
+        The next call to `POST /data/api/v1/scan/projects` will release the lock.'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+              acquireTimeout: <number>
+              holdTimeout: <number>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scan/config:
+    get:
+      summary: Configuration Scan Status
+      operationId: configuration-scan-status-get
+      tags:
+      - config-management
+      description: Returns the status of the configuration filesystem scan.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Request Configuration Scan
+      operationId: request-configuration-scan-post
+      tags:
+      - config-management
+      description: 'Prompts the system to scan the filesystem for configuration changes. Will also release the scan lock, if
+
+        currently being held.'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/scan/projects:
+    get:
+      summary: Project Scan Status
+      operationId: project-scan-status-get
+      tags:
+      - config-management
+      description: Returns the status of the project filesystem scan.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Request Project Scan
+      operationId: request-project-scan-post
+      tags:
+      - config-management
+      description: 'Prompts the system to scan the filesystem for project changes. Will also release the scan lock, if
+
+        currently being held.'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

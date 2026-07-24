@@ -1,0 +1,180 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control entity API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: entity
+  description: Generic entity management
+paths:
+  /data/api/v1/entity/browse:
+    get:
+      summary: Browse Entities
+      operationId: browse-entities-get
+      tags:
+      - entity
+      description: This endpoint returns a list of matching registered entities, including children up to the depth specified.
+      parameters:
+      - name: path
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Path to a specific entity to browse. Use '/' to separate path components.
+      - name: depth
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The depth to browse to. Default is 1.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When listing children, the limit of children to return. Default is 10. Zero means unlimited
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When listing children, the number of children to skip. Default is 0.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/entity/enabled:
+    post:
+      summary: Set Entity Enabled
+      operationId: set-entity-enabled-post
+      tags:
+      - entity
+      description: Allows for altering the enabled state of an entity
+      parameters:
+      - name: path
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The path of the entity to enable or disable. Use '/' to separate path components.
+      - name: timeout
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The maximum time to wait for the operation to complete, in seconds. Default is 10.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/entity/section/{section}:
+    get:
+      summary: Entities by Section
+      operationId: entities-by-section-get
+      tags:
+      - entity
+      description: Returns Entities relevant to a given UI section
+      parameters:
+      - name: section
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: depth
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The depth to browse to. Default is 1.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When listing children, the limit of children to return. Default is 10. Zero means unlimited
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When listing children, the number of children to skip. Default is 0.
+      - name: tag
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If specified, will only return entities that have the given tag. Can be specified multiple times.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

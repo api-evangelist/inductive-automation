@@ -1,0 +1,410 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-translations API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-translations
+  description: Translation configuration
+paths:
+  /data/api/v1/resources/datafile/ignition/translations/{filename}:
+    get:
+      summary: Get Translations Data File
+      operationId: get-translations-data-file-get
+      tags:
+      - config-translations
+      description: Retrieve a data file from the singleton resource
+      parameters:
+      - name: filename
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the file from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    put:
+      summary: Update Translations Data File
+      operationId: update-translations-data-file-put
+      tags:
+      - config-translations
+      description: Update (overwrite) a data file in the singleton resource
+      parameters:
+      - name: filename
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to modify the file in.
+      - name: signature
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The current signature of the resource.
+      - name: rename
+        in: query
+        required: false
+        schema:
+          type: string
+        description: An optional new name for the file
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    delete:
+      summary: Delete Translations Data File
+      operationId: delete-translations-data-file-delete
+      tags:
+      - config-translations
+      description: Deletes a data file in the singleton resource
+      parameters:
+      - name: filename
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to modify the file in.
+      - name: signature
+        in: query
+        required: false
+        schema:
+          type: string
+        description: (Required) The current signature of the resource.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/translations:
+    put:
+      summary: Modify Translations
+      operationId: modify-translations-put
+      tags:
+      - config-translations
+      description: Modify one or more Translations resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                  key_1:
+                    key_0: <string>
+                    key_1: <string>
+                    key_2: <string>
+              backupConfig:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                  key_1:
+                    key_0: <string>
+                    key_1: <string>
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                    key_1: <string>
+                  key_1:
+                    key_0: <string>
+                    key_1: <string>
+              backupConfig:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                    key_1: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create Translations
+      operationId: create-translations-post
+      tags:
+      - config-translations
+      description: Create the Translations resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                    key_1: <string>
+                    key_2: <string>
+                    key_3: <string>
+                  key_1:
+                    key_0: <string>
+                    key_1: <string>
+                  key_2:
+                    key_0: <string>
+                    key_1: <string>
+                  key_3:
+                    key_0: <string>
+                    key_1: <string>
+                    key_2: <string>
+              backupConfig:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                    key_1: <string>
+                    key_2: <string>
+                  key_1:
+                    key_0: <string>
+                    key_1: <string>
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                    key_1: <string>
+                    key_2: <string>
+                    key_3: <string>
+                  key_1:
+                    key_0: <string>
+                    key_1: <string>
+              backupConfig:
+                caseInsensitive: <boolean>
+                ignoreWhitespace: <boolean>
+                ignorePunctuation: <boolean>
+                ignoreTags: <boolean>
+                terms:
+                  key_0:
+                    key_0: <string>
+                    key_1: <string>
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/translations/{signature}:
+    delete:
+      summary: Delete Translations
+      operationId: delete-translations-delete
+      tags:
+      - config-translations
+      description: Delete the Translations resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/ignition/translations:
+    get:
+      summary: Get Translations Config
+      operationId: get-translations-config-get
+      tags:
+      - config-translations
+      description: Retrieve configuration details about the Translations resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/translations:
+    get:
+      summary: Describe 'Translations' Resource Type
+      operationId: describe-'translations'-resource-type-get
+      tags:
+      - config-translations
+      description: Describe the Translations resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi

@@ -1,0 +1,585 @@
+openapi: 3.0.3
+info:
+  title: Ignition Gateway REST access-control config-system-properties API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  version: 8.3.0
+  contact:
+    name: Inductive Automation Support
+    url: https://support.inductiveautomation.com/
+  license:
+    name: Commercial
+    url: https://inductiveautomation.com/pricing/
+  x-postman-collection: https://raw.githubusercontent.com/inductiveautomation/83-api/main/postman/8.3.postman_collection_v2.json
+servers:
+- url: http://{gateway-host}:{port}
+  description: Ignition Gateway (HTTP)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8088'
+      description: Gateway HTTP port (default 8088; HTTPS default 8043)
+- url: https://{gateway-host}:{port}
+  description: Ignition Gateway (HTTPS)
+  variables:
+    gateway-host:
+      default: localhost
+      description: Hostname or IP address of the Ignition Gateway
+    port:
+      default: '8043'
+      description: Gateway HTTPS port
+security:
+- apiKeyAuth: []
+tags:
+- name: config-system-properties
+  description: System properties configuration
+paths:
+  /data/api/v1/homepage-notes:
+    get:
+      summary: Get Homepage Notes
+      operationId: get-homepage-notes-get
+      tags:
+      - config-system-properties
+      description: Returns the homepage notes text from Gateway Properties.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/system-properties:
+    put:
+      summary: Modify System Properties
+      operationId: modify-system-properties-put
+      tags:
+      - config-system-properties
+      description: Modify one or more System Properties resources
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+              backupConfig:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+            - signature: <string>
+              collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+              backupConfig:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+    post:
+      summary: Create System Properties
+      operationId: create-system-properties-post
+      tags:
+      - config-system-properties
+      description: Create the System Properties resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            example:
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+              backupConfig:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+            - collection: <string>
+              enabled: <boolean>
+              description: <string>
+              config:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+              backupConfig:
+                systemName: <string>
+                designerRAM: MB1024
+                disable3DPipeline: true
+                disableDirectDraw: false
+                useCondensedDialogFont: false
+                homepageUrl: /app
+                homepageNotes: Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.
+                clientFallbackEnabled: false
+                secondsBeforeFailover: 60
+                fallbackProjectName: <string>
+                scheduledBackupsEnabled: false
+                scheduledBackupPath: <string>
+                scheduledBackupTimes: 15 1 * * *
+                scheduledBackupRetentionCount: 5
+                scheduledBackupFilename: ${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk
+                automaticThreadDumpsEnabled: false
+                automaticThreadDumpsIntervalSeconds: 60
+                automaticThreadDumpsCpuThreshold: 70
+                automaticThreadDumpsCpuThresholdExceededDuration: 10
+                automaticThreadDumpsRetentionCount: 50
+                errorReportSMTPServer: <string>
+                errorReportToEmail: <string>
+                errorReportFromEmail: <string>
+                errorReportUsername: <string>
+                errorReportPassword:
+                  type: <string>
+                  data:
+                    protected:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    encrypted_key:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    iv:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    ciphertext:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                    tag:
+                      value: '<Error: Too many levels of nesting to fake this schema>'
+                multicastEnabled: true
+                multicastIPAddr: 231.1.1.1
+                multicastSendPort: '4445'
+                multicastReceivePort: '4446'
+                multicastIntervalMillis: '5000'
+                gatewayScriptingProject: <string>
+                enableTagReferenceStore: true
+                scriptMessageEncoding: Protobuf
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/ignition/system-properties/{signature}:
+    delete:
+      summary: Delete System Properties
+      operationId: delete-system-properties-delete
+      tags:
+      - config-system-properties
+      description: Delete the System Properties resource.
+      parameters:
+      - name: signature
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to delete the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/singleton/ignition/system-properties:
+    get:
+      summary: Get System Properties Config
+      operationId: get-system-properties-config-get
+      tags:
+      - config-system-properties
+      description: Retrieve configuration details about the System Properties resource
+      parameters:
+      - name: defaultIfUndefined
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false.
+      - name: collection
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The configuration collection to read the resource from
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+  /data/api/v1/resources/type/ignition/system-properties:
+    get:
+      summary: Describe 'System Properties' Resource Type
+      operationId: describe-'system-properties'-resource-type-get
+      tags:
+      - config-system-properties
+      description: Describe the System Properties resource type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not found
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Ignition-API-Token
+      description: Time-limited API token. Obtain by posting credentials to the token endpoint. See /data/api/v1/token for details.
+externalDocs:
+  description: Ignition 8.3 Gateway REST API Documentation
+  url: https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi
