@@ -1,0 +1,1082 @@
+{
+  "item": [
+    {
+      "id": "1433a8ca-c2a6-4206-8f99-c127530d2a1c",
+      "name": "certificate-management",
+      "description": {
+        "content": "TLS/SSL certificate management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cae933ed-9205-4618-bd46-978a5fc8188a",
+          "name": "Get Certificate",
+          "request": {
+            "name": "Get Certificate",
+            "description": {
+              "content": "Get the server or client certificate for the Ignition OPC-UA Module",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "opc-ua",
+                "api",
+                "v1",
+                ":routeType",
+                "certificate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "routeType",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d050469d-ec9e-4b08-9fb9-46741d75332b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e96b56bb-77cd-4998-8e71-a36114a80e50",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c27777c-8840-4ccb-9a8c-fdc922bf209a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1eeae0c4-fde3-4fc2-9e32-c7ab1adaebb4",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "481a9f37-88fd-4d60-8712-eaff87f4c20e",
+          "name": "Download Certificate",
+          "request": {
+            "name": "Download Certificate",
+            "description": {
+              "content": "Download Certificate for the given type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "opc-ua",
+                "api",
+                "v1",
+                ":routeType",
+                "certificate",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "routeType",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "79715564-95cc-4c32-ac5f-9142ccfedea3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e011965c-eee0-45a3-9d67-674eb570f378",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05425507-be03-485e-8afd-2c939ece6395",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fddccf37-d1a4-47be-82aa-5f78a87d58a7",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d85e9d8c-b386-4557-8d24-4aa40a4798a4",
+          "name": "Regenerate Certificate",
+          "request": {
+            "name": "Regenerate Certificate",
+            "description": {
+              "content": "Regenerate a certificate of the given type.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "opc-ua",
+                "api",
+                "v1",
+                ":routeType",
+                "certificate",
+                "regenerate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "routeType",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f77961dd-d0cd-4df7-92b2-1215fa3f3024",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "regenerate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"validPeriodDays\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0891f0cc-a29a-4a3a-bc7f-bb8513d7d2fa",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "regenerate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"validPeriodDays\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2366ab8-ae91-4534-aec0-081b2355b302",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "regenerate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"validPeriodDays\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2d03370d-9ab0-4e69-b3a0-b0540e77f5d6",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "opc-ua",
+                    "api",
+                    "v1",
+                    ":routeType",
+                    "certificate",
+                    "regenerate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "routeType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"validPeriodDays\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5d722da6-35b1-4500-ab3a-317b6b009040",
+    "name": "Ignition Gateway REST access-control certificate-management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

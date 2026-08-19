@@ -1,0 +1,3362 @@
+{
+  "item": [
+    {
+      "id": "baf55ebc-fb58-4b46-9738-d21a7e5f29db",
+      "name": "config-keyboard-layouts",
+      "description": {
+        "content": "Keyboard layout configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5a9deb02-0883-4101-9c7e-f5c604e9a76a",
+          "name": "Delete Keyboard Layouts (multiple)",
+          "request": {
+            "name": "Delete Keyboard Layouts (multiple)",
+            "description": {
+              "content": "Delete multiple Keyboard Layouts resources by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "delete",
+                "ignition",
+                "keyboard_layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e26a283b-7045-40fc-b4a2-d2e0a70a2d02",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9cb764de-02c8-4339-a055-8a6a97e0ad8f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21b3925b-3628-4764-9955-2f990b2d68c4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "15280d99-db0c-440f-934c-4886655e15f4",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8c097e7-f095-4399-b862-70357a00e3c5",
+          "name": "Get Keyboard Layouts Config",
+          "request": {
+            "name": "Get Keyboard Layouts Config",
+            "description": {
+              "content": "Retrieve configuration details about a specific Keyboard Layouts resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "find",
+                "ignition",
+                "keyboard_layout",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed5558ff-a28f-4c88-98fa-4dd5990c4655",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c518a26-a381-471a-9783-18a758983e02",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2fcc975-2eeb-4312-bf80-d84e36b7eaee",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d4fad216-5441-493c-8621-874e63e29125",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04946f49-7436-4618-a8fc-d03761eff10b",
+          "name": "Modify Keyboard Layouts",
+          "request": {
+            "name": "Modify Keyboard Layouts",
+            "description": {
+              "content": "Modify one or more Keyboard Layouts resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "keyboard_layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a1b10f7-6f98-4483-a01c-050562c7ca2a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5c93a79-de55-4523-9ce2-ed01aa2afbda",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9612a269-b386-428e-92aa-b13bbb2b346e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7bb680da-91f4-4328-8093-2323c8b376a6",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "104e7a41-5725-4ad3-9d5f-dd0ca23da370",
+          "name": "Create Keyboard Layouts",
+          "request": {
+            "name": "Create Keyboard Layouts",
+            "description": {
+              "content": "Create a new Keyboard Layouts resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "keyboard_layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f73b15f-ba63-440c-8bfd-15e0feda2e74",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bec08ec4-2234-4648-8093-15d034bf9dc7",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b8c9c8b2-e417-49be-be0d-a475a9ad586b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "78758483-c8a3-477e-a339-155b4c0446d2",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"backupConfig\": {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"title\": \"<string>\",\n      \"alias\": \"<string>\",\n      \"rows\": [\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ],\n        [\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          },\n          {\n            \"value\": \"reference #/$defs/key not found in the OpenAPI spec\"\n          }\n        ]\n      ],\n      \"labels\": {\n        \"BACKSPACE\": \"Backsp\",\n        \"CANCEL\": \"Cancel\",\n        \"SHIFT\": \"Shift\",\n        \"SPACE\": \"Space\",\n        \"SUBMIT\": \"Enter\"\n      },\n      \"supportedLanguages\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1280da93-9648-43cc-b639-77aca92bd273",
+          "name": "Delete Keyboard Layouts",
+          "request": {
+            "name": "Delete Keyboard Layouts",
+            "description": {
+              "content": "Delete a Keyboard Layouts resource by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "keyboard_layout",
+                ":name",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36b132b1-aa6a-4838-8724-31c6fc4402d3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad3ae643-8f75-4304-8ef2-2ebabf78dd9d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "768bc344-3f92-49ef-9190-84c984ce6d03",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "32bd18b1-8c50-483e-a93d-bee87231ee56",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42555593-b121-48fa-bfcb-ad7e7ec222e5",
+          "name": "List Keyboard Layouts Resources",
+          "request": {
+            "name": "List Keyboard Layouts Resources",
+            "description": {
+              "content": "List all Keyboard Layouts resources, in verbose format, including configuration, metrics, and health checks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "list",
+                "ignition",
+                "keyboard_layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "02342357-696c-4751-9a9f-afa698e49fc5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5413da08-11ac-4dad-a714-8d1dc3a5d3f1",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a4e43b2-288a-4efd-8306-6f1e846af921",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "496d5236-7d7c-4427-bd99-f85a7c43943e",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c970610-79fa-4574-97f6-15a414001cac",
+          "name": "Get Keyboard Layouts Names",
+          "request": {
+            "name": "Get Keyboard Layouts Names",
+            "description": {
+              "content": "List all Keyboard Layouts resources, including just names and enabled bit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "names",
+                "ignition",
+                "keyboard_layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3952d9a8-d667-4107-b978-eb84449625c3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdffa380-35f9-4a6d-9e46-b9c7ed1b59e7",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e822d4a7-41f7-422e-a2c5-788de5af52d2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ee7bfdfb-48fd-44c3-ac3e-fef46bc230ea",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "832cd52b-42f0-4db0-9c45-fadc528767ac",
+          "name": "Rename Keyboard Layouts",
+          "request": {
+            "name": "Rename Keyboard Layouts",
+            "description": {
+              "content": "Change the name of a Keyboard Layouts resource, and update all references to it",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "rename",
+                "ignition",
+                "keyboard_layout",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to rename the resource in"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "835538d0-154a-491a-bc96-035c2944debb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16e55aa4-b9de-4e00-90fe-793af94864fe",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "48fffd22-7e06-46f9-a25d-70aed1e0d891",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d67dfd85-6d4c-4bff-877d-f87737e0f9f0",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "keyboard_layout",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd231692-2e1f-40f8-8521-5f5b3401f9c7",
+          "name": "Describe 'Keyboard Layouts' Resource Type",
+          "request": {
+            "name": "Describe 'Keyboard Layouts' Resource Type",
+            "description": {
+              "content": "Describe the Keyboard Layouts resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "ignition",
+                "keyboard_layout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d86e19b2-49d4-41f0-8145-d73c27b696ef",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e4650aa-bb96-4709-815a-33176592d6fc",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "93c106a0-86b5-462a-b3f1-243266387a7c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f5b2f13-c4a3-4113-b145-31eae086b0a3",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "keyboard_layout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ef277c3d-ecb5-4825-b87b-931c25d36254",
+    "name": "Ignition Gateway REST access-control config-keyboard-layouts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control groups-info API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "groups-info",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get transaction groups status for a specific project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/fsql/api/v1/status/project/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the status of all transaction groups for a specific project, including longest running groups, path of running, non-running and errored groups and tag/DB metrics"
+        },
+        {
+          "info": {
+            "name": "Get transaction group status for each project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/fsql/api/v1/status/projects"
+          },
+          "docs": "Get the status of all transaction groups for each project, including the number of running, non-running and errored groups and tag/DB metrics"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

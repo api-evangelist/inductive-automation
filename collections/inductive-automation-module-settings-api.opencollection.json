@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control module-settings API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "module-settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Module Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.eam/module-settings",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create the Module Settings resource"
+        },
+        {
+          "info": {
+            "name": "Modify Module Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.eam/module-settings",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more Module Settings resources"
+        },
+        {
+          "info": {
+            "name": "Delete Module Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.eam/module-settings/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              }
+            ]
+          },
+          "docs": "Delete the Module Settings resource."
+        },
+        {
+          "info": {
+            "name": "Get Module Settings Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/singleton/com.inductiveautomation.eam/module-settings",
+            "params": [
+              {
+                "name": "defaultIfUndefined",
+                "value": "",
+                "type": "query",
+                "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about the Module Settings resource"
+        },
+        {
+          "info": {
+            "name": "Describe 'Module Settings' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/com.inductiveautomation.eam/module-settings"
+          },
+          "docs": "Describe the Module Settings resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

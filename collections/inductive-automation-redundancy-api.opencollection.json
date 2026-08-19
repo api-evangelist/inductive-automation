@@ -1,0 +1,177 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control redundancy API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "redundancy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy"
+          },
+          "docs": "Information on the current status of the redundancy system."
+        },
+        {
+          "info": {
+            "name": "Get Redundancy Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy/config"
+          },
+          "docs": "The configuration of the redundancy system. Note that the gatewayNetworkSetup section only applies to the redundant backup."
+        },
+        {
+          "info": {
+            "name": "Update Redundancy Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy/config",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the configuration of the redundancy system."
+        },
+        {
+          "info": {
+            "name": "Log Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy/events",
+            "params": [
+              {
+                "name": "timestamp",
+                "value": "",
+                "type": "query",
+                "description": "Return all logs since this timestamp (in epoch millis)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Returns log events from the redundancy system."
+        },
+        {
+          "info": {
+            "name": "Force Failover",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy/gwaction/failover"
+          },
+          "docs": "Forces redundant configuration to failover to the backup node."
+        },
+        {
+          "info": {
+            "name": "Re-Sync Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy/gwaction/resync"
+          },
+          "docs": "Makes a request to force the re-synchronization of redundant nodes."
+        },
+        {
+          "info": {
+            "name": "Redundancy Provider Metrics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/redundancy/providers",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Information on all the Redundancy Providers this Ignition Gateway knows about."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

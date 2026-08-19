@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control general-alarm-settings API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "general-alarm-settings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create General Alarm Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/general-alarm-settings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create the General Alarm Settings resource"
+        },
+        {
+          "info": {
+            "name": "Modify General Alarm Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/general-alarm-settings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more General Alarm Settings resources"
+        },
+        {
+          "info": {
+            "name": "Delete General Alarm Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/general-alarm-settings/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              }
+            ]
+          },
+          "docs": "Delete the General Alarm Settings resource."
+        },
+        {
+          "info": {
+            "name": "Get General Alarm Settings Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/singleton/ignition/general-alarm-settings",
+            "params": [
+              {
+                "name": "defaultIfUndefined",
+                "value": "",
+                "type": "query",
+                "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about the General Alarm Settings resource"
+        },
+        {
+          "info": {
+            "name": "Describe 'General Alarm Settings' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/ignition/general-alarm-settings"
+          },
+          "docs": "Describe the General Alarm Settings resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

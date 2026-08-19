@@ -1,0 +1,3416 @@
+{
+  "item": [
+    {
+      "id": "5386a50d-9898-4e04-9c62-dffb5bd2c5d9",
+      "name": "alarm-notification-profile",
+      "description": {
+        "content": "Alarm notification profile management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9e19da2d-831c-4635-8436-d92b7791d35f",
+          "name": "Modify Alarm Notification Profiles",
+          "request": {
+            "name": "Modify Alarm Notification Profiles",
+            "description": {
+              "content": "Modify one or more Alarm Notification Profiles resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34c373dd-7c56-4881-91bc-a84a067f6f2b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e60a19b-fba0-4f85-8675-16100df3db4d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ff6a76f-e32b-4a87-bbb0-fdea22efdfbd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "831369bf-1a90-4b86-be02-e94a642f31c7",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2fc4d4f1-dc23-4042-9def-cfff9518bce9",
+          "name": "Create Alarm Notification Profiles",
+          "request": {
+            "name": "Create Alarm Notification Profiles",
+            "description": {
+              "content": "Create a new Alarm Notification Profiles resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0df4047-2f44-486d-8727-59104f512a12",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "640c65b0-69a0-4df5-8748-9dec71b74c22",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b9e7381-1c7f-410a-b86a-a78094bb8e25",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb021caf-054c-4fb1-8618-16080c9e4983",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\"\n      },\n      \"settings\": {\n        \"hostAddress\": \"0.0.0.0\",\n        \"sendPort\": 17341,\n        \"receivePort\": 17342,\n        \"backupHostAddress\": \"0.0.0.0\",\n        \"backupSendPort\": 17341,\n        \"backupReceivePort\": 17342,\n        \"twoWayEnabled\": false,\n        \"numericOnlyAckCode\": false,\n        \"auditProfile\": \"null\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28455327-85d9-4e3d-81fe-28634fb41884",
+          "name": "Delete Alarm Notification Profiles",
+          "request": {
+            "name": "Delete Alarm Notification Profiles",
+            "description": {
+              "content": "Delete a Alarm Notification Profiles resource by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile",
+                ":name",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85b22cc5-39b0-4f67-9342-1f6a1ccabdf6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eb728f5d-bed3-40f3-9b1b-2be7054183d0",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39b4cd1e-488f-4d2b-b318-62ccdc9568a3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0db87f20-6315-48bb-99af-1897f4b54cc8",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0914b370-0824-4350-aa60-b42f0123ec59",
+          "name": "Delete Alarm Notification Profiles (multiple)",
+          "request": {
+            "name": "Delete Alarm Notification Profiles (multiple)",
+            "description": {
+              "content": "Delete multiple Alarm Notification Profiles resources by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "delete",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4e2477c-f590-47c8-b4c4-69b758662192",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9ce964f6-1503-4d29-8f53-6d0c3af86ffb",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a770cd26-8dd4-45e2-88e4-c6378425ae5f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9862903e-186b-4c8c-a4a0-d984aaa9ce27",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "642204a2-cbca-4dff-8635-1bd7e48d41e1",
+          "name": "Get Alarm Notification Profiles Config",
+          "request": {
+            "name": "Get Alarm Notification Profiles Config",
+            "description": {
+              "content": "Retrieve configuration details about a specific Alarm Notification Profiles resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "find",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3595d94-aacb-47c0-b319-c6dfd29a0368",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3390b4bd-b13f-4f13-9d03-d17d9b04114c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b25daf35-f938-43cd-bd59-1ae739b9dc15",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a913cf18-36c8-4216-a016-9a2805097caf",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2890da4c-8f79-4003-a90c-9ed1a261dfb0",
+          "name": "List Alarm Notification Profiles Resources",
+          "request": {
+            "name": "List Alarm Notification Profiles Resources",
+            "description": {
+              "content": "List all Alarm Notification Profiles resources, in verbose format, including configuration, metrics, and health checks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "list",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6bcfb168-392e-4e19-9ea8-c92aaadf6b9b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d62e0725-a2b6-4f54-9573-186117a72fe9",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e156baee-61ac-4890-ae14-9b5c8fedd5ea",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8631d5b9-e29a-4e4c-bdf2-c32565565ec4",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2786948a-ee71-44a6-9abc-6f2de1c5f487",
+          "name": "Get Alarm Notification Profiles Names",
+          "request": {
+            "name": "Get Alarm Notification Profiles Names",
+            "description": {
+              "content": "List all Alarm Notification Profiles resources, including just names and enabled bit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "names",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1c2ccf6-993d-485c-bfee-b5c5f7d2714c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d23752f4-537f-456f-aee2-0630b7326df6",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2057e9ad-be51-48b6-912d-7dd48163671b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0c5abe5c-d6cb-49d6-b9ae-f9fd80c14404",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2522fe72-b323-4538-b792-d46a55251a66",
+          "name": "Rename Alarm Notification Profiles",
+          "request": {
+            "name": "Rename Alarm Notification Profiles",
+            "description": {
+              "content": "Change the name of a Alarm Notification Profiles resource, and update all references to it",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "rename",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to rename the resource in"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c008fe49-dd29-46de-8390-c237ac52a626",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "442f75da-a8b7-4b6c-b3d7-3ccd58d9ef07",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "716923fb-9eee-46eb-8d7b-5d7f1bae28b8",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d92afdd1-9ad2-4b40-8e1a-4ce7a2ea29b4",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c361bf7-eebb-4b8c-8ec2-a6b742e3e88f",
+          "name": "Describe 'Alarm Notification Profiles' Resource Type",
+          "request": {
+            "name": "Describe 'Alarm Notification Profiles' Resource Type",
+            "description": {
+              "content": "Describe the Alarm Notification Profiles resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "com.inductiveautomation.alarm-notification",
+                "alarm-notification-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a0184f3-b79f-44d3-a587-68b41415c378",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7b032a6-d3a9-4abb-8fd0-b7d46dbca3a2",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "efb9df02-966c-46cf-87af-26d781410dee",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f9d44845-90c5-45c0-9688-00732e3e8b7e",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.alarm-notification",
+                    "alarm-notification-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ca93e6c1-a9d5-4a91-b49d-11a9443bf8c0",
+    "name": "Ignition Gateway REST access-control alarm-notification-profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

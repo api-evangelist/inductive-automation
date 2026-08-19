@@ -1,0 +1,1762 @@
+{
+  "item": [
+    {
+      "id": "339aa006-9239-4ff2-b4e3-8140cff53c51",
+      "name": "module-settings",
+      "description": {
+        "content": "Module settings configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9106f9fc-e226-444b-90ae-fd60ea108e61",
+          "name": "Modify Module Settings",
+          "request": {
+            "name": "Modify Module Settings",
+            "description": {
+              "content": "Modify one or more Module Settings resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.eam",
+                "module-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a3c82ba-7cc3-47ac-bfac-01fae6606ecb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7340ab34-07b6-4ceb-a021-b5ae312a92e8",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "669b08cd-982e-4672-a382-9ce4d89b6074",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16aa2311-eca9-49b0-8091-2efeb94b7c47",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0f7e765-1d56-479f-8c81-44673754d463",
+          "name": "Create Module Settings",
+          "request": {
+            "name": "Create Module Settings",
+            "description": {
+              "content": "Create the Module Settings resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.eam",
+                "module-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4878e609-ef24-4036-a5bc-ee6d5554a74c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "801dc477-bab2-49d1-970a-b7cc2b96d33b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "942f2a39-fe55-4107-8478-a5ffb5dbeb56",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e46ddb1-b8bc-4150-9f0f-d175272e7838",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    },\n    \"backupConfig\": {\n      \"installMode\": \"<string>\",\n      \"controllerSettings\": {\n        \"eventTableName\": \"<string>\",\n        \"archiveLocationMode\": \"<string>\",\n        \"archivePath\": \"<string>\",\n        \"lowDiskThresholdMB\": \"<number>\",\n        \"datasource\": \"<string>\",\n        \"maxRetainedBackupCount\": \"<number>\",\n        \"backupRetentionAge\": \"<number>\",\n        \"backupRetentionTimeUnit\": \"<string>\"\n      },\n      \"agentSettings\": {\n        \"controllerServerId\": \"<string>\",\n        \"sendStatsInterval\": \"<number>\",\n        \"httpConnectTimeout\": \"<number>\",\n        \"httpReadTimeout\": \"<number>\",\n        \"forwardLeasedLicense\": \"<boolean>\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0841da89-2c01-4f1d-a5de-3eac8dd66a42",
+          "name": "Delete Module Settings",
+          "request": {
+            "name": "Delete Module Settings",
+            "description": {
+              "content": "Delete the Module Settings resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.eam",
+                "module-settings",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "420e8022-7328-45fa-a2fc-8e684dd7014a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d59ba1da-cbbb-43e5-b59d-87faf5e7baa4",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06cc84e3-8852-41bd-b2af-b4e047c38686",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bac84766-3afa-4eee-85ef-5167d653fd94",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.eam",
+                    "module-settings",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7d8b2c4-b816-4776-a816-45189a33c368",
+          "name": "Get Module Settings Config",
+          "request": {
+            "name": "Get Module Settings Config",
+            "description": {
+              "content": "Retrieve configuration details about the Module Settings resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "singleton",
+                "com.inductiveautomation.eam",
+                "module-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "defaultIfUndefined",
+                  "value": "<string>",
+                  "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+                },
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac891827-3b45-4ff7-84f6-23c53f4bc8a3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "652f7b4a-8145-48d5-b04a-054abf040d7b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "42599b24-078a-479f-8d57-ed2479da0fa6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "75fafd4e-fd03-47b8-9201-39a4f4f6e9e4",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4d91f894-b362-4ed7-ab9a-3eaea6c153c6",
+          "name": "Describe 'Module Settings' Resource Type",
+          "request": {
+            "name": "Describe 'Module Settings' Resource Type",
+            "description": {
+              "content": "Describe the Module Settings resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "com.inductiveautomation.eam",
+                "module-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ba036d7-1caa-4a6b-9fcb-8a94dfe16020",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a1ce751a-e495-4683-8b6c-7b781a76740d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f28b0464-b4ef-44fa-8e09-7feb4ee633d1",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "430b0bd2-315a-4153-a633-659f5347e609",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.eam",
+                    "module-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e8626622-fef1-4ee4-9d23-aed7eaa309ee",
+    "name": "Ignition Gateway REST access-control module-settings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

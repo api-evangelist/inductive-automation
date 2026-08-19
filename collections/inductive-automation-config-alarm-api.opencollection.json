@@ -1,0 +1,516 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control config-alarm API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "config-alarm",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete Holiday (multiple)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/delete/ignition/holiday",
+            "params": [
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete multiple Holiday resources by name"
+        },
+        {
+          "info": {
+            "name": "Delete Schedule (multiple)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/delete/ignition/schedule",
+            "params": [
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete multiple Schedule resources by name"
+        },
+        {
+          "info": {
+            "name": "Get Holiday Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/find/ignition/holiday/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about a specific Holiday resource"
+        },
+        {
+          "info": {
+            "name": "Get Schedule Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/find/ignition/schedule/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about a specific Schedule resource"
+        },
+        {
+          "info": {
+            "name": "Create Holiday",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/holiday",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Holiday resource"
+        },
+        {
+          "info": {
+            "name": "Modify Holiday",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/holiday",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more Holiday resources"
+        },
+        {
+          "info": {
+            "name": "Delete Holiday",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/holiday/:name/:signature",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              },
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+              }
+            ]
+          },
+          "docs": "Delete a Holiday resource by name"
+        },
+        {
+          "info": {
+            "name": "Create Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/schedule",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Schedule resource"
+        },
+        {
+          "info": {
+            "name": "Modify Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/schedule",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more Schedule resources"
+        },
+        {
+          "info": {
+            "name": "Delete Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/schedule/:name/:signature",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              },
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+              }
+            ]
+          },
+          "docs": "Delete a Schedule resource by name"
+        },
+        {
+          "info": {
+            "name": "List Holiday Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/list/ignition/holiday",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "List all Holiday resources, in verbose format, including configuration, metrics, and health checks."
+        },
+        {
+          "info": {
+            "name": "List Schedule Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/list/ignition/schedule",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "List all Schedule resources, in verbose format, including configuration, metrics, and health checks."
+        },
+        {
+          "info": {
+            "name": "Get Holiday Names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/names/ignition/holiday",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "List all Holiday resources, including just names and enabled bit"
+        },
+        {
+          "info": {
+            "name": "Get Schedule Names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/names/ignition/schedule",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "List all Schedule resources, including just names and enabled bit"
+        },
+        {
+          "info": {
+            "name": "Rename Holiday",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/rename/ignition/holiday/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to rename the resource in"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Change the name of a Holiday resource, and update all references to it"
+        },
+        {
+          "info": {
+            "name": "Rename Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/rename/ignition/schedule/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to rename the resource in"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Change the name of a Schedule resource, and update all references to it"
+        },
+        {
+          "info": {
+            "name": "Describe 'Holiday' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/ignition/holiday"
+          },
+          "docs": "Describe the Holiday resource type"
+        },
+        {
+          "info": {
+            "name": "Describe 'Schedule' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/ignition/schedule"
+          },
+          "docs": "Describe the Schedule resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

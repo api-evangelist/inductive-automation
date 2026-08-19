@@ -1,0 +1,3416 @@
+{
+  "item": [
+    {
+      "id": "bf75a874-716a-4f7e-a158-5dd12daca54e",
+      "name": "config-audit-profiles",
+      "description": {
+        "content": "Audit profile configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "79340833-bb28-4cca-b23f-75c33f5dbb9c",
+          "name": "Delete Audit Profiles (multiple)",
+          "request": {
+            "name": "Delete Audit Profiles (multiple)",
+            "description": {
+              "content": "Delete multiple Audit Profiles resources by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "delete",
+                "ignition",
+                "audit-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ee1215b0-9808-4eb6-a3eb-3bb3bd23818e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d2a998b-a787-4af4-9932-a9204167eb8e",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c558b3d9-bcc6-40ec-8741-1bcfd4a54e17",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35e1a103-b739-4b5c-b7a5-91f4ca9e59a6",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdf6f406-8beb-41cb-8f0a-12e72c54d382",
+          "name": "Get Audit Profiles Config",
+          "request": {
+            "name": "Get Audit Profiles Config",
+            "description": {
+              "content": "Retrieve configuration details about a specific Audit Profiles resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "find",
+                "ignition",
+                "audit-profile",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a621d0fd-255d-40ca-9828-e7c5c952b23f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a48613ba-ec5f-4b6d-8f23-0e2095617f5f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "44a00541-14b6-4a32-9703-aa20dd03c23f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34290c04-183d-4646-9b5c-86ed56188aff",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "857f49c0-1463-4e9b-8daa-7afc5ef48c0c",
+          "name": "Modify Audit Profiles",
+          "request": {
+            "name": "Modify Audit Profiles",
+            "description": {
+              "content": "Modify one or more Audit Profiles resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "audit-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3ccfa2d4-0b73-4309-b20b-f802b79a94b8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "017b192c-04de-4d79-acdf-8f8bb38d59c5",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31d4a6c8-4581-42fb-bff5-017fbaf6064b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "30dcc64f-aa22-4b2f-99e2-bdd295ebc789",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41a1fc6e-2b4d-422f-ac62-9299cf0af94a",
+          "name": "Create Audit Profiles",
+          "request": {
+            "name": "Create Audit Profiles",
+            "description": {
+              "content": "Create a new Audit Profiles resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "audit-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9cb18f9e-8adb-4341-b366-f651a1d94d44",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ab377403-df4f-4bcd-878c-519260b42c99",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb6a3b5a-cee3-484f-a5cf-fafa5a29ef89",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec91450a-95a5-440f-b9f6-c29dbad4374d",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    },\n    \"backupConfig\": {\n      \"profile\": {\n        \"type\": \"<string>\",\n        \"retentionDays\": 90\n      },\n      \"settings\": {\n        \"databaseName\": \"<string>\",\n        \"pruneEnabled\": false,\n        \"autoCreate\": true,\n        \"tableName\": \"audit_events\",\n        \"keyColumn\": \"audit_events_id\",\n        \"timestampColumn\": \"event_timestamp\",\n        \"actorColumn\": \"actor\",\n        \"actorHostColumn\": \"actor_host\",\n        \"actionColumn\": \"action\",\n        \"actionTargetColumn\": \"action_target\",\n        \"actionValueColumn\": \"action_value\",\n        \"statusCodeColumn\": \"status_code\",\n        \"originatingSystemColumn\": \"originating_system\",\n        \"originatingContextColumn\": \"originating_context\"\n      }\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b4d1280-721e-4177-8a87-c20aa5dbac2c",
+          "name": "Delete Audit Profiles",
+          "request": {
+            "name": "Delete Audit Profiles",
+            "description": {
+              "content": "Delete a Audit Profiles resource by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "audit-profile",
+                ":name",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "21942f5a-eb88-4cee-9309-09a30498ff40",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bbe5ffc8-8074-4a90-9f26-437ca23c4a3f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e2b1bf8-f0a6-46a3-87d5-42d479b03b48",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aaf0da8f-9a4a-4b83-8f73-456e032958ed",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "audit-profile",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d36339df-9dc9-453d-bbd4-b4fbe35a5d87",
+          "name": "List Audit Profiles Resources",
+          "request": {
+            "name": "List Audit Profiles Resources",
+            "description": {
+              "content": "List all Audit Profiles resources, in verbose format, including configuration, metrics, and health checks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "list",
+                "ignition",
+                "audit-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c5f43266-d3ce-4913-89e7-85f11377c2fd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe900868-cd4e-487f-b7e0-16551fc7df4a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f73543b7-e157-4b8b-b825-422dfd945dff",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d915771-798f-48a0-8975-5c000ea901b0",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3110982e-2fb3-4a43-9fbf-10c418c091a0",
+          "name": "Get Audit Profiles Names",
+          "request": {
+            "name": "Get Audit Profiles Names",
+            "description": {
+              "content": "List all Audit Profiles resources, including just names and enabled bit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "names",
+                "ignition",
+                "audit-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1c1442b-2e29-4978-bc45-748af3e1e805",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adc1717b-34de-44e2-9bd0-540bfbc40f5e",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "518078ed-4bd6-498a-b52e-6cb340c88994",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "10b2a4ea-3d91-432b-9158-7d7ea34bd9a2",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fea94ac-92cb-4ad6-bb3e-ff33a5a24b50",
+          "name": "Rename Audit Profiles",
+          "request": {
+            "name": "Rename Audit Profiles",
+            "description": {
+              "content": "Change the name of a Audit Profiles resource, and update all references to it",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "rename",
+                "ignition",
+                "audit-profile",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to rename the resource in"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "87b64b99-55c7-417b-9b34-1ddb6b111257",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e616d5b-5670-423e-b020-4524b0299c8f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "811872b6-6170-415d-8370-74154ca3833f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc659474-d259-482b-b52b-011c2a34348d",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "rename",
+                    "ignition",
+                    "audit-profile",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"references\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d4987f2-6992-4464-9408-5dd45f3e2ebd",
+          "name": "Describe 'Audit Profiles' Resource Type",
+          "request": {
+            "name": "Describe 'Audit Profiles' Resource Type",
+            "description": {
+              "content": "Describe the Audit Profiles resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "ignition",
+                "audit-profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10d3a43b-7c47-4bd2-a6d3-6036389d5f1f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42981365-dfd2-4e87-a492-1982f2796a48",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a3a17ef-a5c9-4590-bbd8-068022abc84d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40ae72a9-77bd-43ab-9530-6be2ba628d5a",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "audit-profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "97a300db-9724-42e7-bafe-8575259a3fd1",
+    "name": "Ignition Gateway REST access-control config-audit-profiles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

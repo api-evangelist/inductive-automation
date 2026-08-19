@@ -1,0 +1,312 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control config-management API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "config-management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Deployment Modes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/mode",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Returns a list of the available deployment modes"
+        },
+        {
+          "info": {
+            "name": "Create Deployment Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/mode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new deployment mode resource collection."
+        },
+        {
+          "info": {
+            "name": "Update Deployment Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/mode/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates or renames a deployment mode."
+        },
+        {
+          "info": {
+            "name": "Delete Deployment Mode",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/mode/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a deployment mode"
+        },
+        {
+          "info": {
+            "name": "Copy a Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/copy",
+            "params": [
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The resource type to copy, in the format 'moduleId/typeId'"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The signature of the resource to copy"
+              },
+              {
+                "name": "fromName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the resource to copy. (required for non-singleton types)"
+              },
+              {
+                "name": "toName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the copied resource. If omitted, the name will be the same as the original resource"
+              },
+              {
+                "name": "fromCollection",
+                "value": "",
+                "type": "query",
+                "description": "The resource collection to copy from. If omitted, will automatically use the active definition"
+              },
+              {
+                "name": "toCollection",
+                "value": "",
+                "type": "query",
+                "description": "The resource collection to copy to. If omitted, will use the same collection as the source resource"
+              }
+            ]
+          },
+          "docs": "Copies a resource from one collection to another, or to a resource with a new name"
+        },
+        {
+          "info": {
+            "name": "Move a Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/move",
+            "params": [
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The resource type to move, in the format 'moduleId/typeId'"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The signature of the resource to move"
+              },
+              {
+                "name": "fromName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the resource to move. (required for non-singleton types)"
+              },
+              {
+                "name": "fromCollection",
+                "value": "",
+                "type": "query",
+                "description": "The resource collection to move from. If omitted, will automatically use the active definition"
+              },
+              {
+                "name": "toCollection",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The resource collection to move to. If omitted, will use the same collection as the source resource"
+              }
+            ]
+          },
+          "docs": "Moves a resource to a different collection."
+        },
+        {
+          "info": {
+            "name": "Configuration Scan Lock Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan-lock/config"
+          },
+          "docs": "Returns information about the currently held scan-lock, if any."
+        },
+        {
+          "info": {
+            "name": "Acquire Configuration Scan Lock",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan-lock/config",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Prevents changes from being applied to the configuration system for a limited time. Time may be specified\nin the request body. While this lock is held, any other changes will be queued (block) until the\nlock is released. While locked, it is safe to make external changes to the filesystem.\nThe next call to `POST /data/api/v1/scan/config` will release the lock."
+        },
+        {
+          "info": {
+            "name": "Project Scan Lock Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan-lock/projects"
+          },
+          "docs": "Returns information about the currently held scan-lock, if any."
+        },
+        {
+          "info": {
+            "name": "Acquire Project Scan Lock",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan-lock/projects",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Prevents changes from being applied to the project system for a limited time. Time may be specified\nin the request body. While this lock is held, any other changes will be queued (block) until the\nlock is released. While locked, it is safe to make external changes to the filesystem.\nThe next call to `POST /data/api/v1/scan/projects` will release the lock."
+        },
+        {
+          "info": {
+            "name": "Configuration Scan Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan/config"
+          },
+          "docs": "Returns the status of the configuration filesystem scan."
+        },
+        {
+          "info": {
+            "name": "Request Configuration Scan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan/config"
+          },
+          "docs": "Prompts the system to scan the filesystem for configuration changes. Will also release the scan lock, if\ncurrently being held."
+        },
+        {
+          "info": {
+            "name": "Project Scan Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan/projects"
+          },
+          "docs": "Returns the status of the project filesystem scan."
+        },
+        {
+          "info": {
+            "name": "Request Project Scan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scan/projects"
+          },
+          "docs": "Prompts the system to scan the filesystem for project changes. Will also release the scan lock, if\ncurrently being held."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

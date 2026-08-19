@@ -1,0 +1,83 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control general API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "general",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/data/config/journal/edge/edit",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/config/journal/edge/edit",
+            "params": [
+              {
+                "name": "defaultIfUndefined",
+                "value": "",
+                "type": "query",
+                "description": "If true, and the configuration is undefined, returns the default edge journal configuration."
+              }
+            ]
+          },
+          "docs": "/data/config/journal/edge/edit"
+        },
+        {
+          "info": {
+            "name": "/data/sipcall-scripts/available-locales",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/sipcall-scripts/available-locales",
+            "params": [
+              {
+                "name": "includeVariants",
+                "value": "",
+                "type": "query",
+                "description": "Include local variants in the results"
+              }
+            ]
+          },
+          "docs": "/data/sipcall-scripts/available-locales"
+        },
+        {
+          "info": {
+            "name": "/data/config/journal/getRemoteJournalNames",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/config/journal/getRemoteJournalNames",
+            "params": [
+              {
+                "name": "gatewayName",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The name of the remote gateway to query for alarm journal names."
+              }
+            ]
+          },
+          "docs": "/data/config/journal/getRemoteJournalNames"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

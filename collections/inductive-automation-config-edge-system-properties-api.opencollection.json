@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control config-edge-system-properties API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "config-edge-system-properties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Edge System Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/edge-system-properties",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create the Edge System Properties resource"
+        },
+        {
+          "info": {
+            "name": "Modify Edge System Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/edge-system-properties",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more Edge System Properties resources"
+        },
+        {
+          "info": {
+            "name": "Delete Edge System Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/edge-system-properties/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              }
+            ]
+          },
+          "docs": "Delete the Edge System Properties resource."
+        },
+        {
+          "info": {
+            "name": "Get Edge System Properties Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/singleton/ignition/edge-system-properties",
+            "params": [
+              {
+                "name": "defaultIfUndefined",
+                "value": "",
+                "type": "query",
+                "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about the Edge System Properties resource"
+        },
+        {
+          "info": {
+            "name": "Describe 'Edge System Properties' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/ignition/edge-system-properties"
+          },
+          "docs": "Describe the Edge System Properties resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

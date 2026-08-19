@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control launcher API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "launcher",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download Launcher",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/launcher/download/:type/:os/:arch",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "os",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "arch",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Downloads a launcher for the given type, OS, and architecture"
+        },
+        {
+          "info": {
+            "name": "Retrieve Launcher information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/launcher/info/:type/:os/:arch",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "os",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "arch",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns launcher information for the given type, OS, and architecture if it exists"
+        },
+        {
+          "info": {
+            "name": "List all launchers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/launcher/list",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Returns a list of all launcher types"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

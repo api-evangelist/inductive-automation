@@ -1,0 +1,1983 @@
+{
+  "item": [
+    {
+      "id": "23b5ad76-e292-499e-96aa-a0f935d8f85c",
+      "name": "config-system-properties",
+      "description": {
+        "content": "System properties configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86d9d8a4-852b-4424-944e-4c9b5f8c2210",
+          "name": "Get Homepage Notes",
+          "request": {
+            "name": "Get Homepage Notes",
+            "description": {
+              "content": "Returns the homepage notes text from Gateway Properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "homepage-notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50801349-921e-4830-a650-2a9659aaec32",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "homepage-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9a1f112-608f-4e9d-aa26-d7a0d5d877a3",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "homepage-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cd7773d0-1348-4302-aa13-557d29fa9409",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "homepage-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4d1b6ffd-e2d6-4a9a-9b94-518064b43d07",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "homepage-notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57b61e7c-ab7c-41d7-a670-92e7d1e2845d",
+          "name": "Modify System Properties",
+          "request": {
+            "name": "Modify System Properties",
+            "description": {
+              "content": "Modify one or more System Properties resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "system-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "abf9ce04-cb3d-435f-9722-96020a9d8954",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "598c179b-aed2-4af0-875f-b9dea8e59d91",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7437495a-8c5d-4648-9986-2b643c6b08fd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "060e050b-5e78-4a43-ab6d-713566bd828e",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa0226a1-e394-4da4-8d8a-7aaee5910bdb",
+          "name": "Create System Properties",
+          "request": {
+            "name": "Create System Properties",
+            "description": {
+              "content": "Create the System Properties resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "system-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91248790-d9a0-4080-bcb8-8fb9c422f9d3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b0d3abf-81be-4c99-9cb2-329a7bdf1490",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1fa860a1-c082-43fc-8374-373e3104a1df",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "660c90b7-4413-4e44-8ca7-e43c9c12361e",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    },\n    \"backupConfig\": {\n      \"systemName\": \"<string>\",\n      \"designerRAM\": \"MB1024\",\n      \"disable3DPipeline\": true,\n      \"disableDirectDraw\": false,\n      \"useCondensedDialogFont\": false,\n      \"homepageUrl\": \"/app\",\n      \"homepageNotes\": \"Welcome to your Ignition Gateway. This customizable area is intended to capture the critical details you want to document for this Gateway. You might include information about the environment (production, testing, or development), key workflows, or maintenance schedules. It's also a great place to list instructions for your team, important reminders about system health, or details about your configuration that require regular review. Use this space to keep everyone informed and ensure smooth operations across the board.\",\n      \"clientFallbackEnabled\": false,\n      \"secondsBeforeFailover\": 60,\n      \"fallbackProjectName\": \"<string>\",\n      \"scheduledBackupsEnabled\": false,\n      \"scheduledBackupPath\": \"<string>\",\n      \"scheduledBackupTimes\": \"15 1 * * *\",\n      \"scheduledBackupRetentionCount\": 5,\n      \"scheduledBackupFilename\": \"${gatewayName}_Ignition-backup-${edition}${timestamp}.gwbk\",\n      \"automaticThreadDumpsEnabled\": false,\n      \"automaticThreadDumpsIntervalSeconds\": 60,\n      \"automaticThreadDumpsCpuThreshold\": 70,\n      \"automaticThreadDumpsCpuThresholdExceededDuration\": 10,\n      \"automaticThreadDumpsRetentionCount\": 50,\n      \"errorReportSMTPServer\": \"<string>\",\n      \"errorReportToEmail\": \"<string>\",\n      \"errorReportFromEmail\": \"<string>\",\n      \"errorReportUsername\": \"<string>\",\n      \"errorReportPassword\": {\n        \"type\": \"<string>\",\n        \"data\": {\n          \"protected\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"encrypted_key\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"iv\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ciphertext\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"tag\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      },\n      \"multicastEnabled\": true,\n      \"multicastIPAddr\": \"231.1.1.1\",\n      \"multicastSendPort\": \"4445\",\n      \"multicastReceivePort\": \"4446\",\n      \"multicastIntervalMillis\": \"5000\",\n      \"gatewayScriptingProject\": \"<string>\",\n      \"enableTagReferenceStore\": true,\n      \"scriptMessageEncoding\": \"Protobuf\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e636e553-d9a5-4586-8351-27bc37efee90",
+          "name": "Delete System Properties",
+          "request": {
+            "name": "Delete System Properties",
+            "description": {
+              "content": "Delete the System Properties resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "system-properties",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09945ab2-ba62-4c5e-b1ef-c3dcb6ba5269",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "678352d1-e7da-496b-b1ea-c2e91c1a13e4",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec0227ff-0a6e-4776-9aa5-863f79d2ede9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cf72626-8ed8-4bc0-b648-89cf4214341a",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "system-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47365b4e-34a3-46e9-bcf2-b57129811221",
+          "name": "Get System Properties Config",
+          "request": {
+            "name": "Get System Properties Config",
+            "description": {
+              "content": "Retrieve configuration details about the System Properties resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "singleton",
+                "ignition",
+                "system-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "defaultIfUndefined",
+                  "value": "<string>",
+                  "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+                },
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72460faa-b044-4e72-b9cb-21a6917a5c7f",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d05e7644-df58-4130-8710-2f7c0d1aa192",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "742d3e7d-164e-456a-8429-e11bd9c653bd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5005fa4d-732d-4710-a9c8-4ba768c1a644",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56cc3200-30aa-4bf5-a541-65c072fc6960",
+          "name": "Describe 'System Properties' Resource Type",
+          "request": {
+            "name": "Describe 'System Properties' Resource Type",
+            "description": {
+              "content": "Describe the System Properties resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "ignition",
+                "system-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1914635f-75b4-42e4-a407-a6b255a355f6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6de0bc82-dfc7-4176-bcca-d61f15a83bfb",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0abd4eba-937e-4522-a338-09f3f1b6050b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82ab495b-36ff-4d48-ad33-992c762b6311",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "system-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "84503642-70ed-4d78-9bab-305b2d6554d1",
+    "name": "Ignition Gateway REST access-control config-system-properties API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

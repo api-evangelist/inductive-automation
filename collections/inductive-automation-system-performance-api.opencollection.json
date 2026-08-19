@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control system-performance API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "system-performance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Historic Performance Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/systemPerformance/charts"
+          },
+          "docs": "Returns a list of historical gateway CPU and memory usage."
+        },
+        {
+          "info": {
+            "name": "Current Performance Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/systemPerformance/currentGauges"
+          },
+          "docs": "Returns an object containing the current gateway CPU and memory usage."
+        },
+        {
+          "info": {
+            "name": "System Clock Drift Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/systemPerformance/driftEvents"
+          },
+          "docs": "Returns a list of historical system clock drift events."
+        },
+        {
+          "info": {
+            "name": "Current System Clock Drift",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/systemPerformance/driftGauge"
+          },
+          "docs": "Returns the current drift of the system clock."
+        },
+        {
+          "info": {
+            "name": "Thread Execution Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/systemPerformance/threads"
+          },
+          "docs": "Return the current number of various types of threads running on the gateway."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

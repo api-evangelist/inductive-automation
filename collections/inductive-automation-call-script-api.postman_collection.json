@@ -1,0 +1,2960 @@
+{
+  "item": [
+    {
+      "id": "ed710f2b-0570-4c3a-a2f4-e4c225570799",
+      "name": "call-script",
+      "description": {
+        "content": "Script invocation endpoints",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "61660714-34e8-403b-8f1c-d04926fa6abb",
+          "name": "Modify Call Script",
+          "request": {
+            "name": "Modify Call Script",
+            "description": {
+              "content": "Modify one or more Call Script resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.sip-notification",
+                "script-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6328fb0c-32b4-4bc9-bc3f-4cbad0e23633",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc9ea730-2c0e-4fff-96f0-8f347e43af6e",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d306c15-e4e1-4624-8273-c05df869e06b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "62560baf-034b-4ad8-88f4-a29bc5545325",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d44f0ba5-df38-49e0-8a53-82373386a5c6",
+          "name": "Create Call Script",
+          "request": {
+            "name": "Create Call Script",
+            "description": {
+              "content": "Create a new Call Script resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.sip-notification",
+                "script-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d920ab2-a5ab-4ea8-8b97-71b0bafd28e5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37de9b4e-5c11-4e85-976a-851c4a63086f",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "89f8483a-37e6-4584-bde7-71e5d2ef0140",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d356d6c1-7ebd-4b8a-9deb-c36d21349a27",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    },\n    \"backupConfig\": {\n      \"locale\": \"en\",\n      \"voice\": \"null\",\n      \"greeting\": \"Hello, this is an Ignition alarm notification.\",\n      \"challenge\": \"Please enter your pin, followed by the pound sign.\",\n      \"nonChallenge\": \"Please press any key to continue.\",\n      \"invalidPin\": \"Invalid pin number.\",\n      \"summary\": \"There are %d events.\",\n      \"activeMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"clearMessage\": \"At {eventTime|hh:mm:ss}, alarm named {name} became {eventState} with a value of {eventValue}\",\n      \"option1\": \"Press 1 to acknowledge\",\n      \"ackConf\": \"Alarm has been acknowledged.\",\n      \"option2\": \"Press 2 to ignore\",\n      \"ignoreConf\": \"Alarm has been ignored.\",\n      \"option3\": \"Press 3 to repeat\",\n      \"closing\": \"Thank you, goodbye.\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9151773b-1aec-4d9e-a68d-77f1bf7e8c7d",
+          "name": "Delete Call Script",
+          "request": {
+            "name": "Delete Call Script",
+            "description": {
+              "content": "Delete a Call Script resource by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "com.inductiveautomation.sip-notification",
+                "script-settings",
+                ":name",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                },
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37fcab0e-8583-4691-8062-fd1d988678b9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6aa01d93-8024-410d-bd5d-2b87fb9ea240",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ae260a22-a1bd-49b2-ba60-248eb5ea6d85",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f075212-3151-4efe-9dd3-4d150b8edc98",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74bb774e-a513-46bc-82a6-722a561ab7be",
+          "name": "Delete Call Script (multiple)",
+          "request": {
+            "name": "Delete Call Script (multiple)",
+            "description": {
+              "content": "Delete multiple Call Script resources by name",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "delete",
+                "com.inductiveautomation.sip-notification",
+                "script-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "confirm",
+                  "value": "<string>",
+                  "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1425b2a9-4650-45f8-8c3f-6ef255753f53",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d286ef98-bd28-4ccd-a464-ee9e531c94fe",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0558e540-8eca-4c82-b61f-a8c69b317d8e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ded3bd6e-4336-4cf6-a426-a0d632785a33",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "delete",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "confirm",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f82aecb1-410f-4679-a25b-88ff23312412",
+          "name": "Get Call Script Config",
+          "request": {
+            "name": "Get Call Script Config",
+            "description": {
+              "content": "Retrieve configuration details about a specific Call Script resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "find",
+                "com.inductiveautomation.sip-notification",
+                "script-settings",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "044d3f01-f54c-419c-9745-2aa2327ead6c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01486691-cb52-4037-8bb2-c601e490ea9d",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d0200eea-0c72-407b-8945-15fcd4003570",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bfe05cbe-0939-4690-ab78-5aa5dddfd3f9",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "find",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed6171d6-cb15-4c95-91f4-3b283640e930",
+          "name": "List Call Script Resources",
+          "request": {
+            "name": "List Call Script Resources",
+            "description": {
+              "content": "List all Call Script resources, in verbose format, including configuration, metrics, and health checks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "list",
+                "com.inductiveautomation.sip-notification",
+                "script-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "730a45e9-d4cf-4187-8069-8e4fd40048cd",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c784b34-2286-4220-994c-f179c0eaee7a",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "834731fc-6024-4f81-b8d0-2f673bd9a4c2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "880aadae-5a80-42ff-8b6c-5cc6944093fe",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "list",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e44424e-a94c-44d8-913e-ba9ce6391c4f",
+          "name": "Get Call Script Names",
+          "request": {
+            "name": "Get Call Script Names",
+            "description": {
+              "content": "List all Call Script resources, including just names and enabled bit",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "names",
+                "com.inductiveautomation.sip-notification",
+                "script-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<string>",
+                  "description": "The maximum number of items to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<string>",
+                  "description": "The number of items to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "A search string to filter items by. Terms separated by whitespace."
+                },
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "<string>",
+                  "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57a49fdd-e437-4273-9b5f-40e24ced4423",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09009e3a-66f7-4038-9307-d8578ace772c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d87d9e74-62f8-4427-a498-7c24309d1f4c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "38068bee-6aac-4950-a72f-ce65a4052794",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "names",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key_0",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "315d9b24-c637-4550-a89d-a12a8ff35f97",
+          "name": "Describe 'Call Script' Resource Type",
+          "request": {
+            "name": "Describe 'Call Script' Resource Type",
+            "description": {
+              "content": "Describe the Call Script resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "com.inductiveautomation.sip-notification",
+                "script-settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "adcb732c-3b76-4ed4-afb1-ffa6803ebad4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5eb64921-118e-4b94-9a90-94cabc083501",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc108269-71d6-434d-86eb-5616d3b891a9",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06640069-4b70-4d7d-8e90-3768df8559c6",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "com.inductiveautomation.sip-notification",
+                    "script-settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c305a801-9801-4b6f-9745-91c2379bf18f",
+    "name": "Ignition Gateway REST access-control call-script API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control config-oauth2-client API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "config-oauth2-client",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete OAuth2 Client (multiple)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/delete/ignition/oauth2-client",
+            "params": [
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete multiple OAuth2 Client resources by name"
+        },
+        {
+          "info": {
+            "name": "Get OAuth2 Client Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/find/ignition/oauth2-client/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about a specific OAuth2 Client resource"
+        },
+        {
+          "info": {
+            "name": "Create OAuth2 Client",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/oauth2-client",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new OAuth2 Client resource"
+        },
+        {
+          "info": {
+            "name": "Modify OAuth2 Client",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/oauth2-client",
+            "params": [
+              {
+                "name": "allowInvalidReferences",
+                "value": "",
+                "type": "query",
+                "description": "If true, invalid references will be allowed. Default is false."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more OAuth2 Client resources"
+        },
+        {
+          "info": {
+            "name": "Delete OAuth2 Client",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/ignition/oauth2-client/:name/:signature",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              },
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the deletion, required when the operation would affect other resources."
+              }
+            ]
+          },
+          "docs": "Delete a OAuth2 Client resource by name"
+        },
+        {
+          "info": {
+            "name": "List OAuth2 Client Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/list/ignition/oauth2-client",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "List all OAuth2 Client resources, in verbose format, including configuration, metrics, and health checks."
+        },
+        {
+          "info": {
+            "name": "Get OAuth2 Client Names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/names/ignition/oauth2-client",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "List all OAuth2 Client resources, including just names and enabled bit"
+        },
+        {
+          "info": {
+            "name": "Rename OAuth2 Client",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/rename/ignition/oauth2-client/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to rename the resource in"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Change the name of a OAuth2 Client resource, and update all references to it"
+        },
+        {
+          "info": {
+            "name": "Describe 'OAuth2 Client' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/ignition/oauth2-client"
+          },
+          "docs": "Describe the OAuth2 Client resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

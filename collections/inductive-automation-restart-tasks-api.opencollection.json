@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control restart-tasks API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "restart-tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all required restart tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/restart-tasks/pending"
+          },
+          "docs": "Get a list of all tasks that are currently pending a gateway restart to complete."
+        },
+        {
+          "info": {
+            "name": "Restart the Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/restart-tasks/restart",
+            "params": [
+              {
+                "name": "confirm",
+                "value": "",
+                "type": "query",
+                "description": "Whether to confirm the restart."
+              }
+            ]
+          },
+          "docs": "Restarts the gateway. **This will be disruptive to anyone currently using this gateway.** Proceed with caution."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

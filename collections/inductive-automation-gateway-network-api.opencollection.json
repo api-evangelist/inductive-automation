@@ -1,0 +1,322 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control gateway-network API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "gateway-network",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Reset Incoming Connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network-incoming/reset/:resourceName",
+            "params": [
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Resets the incoming gateway network connection from a specified remote gateway."
+        },
+        {
+          "info": {
+            "name": "Toggle Approval",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network-incoming/toggleApproval/:remoteId/:approve",
+            "params": [
+              {
+                "name": "remoteId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "approve",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Toggles the approval status of an incoming connection."
+        },
+        {
+          "info": {
+            "name": "Reset Outgoing Connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network-outgoing/reset/:resourceName",
+            "params": [
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Resets the outgoing gateway network connection to a specified remote gateway."
+        },
+        {
+          "info": {
+            "name": "Cancel Task Queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/cancelQueueTasks/:serverId/:queueId",
+            "params": [
+              {
+                "name": "serverId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "queueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancels any tasks pending in the queue. Note that it does *not* cancel outstanding tasks that have already been dispatched to the gateway network connection."
+        },
+        {
+          "info": {
+            "name": "Gateway Network Crawler",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/crawler",
+            "params": [
+              {
+                "name": "ignoreCrawlerCache",
+                "value": "",
+                "type": "query",
+                "description": "Choose to ignore any existing cache information."
+              }
+            ]
+          },
+          "docs": "Runs the Gateway Network crawler to gather information on connected gateways."
+        },
+        {
+          "info": {
+            "name": "Get Remote Server Names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/diagnostics/getRemoteServerIds"
+          },
+          "docs": "Gets the names of all remote servers."
+        },
+        {
+          "info": {
+            "name": "Diagnostic Ping",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/diagnostics/testConnectionToServer/:serverId",
+            "params": [
+              {
+                "name": "serverId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Pings a remote server to test connectivity."
+        },
+        {
+          "info": {
+            "name": "Gateway Detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/gatewayDetail/:serverId",
+            "params": [
+              {
+                "name": "serverId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gateway network details about a specific Ignition server."
+        },
+        {
+          "info": {
+            "name": "Gateways",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/gateways",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Information about all gateways on the Gateway Network that this Ignition server is aware of."
+        },
+        {
+          "info": {
+            "name": "Gateway Network Live Diagram",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/livediagram"
+          },
+          "docs": "Information describing the relationships between all Ignition systems on this Gateway Network."
+        },
+        {
+          "info": {
+            "name": "Pause Task Queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/pauseQueue/:serverId/:queueId",
+            "params": [
+              {
+                "name": "serverId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "queueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Pauses any pending tasks on the given queue, which will cause it to reject any new messages."
+        },
+        {
+          "info": {
+            "name": "Remote Tag Providers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/remote-tag-providers/:serverId",
+            "params": [
+              {
+                "name": "serverId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "A list of remote tag providers names for the specified remote Gateway."
+        },
+        {
+          "info": {
+            "name": "Resume Task Queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/gateway-network/resumeQueue/:serverId/:queueId",
+            "params": [
+              {
+                "name": "serverId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "queueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Resumes a paused task queue."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

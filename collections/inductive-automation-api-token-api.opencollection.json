@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control api-token API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "api-token",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate API Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/api-token/generate"
+          },
+          "docs": "Generates a key and hash pair suitable for a new API Token. Clients should store the key somewhere safe, such as a password manager or secrets manager. The key is the credential that the client will include with each request for authentication purposes. The hash is a secure digest of the key and should be sent to Ignition as the token hash when creating a new API key. WARNING: it is strongly recommended to call this API using https, otherwise the security of the token could be compromised."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

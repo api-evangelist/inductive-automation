@@ -1,0 +1,419 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control user-management-scim API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "user-management-scim",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Group Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Groups",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint returns a list of group resources.\n"
+        },
+        {
+          "info": {
+            "name": "Create Group Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Groups",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint creates a new group resource.\n"
+        },
+        {
+          "info": {
+            "name": "Get Group Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Groups/:group-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint returns a group resource.\n"
+        },
+        {
+          "info": {
+            "name": "Modify Group Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Groups/:group-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint modifies a group resource.\n"
+        },
+        {
+          "info": {
+            "name": "Delete Group Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Groups/:group-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This path deletes a group resource.\n"
+        },
+        {
+          "info": {
+            "name": "List Resource Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/ResourceTypes",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is used to discover the types of resources available on a SCIM service provider (e.g., Users and Groups). Each resource type defines the endpoints, the core schema URI that defines the resource, and any supported schema extensions.\n"
+        },
+        {
+          "info": {
+            "name": "Get Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/ResourceTypes/:type-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "type-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is used to retrieve information about the specified resource type available on a SCIM service provider. The type-id path parameter must be set to the resource type of the resource to retrieve (e.g., 'User', 'Group').\n"
+        },
+        {
+          "info": {
+            "name": "List Schemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Schemas",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is used to retrieve information about resource schemas supported by a SCIM service provider.\n"
+        },
+        {
+          "info": {
+            "name": "Get Schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Schemas/:schema-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "schema-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is used to retrieve information about the specified resource schema supported by a SCIM service provider. The {schema-id} path parameter must be set to the schema URI of the schema to retrieve (e.g., 'urn:ietf:params:scim:schemas:core:2.0:User').\n"
+        },
+        {
+          "info": {
+            "name": "Get Service Provider Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/ServiceProviderConfig",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "The service provider configuration resource enables a service provider to discover SCIM specification features in a standardized form as well as provide additional implementation details to clients."
+        },
+        {
+          "info": {
+            "name": "List User Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Users",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This path returns a list of user resources.\n"
+        },
+        {
+          "info": {
+            "name": "Create User Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Users",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint creates a new user resource.\n"
+        },
+        {
+          "info": {
+            "name": "Get User Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Users/:user-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint returns a user resource.\n"
+        },
+        {
+          "info": {
+            "name": "Modify User Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Users/:user-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint modifies a user resource.\n"
+        },
+        {
+          "info": {
+            "name": "Delete User Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/scim/:profile-name/:scim-version/Users/:user-id",
+            "params": [
+              {
+                "name": "profile-name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scim-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint deletes a user resource.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

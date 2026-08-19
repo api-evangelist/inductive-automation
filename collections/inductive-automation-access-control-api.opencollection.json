@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "access-control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create OPC UA Access Control Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.opcua/access-control",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create the OPC UA Access Control Config resource"
+        },
+        {
+          "info": {
+            "name": "Modify OPC UA Access Control Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.opcua/access-control",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more OPC UA Access Control Config resources"
+        },
+        {
+          "info": {
+            "name": "Delete OPC UA Access Control Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.opcua/access-control/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              }
+            ]
+          },
+          "docs": "Delete the OPC UA Access Control Config resource."
+        },
+        {
+          "info": {
+            "name": "Get OPC UA Access Control Config Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/singleton/com.inductiveautomation.opcua/access-control",
+            "params": [
+              {
+                "name": "defaultIfUndefined",
+                "value": "",
+                "type": "query",
+                "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about the OPC UA Access Control Config resource"
+        },
+        {
+          "info": {
+            "name": "Describe 'OPC UA Access Control Config' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/com.inductiveautomation.opcua/access-control"
+          },
+          "docs": "Describe the OPC UA Access Control Config resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

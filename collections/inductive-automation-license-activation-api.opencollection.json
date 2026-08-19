@@ -1,0 +1,186 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control license-activation API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "license-activation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Activate License",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/activate/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Activate an Ignition license using the given license key. Upon successful activation,details of the license key and it's various attributes will be returned in the response."
+        },
+        {
+          "info": {
+            "name": "Check Gateway Online Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/is-online"
+          },
+          "docs": "Returns a boolean representing the online state of the gateway."
+        },
+        {
+          "info": {
+            "name": "Submit Offline Activation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/offline/activate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit an offline activation response, which can be retrieved by uploading an offline activation request to Inductive Automation's website."
+        },
+        {
+          "info": {
+            "name": "Generate Offline Activation Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/offline/activate-request/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Generate an offline activation request for the given license key."
+        },
+        {
+          "info": {
+            "name": "Unactivate License (Offline)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/offline/unactivate/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Unactivate an Ignition license in offline mode. This will download an unactivation notice (`unactivation_message.txt`) file that can be uploaded to Inductive Automation's website to complete the unactivation. Note: gateway will go into trial mode immediately , however the license grant will not be returned to your license until `unactivation_message.txt` is uploaded to Inductive Automation's website."
+        },
+        {
+          "info": {
+            "name": "Re-Activate License",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/reactivate/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Re-activate an Ignition license using the given license key. Upon successful re-activation, details of the license key and it's various attributes will be returned in the response."
+        },
+        {
+          "info": {
+            "name": "Unactivate License",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/activation/unactivate/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Unactivate an Ignition license."
+        },
+        {
+          "info": {
+            "name": "Leased Activation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/leased-activation/activate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a leased activation request"
+        },
+        {
+          "info": {
+            "name": "Test Leased License Service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/leased-activation/test-leased-license-server"
+          },
+          "docs": "Test the availability of the Inductive Automation Leased License Service."
+        },
+        {
+          "info": {
+            "name": "Leased Unactivation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/leased-activation/unactivate/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a leased activation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

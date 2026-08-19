@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control sfc-config API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "sfc-config",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create SFC Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.sfc/chart-settings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create the SFC Settings resource"
+        },
+        {
+          "info": {
+            "name": "Modify SFC Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.sfc/chart-settings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify one or more SFC Settings resources"
+        },
+        {
+          "info": {
+            "name": "Delete SFC Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/com.inductiveautomation.sfc/chart-settings/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to delete the resource from"
+              }
+            ]
+          },
+          "docs": "Delete the SFC Settings resource."
+        },
+        {
+          "info": {
+            "name": "Get SFC Settings Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/singleton/com.inductiveautomation.sfc/chart-settings",
+            "params": [
+              {
+                "name": "defaultIfUndefined",
+                "value": "",
+                "type": "query",
+                "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+              },
+              {
+                "name": "collection",
+                "value": "",
+                "type": "query",
+                "description": "The configuration collection to read the resource from"
+              }
+            ]
+          },
+          "docs": "Retrieve configuration details about the SFC Settings resource"
+        },
+        {
+          "info": {
+            "name": "Describe 'SFC Settings' Resource Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/resources/type/com.inductiveautomation.sfc/chart-settings"
+          },
+          "docs": "Describe the SFC Settings resource type"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

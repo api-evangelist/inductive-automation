@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control certificate-management API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "certificate-management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/:routeType/certificate",
+            "params": [
+              {
+                "name": "routeType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get the server or client certificate for the Ignition OPC-UA Module"
+        },
+        {
+          "info": {
+            "name": "Download Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/:routeType/certificate/download",
+            "params": [
+              {
+                "name": "routeType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download Certificate for the given type."
+        },
+        {
+          "info": {
+            "name": "Regenerate Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/:routeType/certificate/regenerate",
+            "params": [
+              {
+                "name": "routeType",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Regenerate a certificate of the given type."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

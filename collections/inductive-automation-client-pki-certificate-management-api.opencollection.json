@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control client-pki-certificate-management API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "client-pki-certificate-management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Trust Endpoint Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificate/trust",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Trust the certificate for the given endpoint."
+        },
+        {
+          "info": {
+            "name": "Get Rejected Client Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/rejected"
+          },
+          "docs": "A list of all rejected client certificates."
+        },
+        {
+          "info": {
+            "name": "Download Rejected Client Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/rejected/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download a rejected client certificate with the given signature."
+        },
+        {
+          "info": {
+            "name": "Delete Rejected Client Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/rejected/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a rejected client certificate with the given signature."
+        },
+        {
+          "info": {
+            "name": "Get Trusted Client Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/trusted"
+          },
+          "docs": "A list of all trusted client certificates."
+        },
+        {
+          "info": {
+            "name": "Upload Trusted Client Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/trusted"
+          },
+          "docs": "Upload a trusted client certificate."
+        },
+        {
+          "info": {
+            "name": "Download Trusted Client Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/trusted/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download a trusted client certificate with the given signature."
+        },
+        {
+          "info": {
+            "name": "Trust Rejected Client Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/trusted/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Trust a previously rejected client certificate with the given signature."
+        },
+        {
+          "info": {
+            "name": "Delete Trusted Client Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/opc-ua/api/v1/client/pki/certificates/trusted/:signature",
+            "params": [
+              {
+                "name": "signature",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a trusted client certificate with the given signature."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

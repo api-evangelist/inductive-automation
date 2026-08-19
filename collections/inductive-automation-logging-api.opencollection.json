@@ -1,0 +1,398 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control logging API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "logging",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs",
+            "params": [
+              {
+                "name": "properties",
+                "value": "",
+                "type": "query",
+                "description": "Filters logs using the logger's MDC filtering properties. Must be provided in pairs as a list of strings."
+              },
+              {
+                "name": "minLevel",
+                "value": "",
+                "type": "query",
+                "description": "Returned logs will be of level 'minLevel' and higher. One of [TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF]"
+              },
+              {
+                "name": "allowedMarkers",
+                "value": "",
+                "type": "query",
+                "description": "List of strings of allowed system event IDs."
+              },
+              {
+                "name": "startTime",
+                "value": "",
+                "type": "query",
+                "description": "Include results starting from this timestamp (Epoch millis)."
+              },
+              {
+                "name": "endTime",
+                "value": "",
+                "type": "query",
+                "description": "Include results up to this timestamp (Epoch millis)."
+              },
+              {
+                "name": "logger",
+                "value": "",
+                "type": "query",
+                "description": "Filter for particular loggers by name."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Returns logs from the Ignition Gateway. Accepts query parameters in order to filter the result set."
+        },
+        {
+          "info": {
+            "name": "Download Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/download"
+          },
+          "docs": "Download a copy of the system log from the internal database."
+        },
+        {
+          "info": {
+            "name": "Reset Logger Levels",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/levelreset"
+          },
+          "docs": "Resets all of the logger levels to their default level."
+        },
+        {
+          "info": {
+            "name": "Loggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/loggers",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Returns a list of all the loggers, their current levels, and the name of the context in which they live."
+        },
+        {
+          "info": {
+            "name": "Set Logger Level",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/loggers/:loggerName",
+            "params": [
+              {
+                "name": "loggerName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "level",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The desired logger level. One of [TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF]"
+              }
+            ]
+          },
+          "docs": "Set level for a specific logger."
+        },
+        {
+          "info": {
+            "name": "Monitoring Session Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/monitoring-session",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a logging session that allows setting of levels and filters that will expire when the web session does. Logging levels will be set back to their defaults once this session expires."
+        },
+        {
+          "info": {
+            "name": "Modify Logger Context Properties (Bulk)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/properties"
+          },
+          "docs": "Bulk operation for setting or removing LoggingFilter properties. In a POST body, supply a JSON\nobject in the following shapes. For adding new properties:\n```\n{\n    \"apply\": [\n        {\n            \"key\": \"route-group\",\n            \"vals\": [\n                \"config\"\n            ],\n            \"lvl\": \"DEBUG\"\n        }\n    ]\n}\n```\nTo remove properties:\n```\n{\n    \"remove\": [\n        {\n            \"key\": \"route-group\",\n            \"vals\": [\n                \"config\"\n            ],\n            \"lvl\": \""
+        },
+        {
+          "info": {
+            "name": "Applied Logger Context Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/properties/applied",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "A JSON Object containing the all currently applied logging properties."
+        },
+        {
+          "info": {
+            "name": "Registered Logger Context Properties",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/properties/registered",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "A JSON Object containing the all currently registered logging properties."
+        },
+        {
+          "info": {
+            "name": "Add Logger Context Property",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/properties/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The name of the logger property to set."
+              },
+              {
+                "name": "level",
+                "value": "",
+                "type": "query",
+                "description": "The level to set the specified logger. One of [TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF]"
+              }
+            ]
+          },
+          "docs": "Adds the specified property to the current logging context."
+        },
+        {
+          "info": {
+            "name": "Remove Logger Context Property",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/logs/properties/:key",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "value",
+                "value": "",
+                "type": "query",
+                "description": "The name of the logger property to set."
+              },
+              {
+                "name": "level",
+                "value": "",
+                "type": "query",
+                "description": "The level to set the specified logger. One of [TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF]"
+              }
+            ]
+          },
+          "docs": "Removes the specified property from the current logging context. If only the key is specified, all values under that key will be removed."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control license-status API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "license-status",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Licensing Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/licenses"
+          },
+          "docs": "Details about all existing licenses on this Ignition Gateway."
+        },
+        {
+          "info": {
+            "name": "Trial Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/trial"
+          },
+          "docs": "Information on this Ignition Gateway's Trial Period. `trialState` will be one of [AllInDemo, SomeInDemo, NoneInDemo]"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,252 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control modules API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "modules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "View Certificate Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/certificate",
+            "params": [
+              {
+                "name": "moduleId",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The ID of the module to get the certificate for."
+              }
+            ]
+          },
+          "docs": "Get details about the certificate for a given module."
+        },
+        {
+          "info": {
+            "name": "Accept Certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/certificate",
+            "params": [
+              {
+                "name": "moduleId",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The ID of the module to accept the certificate for."
+              }
+            ]
+          },
+          "docs": "Accept a module's certificate."
+        },
+        {
+          "info": {
+            "name": "View EULA",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/eula",
+            "params": [
+              {
+                "name": "moduleId",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The ID of the module to retrieve the EULA from."
+              }
+            ]
+          },
+          "docs": "Retrieves the given module's EULA as HTML."
+        },
+        {
+          "info": {
+            "name": "Accept EULA",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/eula",
+            "params": [
+              {
+                "name": "moduleId",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The ID of the module to accept the EULA for."
+              }
+            ]
+          },
+          "docs": "Accept a module's EULA"
+        },
+        {
+          "info": {
+            "name": "All Healthy Modules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/healthy",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "A list of all \"healthy\" (non-quarantined) modules on this Ignition Gateway."
+        },
+        {
+          "info": {
+            "name": "Install Module",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/install",
+            "params": [
+              {
+                "name": "moduleId",
+                "value": "",
+                "type": "query",
+                "description": "(Required) The moduleId of the module to be installed."
+              }
+            ]
+          },
+          "docs": "Completes installation of a previously uploaded module"
+        },
+        {
+          "info": {
+            "name": "Quarantined Modules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/quarantined",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of items to return."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The number of items to skip before returning results."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "The name of a field to sort by. Use `asc(fieldName)` or `desc(fieldName)`\nto specify the sort direction as ascending or descending, respectively.\n"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "A search string to filter items by. Terms separated by whitespace."
+              },
+              {
+                "name": "key_0",
+                "value": "",
+                "type": "query",
+                "description": "Filter items by field name, using format like `fieldName[op]=value` where `op` is one of: `eq` (equals), `ne` (not equals), `cn` (contains), `sw` (starts with), `ew` (ends with), `gt` (greater than), `gte` (greater than or equal), `lt` (less than), `lte` (less than or equal), `rgx` (regular expression)."
+              }
+            ]
+          },
+          "docs": "Information about all quarantined modules on this Ignition Gateway."
+        },
+        {
+          "info": {
+            "name": "Toggle Module State",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/toggle-state",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enable and disable Ignition Modules. Allows for operating on multiple modules per request."
+        },
+        {
+          "info": {
+            "name": "Uninstall Module[s]",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/uninstall"
+          },
+          "docs": "Configures module[s] to be uninstalled on the next Gateway restart."
+        },
+        {
+          "info": {
+            "name": "Upload Module",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/modules/upload",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query",
+                "description": "(Required) Used as the filename when the .modl is uploaded to the gateway's file system. This is arbitrary and will result in the module being stored at the module root location (typically `{ignition-install-dir}/user-lib/modules/{fileName}`)"
+              }
+            ]
+          },
+          "docs": "Upload an Ignition Module to prepare for installation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

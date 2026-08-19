@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ignition Gateway REST access-control gateway-backups API",
+    "version": "8.3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-Ignition-API-Token",
+      "value": "{{X-Ignition-API-Token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "gateway-backups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Gateway Backup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{gateway-host}:{port}/data/api/v1/backup",
+            "params": [
+              {
+                "name": "includePeerLocal",
+                "value": "",
+                "type": "query",
+                "description": "In a redundant gateway environment, set this parameter to 'true' to retrieve local-specific files from the\nredundant peer over the gateway network. These files will be stored in the .gwbk alongside the local-specific\nfiles from this gateway.\n"
+              }
+            ]
+          },
+          "docs": "Generates a *.gwbk file that can be downloaded."
+        },
+        {
+          "info": {
+            "name": "Restore Gateway Backup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://{gateway-host}:{port}/data/api/v1/backup",
+            "params": [
+              {
+                "name": "restoreDisabled",
+                "value": "",
+                "type": "query",
+                "description": "If `true`, all projects, database connections, OPC connections, etc will be disabled upon restart. Default is `false`"
+              },
+              {
+                "name": "disableTempProjectBackup",
+                "value": "",
+                "type": "query",
+                "description": "If `true`, the projects dir will not have a temporary backup created during the restore process. Default is `false`"
+              },
+              {
+                "name": "renameEnabled",
+                "value": "",
+                "type": "query",
+                "description": "If `true` will allow overriding the name of the gateway before it is restored. Default is `false`"
+              },
+              {
+                "name": "newName",
+                "value": "",
+                "type": "query",
+                "description": "The new gateway name to use on restore."
+              },
+              {
+                "name": "restoreLocal",
+                "value": "",
+                "type": "query",
+                "description": "Set this parameter to `true` to restore local-specific files on the gateway. These files will be restored to the\ndata/config/local folder and the data/config/resources/local folder. Note that existing files in these folders\nwill be deleted. Default value is `false`.\n"
+              }
+            ]
+          },
+          "docs": "Processes and restores a *.gwbk file on this gateway. The gateway will then be restarted."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

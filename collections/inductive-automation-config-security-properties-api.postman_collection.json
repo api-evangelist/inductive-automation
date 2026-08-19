@@ -1,0 +1,1762 @@
+{
+  "item": [
+    {
+      "id": "34e370b6-285b-4d86-87ab-8af6250f09bc",
+      "name": "config-security-properties",
+      "description": {
+        "content": "Security properties configuration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "02c8feb9-9b4a-4704-a24b-abdf0787d6ce",
+          "name": "Modify Security Properties",
+          "request": {
+            "name": "Modify Security Properties",
+            "description": {
+              "content": "Modify one or more Security Properties resources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "security-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "eba0c637-8b3a-4052-a879-e645ed395b70",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "648a92e9-4fcc-45f1-8698-52ea954c4e61",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2b84f3b3-29e0-480a-97f4-56f30abf3246",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6d3b549-a118-4aba-9e2f-be97107f9a77",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"signature\": \"<string>\",\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2eced8ab-f778-4dcf-a778-5b7dcf249b82",
+          "name": "Create Security Properties",
+          "request": {
+            "name": "Create Security Properties",
+            "description": {
+              "content": "Create the Security Properties resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "security-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "allowInvalidReferences",
+                  "value": "<string>",
+                  "description": "If true, invalid references will be allowed. Default is false."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d9e3dc81-a825-4bf4-b601-b6e5ff0e6b11",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a7314d7f-9484-4c17-8875-5875ca4d15af",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0d8b69ce-83f1-44d2-bea9-c596fcfa6bed",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4b38d5d0-dcb9-4f73-a392-633d942bd382",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "allowInvalidReferences",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  },\n  {\n    \"collection\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"description\": \"<string>\",\n    \"config\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    },\n    \"backupConfig\": {\n      \"systemAuthProfile\": \"<string>\",\n      \"systemIdentityProvider\": \"<string>\",\n      \"forceIdpAuth\": true,\n      \"designerAuthStrategy\": \"CLASSIC\",\n      \"designerAuthTokenInactivityTimeout\": 10,\n      \"designerAuthTokenTimeToLive\": 0,\n      \"designerRoleName\": \"Administrator\",\n      \"createProjectRoleName\": \"<string>\",\n      \"accessPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"readPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"writePermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"designerPermissions\": {\n        \"type\": \"AnyOf\",\n        \"securityLevels\": [\n          {\n            \"name\": \"Authenticated\",\n            \"children\": [\n              {\n                \"name\": \"Roles\",\n                \"children\": [\n                  {\n                    \"name\": \"Administrator\",\n                    \"children\": []\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"createProjectPermissions\": {\n        \"type\": \"AllOf\",\n        \"securityLevels\": []\n      },\n      \"userInactivityTimeout\": 10,\n      \"allowUserAdmin\": false,\n      \"allowDesignerSSO\": false,\n      \"gatewayAuditProfile\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "36468a98-e784-49d8-81a7-00464d96b929",
+          "name": "Delete Security Properties",
+          "request": {
+            "name": "Delete Security Properties",
+            "description": {
+              "content": "Delete the Security Properties resource.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "ignition",
+                "security-properties",
+                ":signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to delete the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signature",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a68ae312-c201-44cd-92c7-f784fba9c4cc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5c534b1-6e92-4527-b462-11589541095c",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2baa92d-bfdd-4706-b802-2464c1311bf6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a5792f85-7c65-44c9-99d5-586092a7829a",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "ignition",
+                    "security-properties",
+                    ":signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signature",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b4cf01d2-a56b-4ec0-9011-d09e79497ac9",
+          "name": "Get Security Properties Config",
+          "request": {
+            "name": "Get Security Properties Config",
+            "description": {
+              "content": "Retrieve configuration details about the Security Properties resource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "singleton",
+                "ignition",
+                "security-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "defaultIfUndefined",
+                  "value": "<string>",
+                  "description": "If true, return the default configuration if the resource is not defined. Otherwise, return 404. Default is false."
+                },
+                {
+                  "disabled": false,
+                  "key": "collection",
+                  "value": "<string>",
+                  "description": "The configuration collection to read the resource from"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10a4ee09-a82b-469b-98a4-2ef8947d1e1e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "038033ad-682e-4dbc-91a3-d53994f04b41",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eed32359-dcba-4371-b82e-ae3247d48924",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e7b294d-089e-413c-815c-d06302b23eec",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "singleton",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "defaultIfUndefined",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "collection",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22c5c67a-0949-4f3f-92ce-8c34a49bdddb",
+          "name": "Describe 'Security Properties' Resource Type",
+          "request": {
+            "name": "Describe 'Security Properties' Resource Type",
+            "description": {
+              "content": "Describe the Security Properties resource type",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "v1",
+                "resources",
+                "type",
+                "ignition",
+                "security-properties"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname or IP address of the Ignition Gateway",
+                  "type": "any",
+                  "value": "{{gateway-host}}",
+                  "key": "gateway-host"
+                },
+                {
+                  "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                  "type": "any",
+                  "value": "{{port}}",
+                  "key": "port"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2eaf00f-9c85-48b8-b9cf-5472a8b0a753",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e81a6df-1b6e-47a1-82fa-966c1594fe48",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aed8f923-edc0-4ee0-b7e6-46a5c674007d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fcdac6eb-7e5b-4fb7-a15e-db8ec9459f05",
+              "name": "Not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "v1",
+                    "resources",
+                    "type",
+                    "ignition",
+                    "security-properties"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname or IP address of the Ignition Gateway",
+                      "type": "any",
+                      "value": "{{gateway-host}}",
+                      "key": "gateway-host"
+                    },
+                    {
+                      "description": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+                      "type": "any",
+                      "value": "{{port}}",
+                      "key": "port"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Ignition-API-Token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname or IP address of the Ignition Gateway",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "gateway-host"
+    },
+    {
+      "description": {
+        "content": "Gateway HTTP port (default 8088; HTTPS default 8043)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "8088",
+      "key": "port"
+    },
+    {
+      "type": "string",
+      "value": "http://{{gateway-host}}:{{port}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Ignition-API-Token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7b0b8e40-f1fc-4c00-84a4-b88214fd7e0a",
+    "name": "Ignition Gateway REST access-control config-security-properties API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.\n\nContact Support:\n Name: Inductive Automation Support",
+      "type": "text/plain"
+    }
+  }
+}
