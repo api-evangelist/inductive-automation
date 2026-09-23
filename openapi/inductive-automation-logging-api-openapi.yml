@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control logging API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Logging API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: logging
+- name: Logging
   description: Logging configuration
 paths:
   /data/api/v1/logs:
@@ -40,7 +40,7 @@ paths:
       summary: Logs
       operationId: logs-get
       tags:
-      - logging
+      - Logging
       description: Returns logs from the Ignition Gateway. Accepts query parameters in order to filter the result set.
       parameters:
       - name: properties
@@ -131,7 +131,7 @@ paths:
       summary: Download Logs
       operationId: download-logs-get
       tags:
-      - logging
+      - Logging
       description: Download a copy of the system log from the internal database.
       responses:
         '200':
@@ -151,7 +151,7 @@ paths:
       summary: Reset Logger Levels
       operationId: reset-logger-levels-post
       tags:
-      - logging
+      - Logging
       description: Resets all of the logger levels to their default level.
       responses:
         '200':
@@ -171,7 +171,7 @@ paths:
       summary: Loggers
       operationId: loggers-get
       tags:
-      - logging
+      - Logging
       description: Returns a list of all the loggers, their current levels, and the name of the context in which they live.
       parameters:
       - name: limit
@@ -226,7 +226,7 @@ paths:
       summary: Set Logger Level
       operationId: set-logger-level-post
       tags:
-      - logging
+      - Logging
       description: Set level for a specific logger.
       parameters:
       - name: loggerName
@@ -258,7 +258,7 @@ paths:
       summary: Monitoring Session Logs
       operationId: monitoring-session-logs-post
       tags:
-      - logging
+      - Logging
       description: Creates a logging session that allows setting of levels and filters that will expire when the web session does. Logging levels will be set back to their defaults once this session expires.
       parameters:
       - name: limit
@@ -325,8 +325,56 @@ paths:
       summary: Modify Logger Context Properties (Bulk)
       operationId: modify-logger-context-properties-(bulk)-post
       tags:
-      - logging
-      description: "Bulk operation for setting or removing LoggingFilter properties. In a POST body, supply a JSON\nobject in the following shapes. For adding new properties:\n```\n{\n    \"apply\": [\n        {\n            \"key\": \"route-group\",\n            \"vals\": [\n                \"config\"\n            ],\n            \"lvl\": \"DEBUG\"\n        }\n    ]\n}\n```\nTo remove properties:\n```\n{\n    \"remove\": [\n        {\n            \"key\": \"route-group\",\n            \"vals\": [\n                \"config\"\n            ],\n            \"lvl\": \""
+      - Logging
+      description: 'Bulk operation for setting or removing LoggingFilter properties. In a POST body, supply a JSON
+
+        object in the following shapes. For adding new properties:
+
+        ```
+
+        {
+
+        "apply": [
+
+        {
+
+        "key": "route-group",
+
+        "vals": [
+
+        "config"
+
+        ],
+
+        "lvl": "DEBUG"
+
+        }
+
+        ]
+
+        }
+
+        ```
+
+        To remove properties:
+
+        ```
+
+        {
+
+        "remove": [
+
+        {
+
+        "key": "route-group",
+
+        "vals": [
+
+        "config"
+
+        ],
+
+        "lvl": "'
       responses:
         '200':
           description: Successful response
@@ -345,7 +393,7 @@ paths:
       summary: Applied Logger Context Properties
       operationId: applied-logger-context-properties-get
       tags:
-      - logging
+      - Logging
       description: A JSON Object containing the all currently applied logging properties.
       parameters:
       - name: limit
@@ -400,7 +448,7 @@ paths:
       summary: Registered Logger Context Properties
       operationId: registered-logger-context-properties-get
       tags:
-      - logging
+      - Logging
       description: A JSON Object containing the all currently registered logging properties.
       parameters:
       - name: limit
@@ -455,7 +503,7 @@ paths:
       summary: Add Logger Context Property
       operationId: add-logger-context-property-post
       tags:
-      - logging
+      - Logging
       description: Adds the specified property to the current logging context.
       parameters:
       - name: key
@@ -492,7 +540,7 @@ paths:
       summary: Remove Logger Context Property
       operationId: remove-logger-context-property-delete
       tags:
-      - logging
+      - Logging
       description: Removes the specified property from the current logging context. If only the key is specified, all values under that key will be removed.
       parameters:
       - name: key

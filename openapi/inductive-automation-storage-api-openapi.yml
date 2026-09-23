@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control storage API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Storage API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: storage
+- name: Storage
   description: Storage configuration
 paths:
   /data/eam/api/v1/eam-tasks/delete-temp-folder:
@@ -40,7 +40,7 @@ paths:
       summary: Delete temp folder
       operationId: delete-temp-folder-delete
       tags:
-      - storage
+      - Storage
       description: Deletes the folder containing the previously uploaded files for an EAM task
       parameters:
       - name: folderPath
@@ -67,7 +67,7 @@ paths:
       summary: Retrieve module certificate
       operationId: retrieve-module-certificate-get
       tags:
-      - storage
+      - Storage
       description: Retrieves module certificate information from an uploaded .modl file
       parameters:
       - name: filePath
@@ -93,7 +93,7 @@ paths:
       summary: Accept module certificate
       operationId: accept-module-certificate-post
       tags:
-      - storage
+      - Storage
       description: Adds a resource to the controller indicating that the user has accepted a module certificate.
       parameters:
       - name: filePath
@@ -120,7 +120,7 @@ paths:
       summary: Retrieve module EULA
       operationId: retrieve-module-eula-get
       tags:
-      - storage
+      - Storage
       description: Retrieves a module EULA from an uploaded .modl file. The EULA is returned as HTML.
       parameters:
       - name: filePath
@@ -146,7 +146,7 @@ paths:
       summary: Accept module EULA
       operationId: accept-module-eula-post
       tags:
-      - storage
+      - Storage
       description: Adds a resource to the controller indicating that the user has accepted a module EULA.
       parameters:
       - name: filePath
@@ -179,7 +179,7 @@ paths:
       summary: Upload .gwbk file
       operationId: upload-.gwbk-file-post
       tags:
-      - storage
+      - Storage
       description: Uploads a .gwbk for temporary storage on the controller. The returned gwbk path is relative to the EAM system temp folder.
       responses:
         '200':
@@ -199,7 +199,7 @@ paths:
       summary: Upload .modl file
       operationId: upload-.modl-file-post
       tags:
-      - storage
+      - Storage
       description: Uploads a .modl file for temporary storage on the controller. The returned modlFile path is relative to the EAM system temp folder.
       parameters:
       - name: filename
@@ -226,7 +226,7 @@ paths:
       summary: Store module file from archive
       operationId: store-module-file-from-archive-post
       tags:
-      - storage
+      - Storage
       description: Adds an archived module file to temporary storage on the controller. The returned modlFile path is relative to the EAM system temp folder.
       parameters:
       - name: filePath
@@ -253,7 +253,7 @@ paths:
       summary: Upload upgrade zip
       operationId: upload-upgrade-zip-post
       tags:
-      - storage
+      - Storage
       description: Upload an Ignition upgrade.zip for temporary storage on the controller. The returned filePath holds the path to the upgrade.zip and is relative to the EAM system temp folder.
       responses:
         '200':
@@ -273,7 +273,7 @@ paths:
       summary: Retrieve archived backups
       operationId: retrieve-archived-backups-get
       tags:
-      - storage
+      - Storage
       description: Retrieves a list of gateway backups for the specified agents. Returned file paths are relative to the EAM archive folder.
       parameters:
       - name: serverids
@@ -300,7 +300,7 @@ paths:
       summary: Retrieve archived modules
       operationId: retrieve-archived-modules-get
       tags:
-      - storage
+      - Storage
       description: Retrieves a list of modules archived on the EAM controller. Returned module file paths are relative to the EAM archive folder.
       responses:
         '200':

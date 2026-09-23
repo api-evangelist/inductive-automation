@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control user-management-scim API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST User Management SCIM API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -41,9 +41,7 @@ paths:
       operationId: list-group-resources-get
       tags:
       - user-management-scim
-      description: 'This endpoint returns a list of group resources.
-
-        '
+      description: This endpoint returns a list of group resources.
       parameters:
       - name: profile-name
         in: path
@@ -73,9 +71,7 @@ paths:
       operationId: create-group-resource-post
       tags:
       - user-management-scim
-      description: 'This endpoint creates a new group resource.
-
-        '
+      description: This endpoint creates a new group resource.
       parameters:
       - name: profile-name
         in: path
@@ -131,9 +127,7 @@ paths:
       operationId: get-group-resource-get
       tags:
       - user-management-scim
-      description: 'This endpoint returns a group resource.
-
-        '
+      description: This endpoint returns a group resource.
       parameters:
       - name: profile-name
         in: path
@@ -168,9 +162,7 @@ paths:
       operationId: modify-group-resource-put
       tags:
       - user-management-scim
-      description: 'This endpoint modifies a group resource.
-
-        '
+      description: This endpoint modifies a group resource.
       parameters:
       - name: profile-name
         in: path
@@ -205,9 +197,7 @@ paths:
       operationId: delete-group-resource-delete
       tags:
       - user-management-scim
-      description: 'This path deletes a group resource.
-
-        '
+      description: This path deletes a group resource.
       parameters:
       - name: profile-name
         in: path
@@ -243,9 +233,7 @@ paths:
       operationId: list-resource-types-get
       tags:
       - user-management-scim
-      description: 'This endpoint is used to discover the types of resources available on a SCIM service provider (e.g., Users and Groups). Each resource type defines the endpoints, the core schema URI that defines the resource, and any supported schema extensions.
-
-        '
+      description: This endpoint is used to discover the types of resources available on a SCIM service provider (e.g., Users and Groups). Each resource type defines the endpoints, the core schema URI that defines the resource, and any supported schema extensions.
       parameters:
       - name: profile-name
         in: path
@@ -276,9 +264,7 @@ paths:
       operationId: get-resource-type-get
       tags:
       - user-management-scim
-      description: 'This endpoint is used to retrieve information about the specified resource type available on a SCIM service provider. The type-id path parameter must be set to the resource type of the resource to retrieve (e.g., ''User'', ''Group'').
-
-        '
+      description: This endpoint is used to retrieve information about the specified resource type available on a SCIM service provider. The type-id path parameter must be set to the resource type of the resource to retrieve (e.g., 'User', 'Group').
       parameters:
       - name: profile-name
         in: path
@@ -314,9 +300,7 @@ paths:
       operationId: list-schemas-get
       tags:
       - user-management-scim
-      description: 'This endpoint is used to retrieve information about resource schemas supported by a SCIM service provider.
-
-        '
+      description: This endpoint is used to retrieve information about resource schemas supported by a SCIM service provider.
       parameters:
       - name: profile-name
         in: path
@@ -347,9 +331,7 @@ paths:
       operationId: get-schema-get
       tags:
       - user-management-scim
-      description: 'This endpoint is used to retrieve information about the specified resource schema supported by a SCIM service provider. The {schema-id} path parameter must be set to the schema URI of the schema to retrieve (e.g., ''urn:ietf:params:scim:schemas:core:2.0:User'').
-
-        '
+      description: This endpoint is used to retrieve information about the specified resource schema supported by a SCIM service provider. The {schema-id} path parameter must be set to the schema URI of the schema to retrieve (e.g., 'urn:ietf:params:scim:schemas:core:2.0:User').
       parameters:
       - name: profile-name
         in: path
@@ -416,9 +398,7 @@ paths:
       operationId: list-user-resources-get
       tags:
       - user-management-scim
-      description: 'This path returns a list of user resources.
-
-        '
+      description: This path returns a list of user resources.
       parameters:
       - name: profile-name
         in: path
@@ -448,9 +428,7 @@ paths:
       operationId: create-user-resource-post
       tags:
       - user-management-scim
-      description: 'This endpoint creates a new user resource.
-
-        '
+      description: This endpoint creates a new user resource.
       parameters:
       - name: profile-name
         in: path
@@ -525,9 +503,7 @@ paths:
       operationId: get-user-resource-get
       tags:
       - user-management-scim
-      description: 'This endpoint returns a user resource.
-
-        '
+      description: This endpoint returns a user resource.
       parameters:
       - name: profile-name
         in: path
@@ -562,9 +538,7 @@ paths:
       operationId: modify-user-resource-put
       tags:
       - user-management-scim
-      description: 'This endpoint modifies a user resource.
-
-        '
+      description: This endpoint modifies a user resource.
       parameters:
       - name: profile-name
         in: path
@@ -599,9 +573,7 @@ paths:
       operationId: delete-user-resource-delete
       tags:
       - user-management-scim
-      description: 'This endpoint deletes a user resource.
-
-        '
+      description: This endpoint deletes a user resource.
       parameters:
       - name: profile-name
         in: path

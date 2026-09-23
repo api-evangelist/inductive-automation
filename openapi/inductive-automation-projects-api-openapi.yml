@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control projects API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Projects API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: projects
+- name: Projects
   description: Ignition project management
 paths:
   /data/api/v1/projects:
@@ -40,7 +40,7 @@ paths:
       summary: Create Project
       operationId: create-project-post
       tags:
-      - projects
+      - Projects
       description: Create a new project on this Ignition Gateway.
       requestBody:
         content:
@@ -75,7 +75,7 @@ paths:
       summary: Copy Project
       operationId: copy-project-post
       tags:
-      - projects
+      - Projects
       description: Create a copy of a project on this Ignition Gateway.
       requestBody:
         content:
@@ -103,7 +103,7 @@ paths:
       summary: Export Project
       operationId: export-project-get
       tags:
-      - projects
+      - Projects
       description: Exports the given project as a zip archive.
       parameters:
       - name: name
@@ -129,7 +129,7 @@ paths:
       summary: Project Details
       operationId: project-details-get
       tags:
-      - projects
+      - Projects
       description: Get information about a specific Ignition Project.
       parameters:
       - name: name
@@ -155,7 +155,7 @@ paths:
       summary: Import Project
       operationId: import-project-post
       tags:
-      - projects
+      - Projects
       description: Import a project into this Ignition Gateway.
       parameters:
       - name: name
@@ -187,7 +187,7 @@ paths:
       summary: List All Projects
       operationId: list-all-projects-get
       tags:
-      - projects
+      - Projects
       description: List all runnable project on this Ignition Gateway.
       parameters:
       - name: limit
@@ -242,7 +242,7 @@ paths:
       summary: List All Project Names
       operationId: list-all-project-names-get
       tags:
-      - projects
+      - Projects
       description: List names of all projects on this Ignition Gateway.
       parameters:
       - name: limit
@@ -297,7 +297,7 @@ paths:
       summary: List All Valid Parent Projects
       operationId: list-all-valid-parent-projects-get
       tags:
-      - projects
+      - Projects
       description: List names of all valid parent projects on this Ignition Gateway.
       parameters:
       - name: limit
@@ -352,7 +352,7 @@ paths:
       summary: List Valid Parent Project Names For Project
       operationId: list-valid-parent-project-names-for-project-get
       tags:
-      - projects
+      - Projects
       description: List names of valid parent projects for a given project on this Ignition Gateway.
       parameters:
       - name: name
@@ -412,7 +412,7 @@ paths:
       summary: Rename Project
       operationId: rename-project-post
       tags:
-      - projects
+      - Projects
       description: Rename a project on this Ignition Gateway.
       parameters:
       - name: name
@@ -445,7 +445,7 @@ paths:
       summary: Modify Project
       operationId: modify-project-put
       tags:
-      - projects
+      - Projects
       description: Modify an Ignition Project.
       parameters:
       - name: name
@@ -484,7 +484,7 @@ paths:
       summary: Delete an Ignition Project
       operationId: delete-an-ignition-project-delete
       tags:
-      - projects
+      - Projects
       description: Delete a project from this Ignition Gateway.
       parameters:
       - name: name

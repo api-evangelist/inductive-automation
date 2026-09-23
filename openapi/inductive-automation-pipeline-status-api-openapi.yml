@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control pipeline-status API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Pipeline Status API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: pipeline-status
+- name: Pipeline Status
   description: Alarm notification pipeline status
 paths:
   /data/alarm-notification/api/v1/pipeline:
@@ -40,7 +40,7 @@ paths:
       summary: Alarm Pipeline Detail
       operationId: alarm-pipeline-detail-get
       tags:
-      - pipeline-status
+      - Pipeline Status
       description: Information about a single alarming pipeline
       parameters:
       - name: path
@@ -100,7 +100,7 @@ paths:
       summary: Cancel Alarming Pipeline
       operationId: cancel-alarming-pipeline-delete
       tags:
-      - pipeline-status
+      - Pipeline Status
       description: Cancel an alarming pipeline for the given alarm event ID.
       responses:
         '200':
@@ -120,7 +120,7 @@ paths:
       summary: Alarm Pipeline Overview
       operationId: alarm-pipeline-overview-get
       tags:
-      - pipeline-status
+      - Pipeline Status
       description: Information about the alarming pipelines
       parameters:
       - name: limit

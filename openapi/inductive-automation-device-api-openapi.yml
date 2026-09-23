@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control device API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Device API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: device
+- name: Device
   description: Device connection management
 paths:
   /data/api/v1/resources/com.inductiveautomation.opcua/device:
@@ -40,7 +40,7 @@ paths:
       summary: Modify Devices
       operationId: modify-devices-put
       tags:
-      - device
+      - Device
       description: Modify one or more Devices resources
       parameters:
       - name: allowInvalidReferences
@@ -210,7 +210,7 @@ paths:
       summary: Create Devices
       operationId: create-devices-post
       tags:
-      - device
+      - Device
       description: Create a new Devices resource
       parameters:
       - name: allowInvalidReferences
@@ -379,7 +379,7 @@ paths:
       summary: Delete Devices
       operationId: delete-devices-delete
       tags:
-      - device
+      - Device
       description: Delete a Devices resource by name
       parameters:
       - name: name
@@ -422,7 +422,7 @@ paths:
       summary: Get Devices Data File
       operationId: get-devices-data-file-get
       tags:
-      - device
+      - Device
       description: Retrieve a data file from a specific Devices resource
       parameters:
       - name: name
@@ -458,7 +458,7 @@ paths:
       summary: Update Devices Data File
       operationId: update-devices-data-file-put
       tags:
-      - device
+      - Device
       description: Update (overwrite) a data file for a named Devices resource
       parameters:
       - name: name
@@ -506,7 +506,7 @@ paths:
       summary: Delete Devices Data File
       operationId: delete-devices-data-file-delete
       tags:
-      - device
+      - Device
       description: Delete a data file for a named Devices resource
       parameters:
       - name: name
@@ -549,7 +549,7 @@ paths:
       summary: Delete Devices (multiple)
       operationId: delete-devices-(multiple)-post
       tags:
-      - device
+      - Device
       description: Delete multiple Devices resources by name
       parameters:
       - name: confirm
@@ -588,7 +588,7 @@ paths:
       summary: Get Devices Config
       operationId: get-devices-config-get
       tags:
-      - device
+      - Device
       description: Retrieve configuration details about a specific Devices resource
       parameters:
       - name: name
@@ -620,7 +620,7 @@ paths:
       summary: List Devices Resources
       operationId: list-devices-resources-get
       tags:
-      - device
+      - Device
       description: List all Devices resources, in verbose format, including configuration, metrics, and health checks.
       parameters:
       - name: limit
@@ -675,7 +675,7 @@ paths:
       summary: Get Devices Names
       operationId: get-devices-names-get
       tags:
-      - device
+      - Device
       description: List all Devices resources, including just names and enabled bit
       parameters:
       - name: limit
@@ -730,7 +730,7 @@ paths:
       summary: Rename Devices
       operationId: rename-devices-post
       tags:
-      - device
+      - Device
       description: Change the name of a Devices resource, and update all references to it
       parameters:
       - name: name
@@ -770,7 +770,7 @@ paths:
       summary: Describe 'Devices' Resource Type
       operationId: describe-'devices'-resource-type-get
       tags:
-      - device
+      - Device
       description: Describe the Devices resource type
       responses:
         '200':

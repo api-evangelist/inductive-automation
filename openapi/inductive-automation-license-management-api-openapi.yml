@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control license-management API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST License Management API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: license-management
+- name: License Management
   description: License management operations
 paths:
   /data/api/v1/resources/com.inductiveautomation.eam/hw-license-management:
@@ -40,7 +40,7 @@ paths:
       summary: Modify Hardware License
       operationId: modify-hardware-license-put
       tags:
-      - license-management
+      - License Management
       description: Modify one or more Hardware License resources
       parameters:
       - name: allowInvalidReferences
@@ -94,7 +94,7 @@ paths:
       summary: Create Hardware License
       operationId: create-hardware-license-post
       tags:
-      - license-management
+      - License Management
       description: Create a new Hardware License resource
       parameters:
       - name: allowInvalidReferences
@@ -147,7 +147,7 @@ paths:
       summary: Delete Hardware License
       operationId: delete-hardware-license-delete
       tags:
-      - license-management
+      - License Management
       description: Delete a Hardware License resource by name
       parameters:
       - name: name
@@ -190,7 +190,7 @@ paths:
       summary: Modify Leased License
       operationId: modify-leased-license-put
       tags:
-      - license-management
+      - License Management
       description: Modify one or more Leased License resources
       parameters:
       - name: allowInvalidReferences
@@ -244,7 +244,7 @@ paths:
       summary: Create Leased License
       operationId: create-leased-license-post
       tags:
-      - license-management
+      - License Management
       description: Create a new Leased License resource
       parameters:
       - name: allowInvalidReferences
@@ -297,7 +297,7 @@ paths:
       summary: Delete Leased License
       operationId: delete-leased-license-delete
       tags:
-      - license-management
+      - License Management
       description: Delete a Leased License resource by name
       parameters:
       - name: name
@@ -340,7 +340,7 @@ paths:
       summary: Delete Hardware License (multiple)
       operationId: delete-hardware-license-(multiple)-post
       tags:
-      - license-management
+      - License Management
       description: Delete multiple Hardware License resources by name
       parameters:
       - name: confirm
@@ -379,7 +379,7 @@ paths:
       summary: Delete Leased License (multiple)
       operationId: delete-leased-license-(multiple)-post
       tags:
-      - license-management
+      - License Management
       description: Delete multiple Leased License resources by name
       parameters:
       - name: confirm
@@ -418,7 +418,7 @@ paths:
       summary: Get Hardware License Config
       operationId: get-hardware-license-config-get
       tags:
-      - license-management
+      - License Management
       description: Retrieve configuration details about a specific Hardware License resource
       parameters:
       - name: name
@@ -450,7 +450,7 @@ paths:
       summary: Get Leased License Config
       operationId: get-leased-license-config-get
       tags:
-      - license-management
+      - License Management
       description: Retrieve configuration details about a specific Leased License resource
       parameters:
       - name: name
@@ -482,7 +482,7 @@ paths:
       summary: List Hardware License Resources
       operationId: list-hardware-license-resources-get
       tags:
-      - license-management
+      - License Management
       description: List all Hardware License resources, in verbose format, including configuration, metrics, and health checks.
       parameters:
       - name: limit
@@ -537,7 +537,7 @@ paths:
       summary: List Leased License Resources
       operationId: list-leased-license-resources-get
       tags:
-      - license-management
+      - License Management
       description: List all Leased License resources, in verbose format, including configuration, metrics, and health checks.
       parameters:
       - name: limit
@@ -592,7 +592,7 @@ paths:
       summary: Get Hardware License Names
       operationId: get-hardware-license-names-get
       tags:
-      - license-management
+      - License Management
       description: List all Hardware License resources, including just names and enabled bit
       parameters:
       - name: limit
@@ -647,7 +647,7 @@ paths:
       summary: Get Leased License Names
       operationId: get-leased-license-names-get
       tags:
-      - license-management
+      - License Management
       description: List all Leased License resources, including just names and enabled bit
       parameters:
       - name: limit
@@ -702,7 +702,7 @@ paths:
       summary: Rename Hardware License
       operationId: rename-hardware-license-post
       tags:
-      - license-management
+      - License Management
       description: Change the name of a Hardware License resource, and update all references to it
       parameters:
       - name: name
@@ -742,7 +742,7 @@ paths:
       summary: Rename Leased License
       operationId: rename-leased-license-post
       tags:
-      - license-management
+      - License Management
       description: Change the name of a Leased License resource, and update all references to it
       parameters:
       - name: name
@@ -782,7 +782,7 @@ paths:
       summary: Describe 'Hardware License' Resource Type
       operationId: describe-'hardware-license'-resource-type-get
       tags:
-      - license-management
+      - License Management
       description: Describe the Hardware License resource type
       responses:
         '200':
@@ -802,7 +802,7 @@ paths:
       summary: Describe 'Leased License' Resource Type
       operationId: describe-'leased-license'-resource-type-get
       tags:
-      - license-management
+      - License Management
       description: Describe the Leased License resource type
       responses:
         '200':

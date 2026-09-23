@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control certificate-management API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Certificate Management API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: certificate-management
+- name: certificate management
   description: TLS/SSL certificate management
 paths:
   /data/opc-ua/api/v1/{routeType}/certificate:
@@ -40,7 +40,7 @@ paths:
       summary: Get Certificate
       operationId: get-certificate-get
       tags:
-      - certificate-management
+      - certificate management
       description: Get the server or client certificate for the Ignition OPC-UA Module
       parameters:
       - name: routeType
@@ -66,7 +66,7 @@ paths:
       summary: Download Certificate
       operationId: download-certificate-get
       tags:
-      - certificate-management
+      - certificate management
       description: Download Certificate for the given type.
       parameters:
       - name: routeType
@@ -92,7 +92,7 @@ paths:
       summary: Regenerate Certificate
       operationId: regenerate-certificate-post
       tags:
-      - certificate-management
+      - certificate management
       description: Regenerate a certificate of the given type.
       parameters:
       - name: routeType

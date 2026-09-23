@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control modules API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Modules API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: modules
+- name: Modules
   description: Installed module management
 paths:
   /data/api/v1/modules/certificate:
@@ -40,7 +40,7 @@ paths:
       summary: View Certificate Information
       operationId: view-certificate-information-get
       tags:
-      - modules
+      - Modules
       description: Get details about the certificate for a given module.
       parameters:
       - name: moduleId
@@ -66,7 +66,7 @@ paths:
       summary: Accept Certificate
       operationId: accept-certificate-post
       tags:
-      - modules
+      - Modules
       description: Accept a module's certificate.
       parameters:
       - name: moduleId
@@ -93,7 +93,7 @@ paths:
       summary: View EULA
       operationId: view-eula-get
       tags:
-      - modules
+      - Modules
       description: Retrieves the given module's EULA as HTML.
       parameters:
       - name: moduleId
@@ -119,7 +119,7 @@ paths:
       summary: Accept EULA
       operationId: accept-eula-post
       tags:
-      - modules
+      - Modules
       description: Accept a module's EULA
       parameters:
       - name: moduleId
@@ -146,7 +146,7 @@ paths:
       summary: All Healthy Modules
       operationId: all-healthy-modules-get
       tags:
-      - modules
+      - Modules
       description: A list of all "healthy" (non-quarantined) modules on this Ignition Gateway.
       parameters:
       - name: limit
@@ -201,7 +201,7 @@ paths:
       summary: Install Module
       operationId: install-module-post
       tags:
-      - modules
+      - Modules
       description: Completes installation of a previously uploaded module
       parameters:
       - name: moduleId
@@ -228,7 +228,7 @@ paths:
       summary: Quarantined Modules
       operationId: quarantined-modules-get
       tags:
-      - modules
+      - Modules
       description: Information about all quarantined modules on this Ignition Gateway.
       parameters:
       - name: limit
@@ -283,7 +283,7 @@ paths:
       summary: Toggle Module State
       operationId: toggle-module-state-put
       tags:
-      - modules
+      - Modules
       description: Enable and disable Ignition Modules. Allows for operating on multiple modules per request.
       requestBody:
         content:
@@ -315,7 +315,7 @@ paths:
       summary: Uninstall Module[s]
       operationId: uninstall-module[s]-delete
       tags:
-      - modules
+      - Modules
       description: Configures module[s] to be uninstalled on the next Gateway restart.
       responses:
         '200':
@@ -335,7 +335,7 @@ paths:
       summary: Upload Module
       operationId: upload-module-post
       tags:
-      - modules
+      - Modules
       description: Upload an Ignition Module to prepare for installation.
       parameters:
       - name: fileName

@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control agent-management API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Agent Management API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: agent-management
+- name: Agent Management
   description: EAM agent management
 paths:
   /data/api/v1/resources/com.inductiveautomation.eam/agent-management:
@@ -40,7 +40,7 @@ paths:
       summary: Modify Agent Management
       operationId: modify-agent-management-put
       tags:
-      - agent-management
+      - Agent Management
       description: Modify one or more Agent Management resources
       parameters:
       - name: allowInvalidReferences
@@ -94,7 +94,7 @@ paths:
       summary: Create Agent Management
       operationId: create-agent-management-post
       tags:
-      - agent-management
+      - Agent Management
       description: Create a new Agent Management resource
       parameters:
       - name: allowInvalidReferences
@@ -147,7 +147,7 @@ paths:
       summary: Delete Agent Management
       operationId: delete-agent-management-delete
       tags:
-      - agent-management
+      - Agent Management
       description: Delete a Agent Management resource by name
       parameters:
       - name: name
@@ -190,7 +190,7 @@ paths:
       summary: Delete Agent Management (multiple)
       operationId: delete-agent-management-(multiple)-post
       tags:
-      - agent-management
+      - Agent Management
       description: Delete multiple Agent Management resources by name
       parameters:
       - name: confirm
@@ -229,7 +229,7 @@ paths:
       summary: Get Agent Management Config
       operationId: get-agent-management-config-get
       tags:
-      - agent-management
+      - Agent Management
       description: Retrieve configuration details about a specific Agent Management resource
       parameters:
       - name: name
@@ -261,7 +261,7 @@ paths:
       summary: List Agent Management Resources
       operationId: list-agent-management-resources-get
       tags:
-      - agent-management
+      - Agent Management
       description: List all Agent Management resources, in verbose format, including configuration, metrics, and health checks.
       parameters:
       - name: limit
@@ -316,7 +316,7 @@ paths:
       summary: Get Agent Management Names
       operationId: get-agent-management-names-get
       tags:
-      - agent-management
+      - Agent Management
       description: List all Agent Management resources, including just names and enabled bit
       parameters:
       - name: limit
@@ -371,7 +371,7 @@ paths:
       summary: Rename Agent Management
       operationId: rename-agent-management-post
       tags:
-      - agent-management
+      - Agent Management
       description: Change the name of a Agent Management resource, and update all references to it
       parameters:
       - name: name
@@ -411,7 +411,7 @@ paths:
       summary: Describe 'Agent Management' Resource Type
       operationId: describe-'agent-management'-resource-type-get
       tags:
-      - agent-management
+      - Agent Management
       description: Describe the Agent Management resource type
       responses:
         '200':
@@ -431,7 +431,7 @@ paths:
       summary: EAM Agent Details Overview
       operationId: eam-agent-details-overview-get
       tags:
-      - agent-management
+      - Agent Management
       description: Gets the details of a specific EAM agent.
       parameters:
       - name: agentName
@@ -457,7 +457,7 @@ paths:
       summary: EAM Agent License Keys
       operationId: eam-agent-license-keys-get
       tags:
-      - agent-management
+      - Agent Management
       description: Gets the license keys of a specific EAM agent.
       parameters:
       - name: agentName
@@ -483,7 +483,7 @@ paths:
       summary: Retrieve agent modules
       operationId: retrieve-agent-modules-get
       tags:
-      - agent-management
+      - Agent Management
       description: Retrieve module information from an agent. This includes module name, version, license status and module state.
       parameters:
       - name: serverid
@@ -510,7 +510,7 @@ paths:
       summary: Retrieve project resources
       operationId: retrieve-project-resources-get
       tags:
-      - agent-management
+      - Agent Management
       description: Retrieve project resource names from an agent or from the local controller. Set the serverid parameter to return projects from a remote gateway, or set the localsystem parameter to True to return projects from the local controller.
       parameters:
       - name: serverid
@@ -549,7 +549,7 @@ paths:
       summary: Retrieve projects names
       operationId: retrieve-projects-names-get
       tags:
-      - agent-management
+      - Agent Management
       description: Retrieve project names from an agent or from the local controller. Set the serverid parameter to return projects from a remote gateway, or set the localsystem parameter to True to return projects from the local controller.
       parameters:
       - name: serverid
@@ -582,7 +582,7 @@ paths:
       summary: Retrieve agent info for upgrade
       operationId: retrieve-agent-info-for-upgrade-get
       tags:
-      - agent-management
+      - Agent Management
       description: Returns system data about an agent, used to prep a remote upgrade
       parameters:
       - name: serverids
@@ -609,7 +609,7 @@ paths:
       summary: EAM Agents Status
       operationId: eam-agents-status-get
       tags:
-      - agent-management
+      - Agent Management
       description: Displays a list of EAM agents and their status. The list includes agents that are pending approval. This must be called from a controller.
       parameters:
       - name: limit
@@ -664,7 +664,7 @@ paths:
       summary: EAM Agents by Agent Group
       operationId: eam-agents-by-agent-group-get
       tags:
-      - agent-management
+      - Agent Management
       description: Gets the connected EAM agents, organized by group. This must be called from a controller.
       parameters:
       - name: limit
@@ -719,7 +719,7 @@ paths:
       summary: Approve agent
       operationId: approve-agent-post
       tags:
-      - agent-management
+      - Agent Management
       description: Approves an EAM agent, which will allow interaction with the controller.
       parameters:
       - name: serverid
@@ -745,7 +745,7 @@ paths:
       summary: Quarantined agents
       operationId: quarantined-agents-get
       tags:
-      - agent-management
+      - Agent Management
       description: Returns a list of encoded ServerIds of EAM agents waiting for approval.
       responses:
         '200':
@@ -765,7 +765,7 @@ paths:
       summary: Delete quarantined agent
       operationId: delete-quarantined-agent-delete
       tags:
-      - agent-management
+      - Agent Management
       description: Deletes a pending EAM agent from the agent quarantine.
       parameters:
       - name: serverid
@@ -791,7 +791,7 @@ paths:
       summary: Upgrade Agent
       operationId: upgrade-agent-post
       tags:
-      - agent-management
+      - Agent Management
       description: Upgrade the specified EAM agent
       parameters:
       - name: groupName

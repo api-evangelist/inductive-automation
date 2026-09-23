@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control overview API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Overview API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: overview
+- name: Overview
   description: Gateway overview and status
 paths:
   /data/api/v1/locales:
@@ -40,7 +40,7 @@ paths:
       summary: Get All Available Locales
       operationId: get-all-available-locales-get
       tags:
-      - overview
+      - Overview
       description: Returns codes and display names for all languages available for use by the gateways.
       parameters:
       - name: includeVariants
@@ -69,7 +69,7 @@ paths:
       summary: Gateway Overview
       operationId: gateway-overview-get
       tags:
-      - overview
+      - Overview
       description: General status information about this Ignition Gateway.
       responses:
         '200':
@@ -89,7 +89,7 @@ paths:
       summary: Connections Overview
       operationId: connections-overview-get
       tags:
-      - overview
+      - Overview
       description: A list of various connections (DB, OPC, etc.) on this Ignition Gateway.
       parameters:
       - name: limit
@@ -144,7 +144,7 @@ paths:
       summary: Gateway Network
       operationId: gateway-network-get
       tags:
-      - overview
+      - Overview
       description: Information about the Gateway Network.
       responses:
         '200':
@@ -164,7 +164,7 @@ paths:
       summary: Gateway Name
       operationId: gateway-name-get
       tags:
-      - overview
+      - Overview
       description: This Ignition Gateway's name.
       responses:
         '200':
@@ -184,7 +184,7 @@ paths:
       summary: Problems Overview
       operationId: problems-overview-get
       tags:
-      - overview
+      - Overview
       description: A list of objects representing problems on the gateway that are considered 'critical'
       parameters:
       - name: limit

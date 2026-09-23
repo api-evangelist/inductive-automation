@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Ignition Gateway REST access-control encryption API
-  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more. The specification is dynamically generated based on installed modules. Authentication uses API keys exchanged for time-limited tokens via the X-Ignition-API-Token header. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+  title: Ignition Gateway REST Encryption API
+  description: The Ignition Gateway REST API (Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, historian data, user management (SCIM), alarm notification, OPC connections, and more.
   version: 8.3.0
   contact:
     name: Inductive Automation Support
@@ -32,7 +32,7 @@ servers:
 security:
 - apiKeyAuth: []
 tags:
-- name: encryption
+- name: Encryption
   description: Encryption utilities
 paths:
   /data/api/v1/encryption/encrypt:
@@ -40,7 +40,7 @@ paths:
       summary: Encrypt arbitrary bytes
       operationId: encrypt-arbitrary-bytes-post
       tags:
-      - encryption
+      - Encryption
       description: Encrypt an arbitrary payload into a flat JSON Web Encryption structure suitable for embedding as a secret in resource configs.
       requestBody:
         content:
