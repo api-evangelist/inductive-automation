@@ -1,4 +1,4 @@
-# Inductive Automation (inductive-automation)
+# Inductive Automation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,265 @@
 
 Inductive Automation is the developer of Ignition, an industrial application platform used for SCADA, HMI, MES, and IIoT deployments across manufacturing, utilities, and infrastructure. Ignition 8.3 exposes an OpenAPI-compliant REST API through its Gateway that provides programmatic access to configuration, tags, projects, and modules, enabling containerized and cloud-native industrial automation deployments.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/inductive-automation/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/inductive-automation/refs/heads/main/apis.yml)
+**Areas:** SCADA · HMI · Manufacturing · Industrial IoT · Industrial Automation · OPC UA
 
-## Scope
+## Inductive Automation on APIs.io
 
-- **Type:** Index
+Everything profiled for Inductive Automation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/inductive-automation/](https://apis.io/providers/inductive-automation/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (88)
 
-- SCADA
-- HMI
-- Manufacturing
-- IIoT
-- Industrial Automation
-- Industrial IoT
-- OPC UA
+- [Ignition Gateway REST API](https://apis.io/apis/inductive-automation/ignition-gateway-rest-api/) — The Ignition Gateway REST API (available in Ignition 8.3+) provides an OpenAPI- compliant HTTP interface to Gateway configuration resources including tags,…
+- [Inductive Automation Access Control API](https://apis.io/apis/inductive-automation/inductive-automation-access-control-api/) — Access control configuration
+- [Inductive Automation Agent Group API](https://apis.io/apis/inductive-automation/inductive-automation-agent-group-api/) — EAM agent group management
+- [Inductive Automation Agent Management API](https://apis.io/apis/inductive-automation/inductive-automation-agent-management-api/) — EAM agent management
+- [Inductive Automation Alarm Journal Resources API](https://apis.io/apis/inductive-automation/inductive-automation-alarm-journal-resources-api/) — Alarm journal resource management
+- [Inductive Automation Alarm Notification Profile API](https://apis.io/apis/inductive-automation/inductive-automation-alarm-notification-profile-api/) — Alarm notification profile management
+- [Inductive Automation API Token API](https://apis.io/apis/inductive-automation/inductive-automation-api-token-api/) — API token authentication
+- [Inductive Automation Audit API](https://apis.io/apis/inductive-automation/inductive-automation-audit-api/) — Audit log access
+- [Inductive Automation Call Script API](https://apis.io/apis/inductive-automation/inductive-automation-call-script-api/) — Script invocation endpoints
+- [Inductive Automation Certificate Management API](https://apis.io/apis/inductive-automation/inductive-automation-certificate-management-api/) — TLS/SSL certificate management
+- [Inductive Automation Charts Info API](https://apis.io/apis/inductive-automation/inductive-automation-charts-info-api/) — Charts module information
+- [Inductive Automation Client Pki Certificate Management API](https://apis.io/apis/inductive-automation/inductive-automation-client-pki-certificate-management-api/) — Client PKI certificate management
+- [Inductive Automation Config Alarm API](https://apis.io/apis/inductive-automation/inductive-automation-config-alarm-api/) — Alarm configuration resources
+- [Inductive Automation Config API Token API](https://apis.io/apis/inductive-automation/inductive-automation-config-api-token-api/) — API token configuration
+- [Inductive Automation Config Audit Profiles API](https://apis.io/apis/inductive-automation/inductive-automation-config-audit-profiles-api/) — Audit profile configuration
+- [Inductive Automation Config Databases API](https://apis.io/apis/inductive-automation/inductive-automation-config-databases-api/) — Database connection configuration
+- [Inductive Automation Config Edge System Properties API](https://apis.io/apis/inductive-automation/inductive-automation-config-edge-system-properties-api/) — Edge system properties
+- [Inductive Automation Config Email Profile API](https://apis.io/apis/inductive-automation/inductive-automation-config-email-profile-api/) — Email profile configuration
+- [Inductive Automation Config Gateway Network API](https://apis.io/apis/inductive-automation/inductive-automation-config-gateway-network-api/) — Gateway network configuration
+- [Inductive Automation Config Identity Provider API](https://apis.io/apis/inductive-automation/inductive-automation-config-identity-provider-api/) — Identity provider configuration
+- [Inductive Automation Config Keyboard Layouts API](https://apis.io/apis/inductive-automation/inductive-automation-config-keyboard-layouts-api/) — Keyboard layout configuration
+- [Inductive Automation Config Local System Properties API](https://apis.io/apis/inductive-automation/inductive-automation-config-local-system-properties-api/) — Local system properties
+- [Inductive Automation Config Management API](https://apis.io/apis/inductive-automation/inductive-automation-config-management-api/) — General configuration management
+- [Inductive Automation Config Metrics Dashboard API](https://apis.io/apis/inductive-automation/inductive-automation-config-metrics-dashboard-api/) — Metrics dashboard configuration
+- [Inductive Automation Config Oauth2 Client API](https://apis.io/apis/inductive-automation/inductive-automation-config-oauth2-client-api/) — OAuth2 client configuration
+- [Inductive Automation Config Perspective Branding API](https://apis.io/apis/inductive-automation/inductive-automation-config-perspective-branding-api/) — Perspective module branding configuration
+- [Inductive Automation Config Perspective Fonts API](https://apis.io/apis/inductive-automation/inductive-automation-config-perspective-fonts-api/) — Perspective font configuration
+- [Inductive Automation Config Perspective Icons API](https://apis.io/apis/inductive-automation/inductive-automation-config-perspective-icons-api/) — Perspective icon library configuration
+- [Inductive Automation Config Perspective Themes API](https://apis.io/apis/inductive-automation/inductive-automation-config-perspective-themes-api/) — Perspective theme configuration
+- [Inductive Automation Config Secret Provider API](https://apis.io/apis/inductive-automation/inductive-automation-config-secret-provider-api/) — Secret provider configuration
+- [Inductive Automation Config Security Levels API](https://apis.io/apis/inductive-automation/inductive-automation-config-security-levels-api/) — Security zone level configuration
+- [Inductive Automation Config Security Properties API](https://apis.io/apis/inductive-automation/inductive-automation-config-security-properties-api/) — Security properties configuration
+- [Inductive Automation Config Security Zone API](https://apis.io/apis/inductive-automation/inductive-automation-config-security-zone-api/) — Security zone configuration
+- [Inductive Automation Config Store Forward API](https://apis.io/apis/inductive-automation/inductive-automation-config-store-forward-api/) — Store-and-forward configuration
+- [Inductive Automation Config System Properties API](https://apis.io/apis/inductive-automation/inductive-automation-config-system-properties-api/) — System properties configuration
+- [Inductive Automation Config Tag Provider API](https://apis.io/apis/inductive-automation/inductive-automation-config-tag-provider-api/) — Tag provider configuration
+- [Inductive Automation Config Translations API](https://apis.io/apis/inductive-automation/inductive-automation-config-translations-api/) — Translation configuration
+- [Inductive Automation Config User Source API](https://apis.io/apis/inductive-automation/inductive-automation-config-user-source-api/) — User source configuration
+- [Inductive Automation Data Syncs API](https://apis.io/apis/inductive-automation/inductive-automation-data-syncs-api/) — Data synchronization
+- [Inductive Automation Designer Sessions API](https://apis.io/apis/inductive-automation/inductive-automation-designer-sessions-api/) — Designer session management
+- [Inductive Automation Device API](https://apis.io/apis/inductive-automation/inductive-automation-device-api/) — Device connection management
+- [Inductive Automation Eam Tasks API](https://apis.io/apis/inductive-automation/inductive-automation-eam-tasks-api/) — Enterprise Administration Module task management
+- [Inductive Automation Encryption API](https://apis.io/apis/inductive-automation/inductive-automation-encryption-api/) — Encryption utilities
+- [Inductive Automation Entity API](https://apis.io/apis/inductive-automation/inductive-automation-entity-api/) — Generic entity management
+- [Inductive Automation Event Thresholds API](https://apis.io/apis/inductive-automation/inductive-automation-event-thresholds-api/) — Event threshold configuration
+- [Inductive Automation Executors API](https://apis.io/apis/inductive-automation/inductive-automation-executors-api/) — Thread pool executor management
+- [Inductive Automation Gateway Backups API](https://apis.io/apis/inductive-automation/inductive-automation-gateway-backups-api/) — Gateway backup and restore
+- [Inductive Automation Gateway Info API](https://apis.io/apis/inductive-automation/inductive-automation-gateway-info-api/) — Gateway information
+- [Inductive Automation Gateway Network API](https://apis.io/apis/inductive-automation/inductive-automation-gateway-network-api/) — Gateway network topology
+- [Inductive Automation Gateway Scripts API](https://apis.io/apis/inductive-automation/inductive-automation-gateway-scripts-api/) — Gateway script execution
+- [Inductive Automation General Alarm Settings API](https://apis.io/apis/inductive-automation/inductive-automation-general-alarm-settings-api/) — General alarm settings
+- [Inductive Automation General API](https://apis.io/apis/inductive-automation/inductive-automation-general-api/) — The general API from Inductive Automation — 3 operation(s) for general.
+- [Inductive Automation Groups Info API](https://apis.io/apis/inductive-automation/inductive-automation-groups-info-api/) — User group information
+- [Inductive Automation Historian Config API](https://apis.io/apis/inductive-automation/inductive-automation-historian-config-api/) — Tag historian configuration
+- [Inductive Automation Launcher API](https://apis.io/apis/inductive-automation/inductive-automation-launcher-api/) — Ignition Launcher operations
+- [Inductive Automation License Activation API](https://apis.io/apis/inductive-automation/inductive-automation-license-activation-api/) — License activation management
+- [Inductive Automation License Management API](https://apis.io/apis/inductive-automation/inductive-automation-license-management-api/) — License management operations
+- [Inductive Automation License Status API](https://apis.io/apis/inductive-automation/inductive-automation-license-status-api/) — License status information
+- [Inductive Automation local devices API](https://apis.io/apis/inductive-automation/inductive-automation-local-devices-api/) — Local device management
+- [Inductive Automation Logging API](https://apis.io/apis/inductive-automation/inductive-automation-logging-api/) — Logging configuration
+- [Inductive Automation Managed Tag Provider API](https://apis.io/apis/inductive-automation/inductive-automation-managed-tag-provider-api/) — Managed tag provider operations
+- [Inductive Automation Module Certificate API](https://apis.io/apis/inductive-automation/inductive-automation-module-certificate-api/) — Module certificate management
+- [Inductive Automation Module Eula API](https://apis.io/apis/inductive-automation/inductive-automation-module-eula-api/) — Module EULA acceptance
+- [Inductive Automation Module Settings API](https://apis.io/apis/inductive-automation/inductive-automation-module-settings-api/) — Module settings configuration
+- [Inductive Automation Modules API](https://apis.io/apis/inductive-automation/inductive-automation-modules-api/) — Installed module management
+- [Inductive Automation opc connection API](https://apis.io/apis/inductive-automation/inductive-automation-opc-connection-api/) — OPC connection management
+- [Inductive Automation Overview API](https://apis.io/apis/inductive-automation/inductive-automation-overview-api/) — Gateway overview and status
+- [Inductive Automation Perspective Sessions API](https://apis.io/apis/inductive-automation/inductive-automation-perspective-sessions-api/) — Perspective module session management
+- [Inductive Automation Pipeline Status API](https://apis.io/apis/inductive-automation/inductive-automation-pipeline-status-api/) — Alarm notification pipeline status
+- [Inductive Automation Projects API](https://apis.io/apis/inductive-automation/inductive-automation-projects-api/) — Ignition project management
+- [Inductive Automation Quickstart API](https://apis.io/apis/inductive-automation/inductive-automation-quickstart-api/) — Quick-start setup wizard
+- [Inductive Automation Redundancy API](https://apis.io/apis/inductive-automation/inductive-automation-redundancy-api/) — Gateway redundancy configuration
+- [Inductive Automation Remote Upgrade API](https://apis.io/apis/inductive-automation/inductive-automation-remote-upgrade-api/) — Remote Gateway upgrade operations
+- [Inductive Automation Reports Info API](https://apis.io/apis/inductive-automation/inductive-automation-reports-info-api/) — Reporting module information
+- [Inductive Automation Restart Tasks API](https://apis.io/apis/inductive-automation/inductive-automation-restart-tasks-api/) — Gateway restart task management
+- [Inductive Automation Roster Config API](https://apis.io/apis/inductive-automation/inductive-automation-roster-config-api/) — Alarm roster configuration
+- [Inductive Automation Running Scripts API](https://apis.io/apis/inductive-automation/inductive-automation-running-scripts-api/) — Running script monitoring
+- [Inductive Automation Secret Providers API](https://apis.io/apis/inductive-automation/inductive-automation-secret-providers-api/) — Secret provider management
+- [Inductive Automation Server API](https://apis.io/apis/inductive-automation/inductive-automation-server-api/) — OPC UA server configuration
+- [Inductive Automation Server Pki Certificate Management API](https://apis.io/apis/inductive-automation/inductive-automation-server-pki-certificate-management-api/) — Server PKI certificate management
+- [Inductive Automation Service Connectors API](https://apis.io/apis/inductive-automation/inductive-automation-service-connectors-api/) — Service connector configuration
+- [Inductive Automation Sfc Config API](https://apis.io/apis/inductive-automation/inductive-automation-sfc-config-api/) — Sequential Function Chart configuration
+- [Inductive Automation Storage API](https://apis.io/apis/inductive-automation/inductive-automation-storage-api/) — Storage configuration
+- [Inductive Automation Streams Info API](https://apis.io/apis/inductive-automation/inductive-automation-streams-info-api/) — Data stream information
+- [Inductive Automation System Performance API](https://apis.io/apis/inductive-automation/inductive-automation-system-performance-api/) — System performance metrics
+- [Inductive Automation Thread Diagnostics API](https://apis.io/apis/inductive-automation/inductive-automation-thread-diagnostics-api/) — JVM thread diagnostics
+- [Inductive Automation User Management SCIM API](https://apis.io/apis/inductive-automation/inductive-automation-user-management-scim-api/) — SCIM 2.0 user and group management
+- [Inductive Automation Vision Sessions API](https://apis.io/apis/inductive-automation/inductive-automation-vision-sessions-api/) — Vision module client sessions
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-06-05
-- **Modified:** 2026-06-05
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Ignition Gateway REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Ignition Gateway REST API (available in Ignition 8.3+) provides an OpenAPI-compliant HTTP interface to Gateway configuration resources including tags, projects, modules, device connections, and historian data. The API spec is dynamically generated and includes all routes exposed by installed modules. Authentication uses API keys with time-limited tokens. Mutative requests are audit-logged. Supports Kubernetes and Helm-based cloud-native deployments.
+- [Inductive Automation Agentic Access](https://apis.io/agentic-access/inductive-automation/inductive-automation-agentic-access/)
 
-- **Human URL:** [https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi)
-- **Base URL:** `https://{gateway-host}:8088/api`
+#### JSON Schema (3)
 
-#### Tags
+The data models the API reads and writes.
 
-- SCADA
-- Industrial Automation
-- Tags
-- Configuration
-- OpenAPI
-- REST
+- [GatewayInfo](https://apis.io/schemas/inductive-automation/inductive-automation-gateway-info/)
+- [ResourceRecord](https://apis.io/schemas/inductive-automation/inductive-automation-resource-record/)
+- [ScimUser](https://apis.io/schemas/inductive-automation/inductive-automation-scim-user/)
 
-#### Properties
+#### JSON Structure (2)
 
-- [Documentation](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/openapi)
-- [Portal](https://inductiveautomation.com/moduleshowcase/api-docs)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Inductive Automation Gateway Info Structure](https://apis.io/json-structure/inductive-automation/inductive-automation-gateway-info-structure/)
+- [Inductive Automation Resource Record Structure](https://apis.io/json-structure/inductive-automation/inductive-automation-resource-record-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Inductive Automation Context](https://apis.io/jsonld/inductive-automation/inductive-automation-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Inductive Automation / Ignition Gateway API Vocabulary](https://apis.io/vocabularies/inductive-automation/inductive-automation-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Inductive Automation Create Database Connection Example](https://apis.io/examples/inductive-automation/inductive-automation-create-database-connection-example/)
+- [Inductive Automation Gateway Info Example](https://apis.io/examples/inductive-automation/inductive-automation-gateway-info-example/)
+- [Inductive Automation List Projects Example](https://apis.io/examples/inductive-automation/inductive-automation-list-projects-example/)
+
+#### Collections (87)
+
+Postman and Open Collection request collections.
+
+- [Ignition Gateway REST access-control API](https://apis.io/collections/inductive-automation/open-inductive-automation-access-control-api/)
+- [Ignition Gateway REST access-control agent-group API](https://apis.io/collections/inductive-automation/open-inductive-automation-agent-group-api/)
+- [Ignition Gateway REST access-control agent-management API](https://apis.io/collections/inductive-automation/open-inductive-automation-agent-management-api/)
+- [Ignition Gateway REST access-control alarm-journal-resources API](https://apis.io/collections/inductive-automation/open-inductive-automation-alarm-journal-resources-api/)
+- [Ignition Gateway REST access-control alarm-notification-profile API](https://apis.io/collections/inductive-automation/open-inductive-automation-alarm-notification-profile-api/)
+- [Ignition Gateway REST access-control api-token API](https://apis.io/collections/inductive-automation/open-inductive-automation-api-token-api/)
+- [Ignition Gateway REST access-control audit API](https://apis.io/collections/inductive-automation/open-inductive-automation-audit-api/)
+- [Ignition Gateway REST access-control call-script API](https://apis.io/collections/inductive-automation/open-inductive-automation-call-script-api/)
+- [Ignition Gateway REST access-control certificate-management API](https://apis.io/collections/inductive-automation/open-inductive-automation-certificate-management-api/)
+- [Ignition Gateway REST access-control charts-info API](https://apis.io/collections/inductive-automation/open-inductive-automation-charts-info-api/)
+- [Ignition Gateway REST access-control client-pki-certificate-management API](https://apis.io/collections/inductive-automation/open-inductive-automation-client-pki-certificate-management-api/)
+- [Ignition Gateway REST access-control config-alarm API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-alarm-api/)
+- [Ignition Gateway REST access-control config-api-token API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-api-token-api/)
+- [Ignition Gateway REST access-control config-audit-profiles API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-audit-profiles-api/)
+- [Ignition Gateway REST access-control config-databases API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-databases-api/)
+- [Ignition Gateway REST access-control config-edge-system-properties API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-edge-system-properties-api/)
+- [Ignition Gateway REST access-control config-email-profile API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-email-profile-api/)
+- [Ignition Gateway REST access-control config-gateway-network API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-gateway-network-api/)
+- [Ignition Gateway REST access-control config-identity-provider API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-identity-provider-api/)
+- [Ignition Gateway REST access-control config-keyboard-layouts API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-keyboard-layouts-api/)
+- [Ignition Gateway REST access-control config-local-system-properties API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-local-system-properties-api/)
+- [Ignition Gateway REST access-control config-management API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-management-api/)
+- [Ignition Gateway REST access-control config-metrics-dashboard API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-metrics-dashboard-api/)
+- [Ignition Gateway REST access-control config-oauth2-client API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-oauth2-client-api/)
+- [Ignition Gateway REST access-control config-perspective-branding API](https://apis.io/collections/inductive-automation/open-inductive-automation-config-perspective-branding-api/)
+- …and 62 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Inductive Automation — jsonschema rules](https://apis.io/rules/inductive-automation/inductive-automation-jsonschema-spectral-rules/)
+- [Inductive Automation API Rules](https://apis.io/rules/inductive-automation/inductive-automation-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Inductive Automation Authentication](https://apis.io/security/inductive-automation/inductive-automation-authentication/)
+- [Inductive Automation Domain Security](https://apis.io/security/inductive-automation/inductive-automation-domain-security/)
+- [Inductive Automation Trust Center](https://apis.io/security/inductive-automation/inductive-automation-trust-center/)
+- [Inductive Automation Vulnerability Disclosure](https://apis.io/security/inductive-automation/inductive-automation-vulnerability-disclosure/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Inductive Automation Plans Pricing](https://apis.io/plans/inductive-automation/inductive-automation-plans-pricing/)
+- [Inductive Automation Price Estimates](https://apis.io/plans/inductive-automation/inductive-automation-price-estimates/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://inductiveautomation.com)
 - [Documentation](https://www.docs.inductiveautomation.com/)
-- [Portal](https://inductiveautomation.com/moduleshowcase/api-docs)
-- [Blog](https://inductiveautomation.com/resources/article)
-- [GitHub Organization](https://github.com/inductiveautomation)
-- [LinkedIn](https://www.linkedin.com/company/inductive-automation)
-- [YouTube](https://www.youtube.com/@InductiveAutomation)
+- [Getting started](https://inductiveautomation.com/ignition/trial/)
 - [Pricing](https://inductiveautomation.com/pricing/)
-- [About](https://inductiveautomation.com/about-inductive-automation)
 - [Support](https://support.inductiveautomation.com/)
-- [Getting Started](https://inductiveautomation.com/ignition/trial/)
+- [Blog](https://inductiveautomation.com/blog/)
+- [GitHub](https://github.com/inductiveautomation)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 43.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 50.0 |
+
+**Agent readiness 23.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 27.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/inductive-automation/](https://apis.io/providers/inductive-automation/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Inductive Automation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/inductive-automation/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
